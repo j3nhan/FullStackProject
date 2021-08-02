@@ -10,7 +10,7 @@ class User < ApplicationRecord
     has_mamy :reviews, foreign_key: :author_id
 
     def self.find_by_credentials(email, password)
-        @user = User.find_by_credentials(email: email)
+        @user = User.find_by(email: email)
         @user && @user.is_password?(password) ? @user : nil
     end
 
@@ -29,8 +29,8 @@ class User < ApplicationRecord
         self.session_token
     end
 
+    private
     def ensure_session_token
         self.session_token ||= SecureRandom::urlsafe_base64
     end
-
 end
