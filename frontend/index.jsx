@@ -21,4 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
+
+// testing
+    window.store = store;
+    window.dispatch = store.dispatch;
+    window.getState = store.getState;
+    window.signupUser = signupUser;
+    window.loginUser = loginUser;
+    window.logoutUser = logoutUser;
 });
