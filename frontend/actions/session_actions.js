@@ -5,9 +5,9 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const REMOVE_SESSION_ERRORS = 'REMOVE_SESSION_ERRORS';
 
-export const receiveCurrentUser = currentUser => ({
+export const receiveCurrentUser = user => ({
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    user
 });
 
 export const logoutCurrentUser = () => ({
@@ -42,4 +42,4 @@ export const logoutUser = () => dispatch => (
     .then(() => dispatch(logoutCurrentUser()))
 );
 
-export const removeErrors = () => dispatch => (removeSessionErrors());
+export const clearErrors = () => dispatch => (removeSessionErrors());
