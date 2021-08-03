@@ -42,4 +42,4 @@ export const logoutUser = () => dispatch => (
     .then(() => dispatch(logoutCurrentUser()))
 );
 
-export const clearErrors = () => dispatch => (removeSessionErrors());
+export const removeErrors = () => dispatch => dispatch(removeSessionErrors());
