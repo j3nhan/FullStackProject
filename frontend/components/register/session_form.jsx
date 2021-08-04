@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
             firstName: "",
             email: "",
             password: "",
-            rePassword: "",
+            // rePassword: "",
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -114,9 +114,7 @@ class SessionForm extends React.Component {
                             <br />
                             {/* add signin form link after question */}
                             <div>Already have an account? 
-                                <Link to="signin">
-                                    <button>Sign-In</button>
-                                </Link>
+                                <Link to='/signin'>Sign-In</Link>
                             </div>
                         </div>
                     </form>
@@ -169,9 +167,7 @@ class SessionForm extends React.Component {
                                 <br />
                                 <span>New to ValYou?</span>
                                 <br />
-                                <Link to="/signup">
-                                    <button>Create your ValYOU account</button>
-                                </Link>
+                                <Link to="/signup">Create your ValYOU account</Link>
                             </div>
                         </div>
                     </form>

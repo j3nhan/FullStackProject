@@ -16,7 +16,6 @@ const Homepage = ({ currentUser, signoutUser }) => {
             <button onClick={signoutUser}>Sign Out</button>
         </div>
     );
-    console.log(currentUser);
     return currentUser ? userHome() : initialHome();
 };
 

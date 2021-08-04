@@ -14,7 +14,7 @@ export const signoutCurrentUser = () => ({
     type: SIGNOUT_CURRENT_USER, 
 });
 
-export const receiveSessionErrors = errors => ({
+export const receiveSesErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 });
