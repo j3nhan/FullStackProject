@@ -42,5 +42,8 @@
   "bugs": {
     "url": "https://github.com/j3nhan/FullStackProject/issues"
   },
-  "homepage": "https://github.com/j3nhan/FullStackProject#readme"
+  "homepage": "https://github.com/j3nhan/FullStackProject#readme",
+  "devDependencies": {
+    "file-loader": "^6.2.0"
+  }
 }
