@@ -8,7 +8,6 @@ class SessionForm extends React.Component {
             name: "",
             email: "",
             password: "",
-            // rePassword: "",
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -85,18 +84,6 @@ class SessionForm extends React.Component {
                                     />
                                 </label>
                             </div>
-
-                            {/* re-enter password confirmation field */}
-                            {/* <div className="field-container">
-                                <label className="input-label">Re-enter Password
-                                    <input className="re-password-label" 
-                                        type="password" 
-                                        value="this.state.rePassword"
-                                        onChange={this.handleUpdate("rePassword")}
-                                        placeholder="At least 6 characters"
-                                    />
-                                </label>
-                            </div> */}
                             
                             <br />
                             <div className="errors">
