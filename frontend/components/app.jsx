@@ -1,6 +1,6 @@
 import React from 'react';
 import HomepageContainer from './home/homepage_container';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, Redirect, HashRouter } from 'react-router-dom';
 import SignupFormContainer from './register/signup_form_container';
 import SigninFormContainer from './register/signin_form_container';
 
@@ -15,7 +15,7 @@ const App = () => (
             <Route path="/signup" component={SignupFormContainer} />
             <Route path="/signin" component={SigninFormContainer} />
         </Switch>
-        
+
     </div>
 );
 
