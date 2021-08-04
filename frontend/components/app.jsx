@@ -7,7 +7,6 @@ import SigninFormContainer from './register/signin_form_container';
 const App = () => (
     <div>
         <header>
-            <h1>ValYOU Homepage</h1>
             <HomepageContainer />
         </header>
 
