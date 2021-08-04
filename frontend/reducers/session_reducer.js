@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from "../actions/session_actions";
+import { RECEIVE_CURRENT_USER, SIGNOUT_CURRENT_USER } from "../actions/session_actions";
 
 const _nullSession = {
   id: null
@@ -10,7 +10,7 @@ const sessionReducer = (state = _nullSession, action) => {
         case RECEIVE_CURRENT_USER:
             const { id } = action.user;
             return Object.assign({}, { id });
-        case LOGOUT_CURRENT_USER:
+        case SIGNOUT_CURRENT_USER:
             return _nullSession;
         default:
             return state;

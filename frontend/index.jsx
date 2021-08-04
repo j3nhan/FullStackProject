@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import { signupUser, loginUser, logoutUser} from './actions/session_actions'
+import { signupUser, signinUser, signoutUser} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatch = store.dispatch;
     window.getState = store.getState;
     window.signupUser = signupUser;
-    window.loginUser = loginUser;
-    window.logoutUser = logoutUser;
+    window.signinUser = signinUser;
+    window.signoutUser = signoutUser;
 });

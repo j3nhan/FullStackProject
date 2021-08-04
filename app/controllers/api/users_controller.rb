@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            login(@user)
+            signin(@user)
             render "api/users/show"
         else 
             render json: @user.errors.full_messages, status: 422
@@ -22,13 +22,3 @@ class Api::UsersController < ApplicationController
         params.require(:user).permit(:first_name, :email, :password)
     end
 end
-
-# $.ajax({
-#     method: "POST",
-#     url: '/api/users',
-#     data: { user: {
-#         first_name: 'test',
-#         email: 'test1@test',
-#         password: 'testing'
-#     } }
-# })

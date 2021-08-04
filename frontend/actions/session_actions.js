@@ -1,7 +1,7 @@
-import { signup, login, logout } from '../util/session_api_util';
+import { signup, signin, signout } from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
+export const SIGNOUT_CURRENT_USER = 'SIGNOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const REMOVE_SESSION_ERRORS = 'REMOVE_SESSION_ERRORS';
 
@@ -10,8 +10,8 @@ export const receiveCurrentUser = user => ({
     user
 });
 
-export const logoutCurrentUser = () => ({
-    type: LOGOUT_CURRENT_USER, 
+export const signoutCurrentUser = () => ({
+    type: SIGNOUT_CURRENT_USER, 
 });
 
 export const receiveSessionErrors = errors => ({
@@ -30,16 +30,16 @@ export const signupUser = user => dispatch => (
     )
 );
 
-export const loginUser = user => dispatch => (
-    login(user)
+export const signinUser = user => dispatch => (
+    signin(user)
     .then(res => dispatch(receiveCurrentUser(res)),
         error => dispatch(receiveSesErrors(error.responseJSON))
     )
 );
 
-export const logoutUser = () => dispatch => (
-    logout()
-    .then(() => dispatch(logoutCurrentUser()))
+export const signoutUser = () => dispatch => (
+    signout()
+    .then(() => dispatch(signoutCurrentUser()))
 );
 
 export const removeErrors = () => dispatch => dispatch(removeSessionErrors());
