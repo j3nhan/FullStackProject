@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.currentUser) {
         preloadedState = {
             session: { id: window.currentUser.id },
-        entities: {
-            users: { [window.currentUser.id]: window.currentUser }
-        }
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            }
         };
         store = configureStore(preloadedState);
         delete window.currentUser;
@@ -29,4 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.signupUser = signupUser;
     window.signinUser = signinUser;
     window.signoutUser = signoutUser;
+    
 });

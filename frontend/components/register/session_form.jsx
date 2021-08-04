@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: "",
+            name: "",
             email: "",
             password: "",
             // rePassword: "",
@@ -57,8 +57,8 @@ class SessionForm extends React.Component {
                                 <label className="input-label">Your name
                                     <input className="name-label"
                                         type="text"
-                                        value={this.state.firstName}
-                                        onChange={this.handleUpdate("firstName")} 
+                                        value={this.state.name}
+                                        onChange={this.handleUpdate("name")} 
                                     />
                                 </label>
                             </div>

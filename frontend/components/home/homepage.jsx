@@ -12,7 +12,7 @@ const Homepage = ({ currentUser, signoutUser }) => {
 
     const userHome = () => (
         <div>
-            <h2>Welcome {currentUser.firstName}!</h2>
+            <h2>Welcome {currentUser.name}!</h2>
             <button onClick={signoutUser}>Sign Out</button>
         </div>
     );
