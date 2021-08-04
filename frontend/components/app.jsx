@@ -10,9 +10,12 @@ const App = () => (
             <h1>ValYOU Homepage</h1>
             <HomepageContainer />
         </header>
+
         <Switch>
-            
+            <Route path="/signup" component={SignupFormContainer} />
+            <Route path="/signin" component={SigninFormContainer} />
         </Switch>
+        
     </div>
 );
 
