@@ -39,10 +39,10 @@ class SessionForm extends React.Component {
         return(
             <ul>
                 {this.props.errors.map((error, idx) => (
-                    <li key={'error-${i}'}>{ error }</li>
+                    <li key={`error-${idx}`}>{ error }</li>
                 ))}
             </ul>
-        )
+        );
     }
 
     render() {
@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
                                     <input className="name-label"
                                         type="text"
                                         value={this.state.firstName}
-                                        onChange={this.update("firstName")} 
+                                        onChange={this.handleUpdate("firstName")} 
                                     />
                                 </label>
                             </div>
@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
                                         type="password" 
                                         value="this.state.password"
                                         onChange={this.handleUpdate("password")}
-                                        placeholder="At least 6 characters"
+                                        // placeholder="At least 6 characters"
                                     />
                                 </label>
                             </div>
@@ -132,7 +132,7 @@ class SessionForm extends React.Component {
                                     <input className="name-label"
                                         type="text"
                                         value={this.state.email}
-                                        onChange={this.update("email")} 
+                                        onChange={this.handleUpdate("email")} 
                                     />
                                 </label>
                             </div>                                    
@@ -144,7 +144,7 @@ class SessionForm extends React.Component {
                                         type="password" 
                                         value="this.state.password"
                                         onChange={this.handleUpdate("password")}
-                                        placeholder="At least 6 characters"
+                                        // placeholder="At least 6 characters"
                                     />
                                 </label>
                             </div>
@@ -177,4 +177,4 @@ class SessionForm extends React.Component {
     };
 };
 
-export default sessionForm;
+export default SessionForm;
