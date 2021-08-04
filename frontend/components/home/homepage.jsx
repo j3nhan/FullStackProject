@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const Homepage = ({ currentUser, signoutUser }) => {
     const initialHome = () => (
         <nav>
-            <Link to='/signin'>signin</Link>
+            <Link to='/signin'>Sign-In</Link>
+            <br />
             <Link to='/signup'>Sign Up</Link>
         </nav>
     );
@@ -12,7 +13,7 @@ const Homepage = ({ currentUser, signoutUser }) => {
     const userHome = () => (
         <div>
             <h2>Welcome {currentUser.firstName}!</h2>
-            <button onClick={signoutUser}>Log Out</button>
+            <button onClick={signoutUser}>Sign Out</button>
         </div>
     );
     console.log(currentUser);
