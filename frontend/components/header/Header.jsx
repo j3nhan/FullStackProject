@@ -11,11 +11,10 @@ const Header = () => {
         <nav className="header">   
             <Link to="/">
                 <img className="header-logo" 
-                    src="public/images/valyou-logo.png"
+                    src="images/valyou-logo.png"
                     alt="amazon-logo" 
                     />
             </Link>
-            {/* <img className='nav-logo' src="images/amanom-logo.png"/> */}
 
             <div className="header-option" style={{marginRight: "-10px"}}>
                 <LocationOnIcon/>

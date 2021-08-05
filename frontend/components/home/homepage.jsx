@@ -25,17 +25,28 @@ import React from 'react';
 // -------------------------
 
 // import banners here
+// import ban1 from "public/images/ban1.jpg"
+import Slider from '../slider/Slider'
 
-const categories = [
+
+const Homepage = () => {
+    const categories = [
     "Minority-Owned",
     "Farmers Market",
     "Women-Owned",
     "Veteran-Owned",
     "Disability-Owned"
-]
+    ]
+    
+    const ban1 = "images/ban1.jpg";
+    const ban2 = "images/ban2.jpg";
+    const ban3 = "images/ban3.jpg";
+    const ban4 = "images/ban4.jpg";
 
-const Homepage = () => {
-    const bannerImages = [ban1, ban2, ban3, ban4, ban5]
+    const bannerImages = [ban1, ban2, ban3, ban4]
+
+    {bannerImages.map(ban => <img src={ban}/> )}
+    
     return (
         <div>
             <div className="item-container">
@@ -47,6 +58,7 @@ const Homepage = () => {
                 <div className="home-container">
                     {/* images props from slider */}
                     <Slider images={bannerImages} />
+
                     <div className="home-row"> 
                         {/* items */}
                     </div>
