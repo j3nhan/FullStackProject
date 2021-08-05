@@ -23,6 +23,9 @@ import React from 'react';
 
 
 // -------------------------
+
+// import banners here
+
 const categories = [
     "Minority-Owned",
     "Farmers Market",
@@ -31,11 +34,8 @@ const categories = [
     "Disability-Owned"
 ]
 
-const items = [
-
-]
-
 const Homepage = () => {
+    const bannerImages = [b1, b2, b3, b4, b5]
     return (
         <div>
             <div className="item-container">
@@ -45,7 +45,8 @@ const Homepage = () => {
 
             <div className="home">
                 <div className="home-container">
-                    {/* slider */}
+                    {/* images props from slider */}
+                    <Slider images={bannerImages} />
                     <div className="home-row"> 
                         {/* items */}
                     </div>

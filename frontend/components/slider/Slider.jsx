@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
+// images props
 const Slider = ({ images }) => {
-    const [idx, setIdx] = setState(0);
+    const [idx, setIdx] = setState(0); 
 
     useEffect(() => {
         const lastIdx = images.length - 1;
