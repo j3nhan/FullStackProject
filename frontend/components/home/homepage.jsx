@@ -35,7 +35,7 @@ const categories = [
 ]
 
 const Homepage = () => {
-    const bannerImages = [b1, b2, b3, b4, b5]
+    const bannerImages = [ban1, ban2, ban3, ban4, ban5]
     return (
         <div>
             <div className="item-container">
