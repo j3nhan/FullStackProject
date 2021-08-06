@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
-// import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-// import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const Header = () => {
@@ -11,7 +9,7 @@ const Header = () => {
         <nav className="header">   
             <Link to="/">
                 <img className="header-logo" 
-                    src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                    src="images/valyou-logo.png"
                     alt="amazon-logo" 
                     />
             </Link>

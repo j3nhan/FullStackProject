@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
+// images props
 const Slider = ({ images }) => {
-    const [idx, setIdx] = setState(0);
+    const [idx, setIdx] = useState(0); 
 
     useEffect(() => {
         const lastIdx = images.length - 1;
@@ -18,7 +19,7 @@ const Slider = ({ images }) => {
     useEffect(() => {
         let slider = setInterval(() => {
             setIdx(idx + 1);
-        }, 5000);
+        }, 6000);
 
         return () => {
             clearInterval(slider);
@@ -45,11 +46,11 @@ const Slider = ({ images }) => {
                 })}
 
                 <p className='prev' onClick={() => setIdx(idx - 1)} >
-                    <ArrowForwardIosIcon />
+                    <ArrowBackIosIcon />               
                 </p>
 
                 <p className='next' onClick={() => setIdx(idx + 1)} >
-                    <ArrowBackIosIcon />
+                    <ArrowForwardIosIcon />
                 </p>
             </div>
         </div>
