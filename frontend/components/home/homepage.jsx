@@ -51,7 +51,7 @@ const Homepage = () => {
         <div>
             <div className="item-container">
                 {categories && categories.map((category, idx) =>
-                    <p>{category}</p>)}
+                    <p key={idx}>{category}</p>)}
             </div>
 
             <div className="home">

@@ -19,7 +19,7 @@ const Slider = ({ images }) => {
     useEffect(() => {
         let slider = setInterval(() => {
             setIdx(idx + 1);
-        }, 5000);
+        }, 6000);
 
         return () => {
             clearInterval(slider);

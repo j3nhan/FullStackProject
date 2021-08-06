@@ -41,13 +41,13 @@
   }
   
   .banner-img {
-    margin-top: 97px;
-    margin-left: 10px;
+    margin-top: 94.2px;
+    margin-left: -10px;
     margin-right: -10px;
     width: 100%;
     z-index: -1;
     margin-bottom: -140px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0));
   }
   
   .prev,
