@@ -11,9 +11,9 @@ import React from 'react';
 //         </header>
 
 //         <Switch>
-//             <Route path="/signup" component={SignupFormContainer} />
-//             <Route path="/signin" component={SigninFormContainer} />
-//             <Route path="/" component={HomepageContainer} />
+//             <Route exact path="/signup" component={SignupFormContainer} />
+//             <Route exact path="/signin" component={SigninFormContainer} />
+//             <Route exact path="/" component={HomepageContainer} />
 //         </Switch>
 
 //     </div>
