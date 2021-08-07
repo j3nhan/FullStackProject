@@ -13,6 +13,7 @@ import React from 'react';
 //         <Switch>
 //             <Route exact path="/signup" component={SignupFormContainer} />
 //             <Route exact path="/signin" component={SigninFormContainer} />
+//             <Route exact path="/items/:itemId" component={ItemShowContainer} 
 //             <Route exact path="/" component={HomepageContainer} />
 //         </Switch>
 
@@ -35,6 +36,7 @@ function App() {
                     <Route path="/">
                         <Header/>
                         <Homepage/>
+                        <Item />
                     </Route>
                 </Switch>
             </div>
