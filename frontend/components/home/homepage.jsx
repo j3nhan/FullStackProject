@@ -27,6 +27,7 @@ import React from 'react';
 
 import Slider from '../slider/Slider'
 import Item from '../item/Item';
+import BackToTop from '../backtotop/BackToTop';
             
 const Homepage = () => {
     const categories = [
@@ -55,11 +56,10 @@ const Homepage = () => {
 
             <div className="home">
                 <div className="home-container">
-                    {/* images props from slider */}
                     <Slider images={bannerImages} />
 
                     <div className="home-row"> 
-                        {items.slice(0, 2).map(item) => (
+                        {items.slice(0, 2).map((item) => (
                             <Item key={item.id}
                                 id={item.id}
                                 itemName={item.ItemName}
@@ -67,11 +67,35 @@ const Homepage = () => {
                                 photo={item.photo}
                                 description={item.description}
                             /> 
-                        )}
+                        ))}
+                    </div>
+
+                    <div className="home-row"> 
+                        {items.slice(2, 5).map((item) => (
+                            <Item key={item.id}
+                                id={item.id}
+                                itemName={item.ItemName}
+                                price={item.price}
+                                photo={item.photo}
+                                description={item.description}
+                            /> 
+                        ))}
+                    </div>
+                    
+                    <div className="home-row"> 
+                        {items.slice(5, 6).map((item) => (
+                            <Item key={item.id}
+                                id={item.id}
+                                itemName={item.ItemName}
+                                price={item.price}
+                                photo={item.photo}
+                                description={item.description}
+                            /> 
+                        ))}
                     </div>
 
                     <div style={{marginTop: "40px"}}>
-                        {/* Back to Top */}
+                        <BackToTop/>
                     </div>
                 </div>
             </div>
