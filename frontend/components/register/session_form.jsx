@@ -17,8 +17,8 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        // make edits
-        this.props.processForm(user);
+        this.props.processForm(user)
+        .then(() => this.props.history.push('/Homepage')) // history push edit?
     }
 
     handleUpdate(type) {
@@ -27,12 +27,12 @@ class SessionForm extends React.Component {
         });
     }
 
-    handleDemo(){
-        this.setState({ 
-            email: "testing@testing.com",
-            password: "testing"
-        })
-    }
+    handleDemo(e){
+        e.preventDefault();
+        const user = {email: "winning@winning", password: "winning"};
+        this.props.processForm(user)
+        .then(() => this.props.history.push('/Homepage')) // history push edit?
+    };
 
     renderErrors() {
         return(
@@ -154,10 +154,20 @@ class SessionForm extends React.Component {
                                 <br />
                                 <span>New to ValYou?</span>
                                 <br />
-                                <Link to="/signup">Create your ValYOU account</Link>
+                                <div className="signup-button">
+                                    <Link to="/signup">Create your ValYOU account</Link>
+                                </div>
                             </div>
                         </div>
                     </form>
+                    <br />
+                    <br />
+
+                    <div className="demo-container">
+                        <span className="demo-signin"> Feel free to try our
+                            {<span onClick={this.handleDemo}>Demo Sign-In</span>}!
+                        </span>
+                    </div>
                 </div>
             );
         }
