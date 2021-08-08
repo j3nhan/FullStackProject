@@ -11,7 +11,7 @@ class Api::ItemsController < ApplicationController
 
     private
     def item_params
-        params.require(:item).permit(:item_name, :description, :price)
+        params.require(:item).permit(:item_name, :description, :price, photos: [], search: query)
     end
 
 end
