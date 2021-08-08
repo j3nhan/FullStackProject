@@ -27,6 +27,7 @@ import React from 'react';
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Header from "./header/Header"
 import Homepage from "./home/Homepage"
+import Item from "./item/Item"
 
 function App() {
     return (
