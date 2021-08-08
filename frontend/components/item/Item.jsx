@@ -2,7 +2,7 @@ import { ButtonBase } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Item = ({id, itemName, description, price }) => {
+const Item = ({id, itemName, description, price, photo }) => {
     return (
         <div className="product">
             <div className="info">
@@ -22,10 +22,11 @@ const Item = ({id, itemName, description, price }) => {
                         </p>
                     ))}
                 </div> */}
-
-                {/* <img src={ img } alt="" /> */}
-                <button>Add To Basket</button>
             </div>
+
+            <img src={ photo } alt="" />
+            <button>Add To Basket</button>
+
         </div>
     );
 };

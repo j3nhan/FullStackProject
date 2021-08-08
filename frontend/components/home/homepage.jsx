@@ -20,15 +20,14 @@ import React from 'react';
 // };
 
 // export default Homepage;
-
-
+            
+            
 // -------------------------
 
-// import banners here
-// import ban1 from "public/images/ban1.jpg"
+
 import Slider from '../slider/Slider'
-
-
+import Item from '../item/Item';
+            
 const Homepage = () => {
     const categories = [
     "Minority-Owned",
@@ -60,7 +59,15 @@ const Homepage = () => {
                     <Slider images={bannerImages} />
 
                     <div className="home-row"> 
-                        {/* items */}
+                        {items.slice(0, 2).map(item) => (
+                            <Item key={item.id}
+                                id={item.id}
+                                itemName={item.ItemName}
+                                price={item.price}
+                                photo={item.photo}
+                                description={item.description}
+                            /> 
+                        )}
                     </div>
 
                     <div style={{marginTop: "40px"}}>
