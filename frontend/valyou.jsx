@@ -29,5 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.signupUser = signupUser;
     window.signinUser = signinUser;
     window.signoutUser = signoutUser;
-    
+    window.fetchItem = fetchItem;
 });
