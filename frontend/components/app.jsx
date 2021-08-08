@@ -37,7 +37,7 @@ function App() {
                     <Route path="/">
                         <Header/>
                         <Homepage/>
-                        <Item />
+                        <ItemShow />
                     </Route>
                 </Switch>
             </div>

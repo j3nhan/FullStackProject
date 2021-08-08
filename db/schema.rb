@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_08_06_182814) do
     t.string "item_name", null: false
     t.text "description", null: false
     t.integer "price", null: false
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_name"], name: "index_items_on_item_name", unique: true
