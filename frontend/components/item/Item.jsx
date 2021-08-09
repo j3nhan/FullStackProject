@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import StarIcon from '@material-ui/icons/Star';
 
 const Item = ({id, itemName, price, rating, description, photo }) => {
     return (
@@ -17,7 +18,7 @@ const Item = ({id, itemName, price, rating, description, photo }) => {
                 <div className="rating">
                     {Array(rating).fill().map((_, idx) => (
                         <p key={ idx }>
-                            <span role="img" aria-label="star">⭐</span>
+                            <StarIcon style={{color: "#ffd600"}} />
                         </p>
                     ))}
                 </div>
