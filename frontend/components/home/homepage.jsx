@@ -26,6 +26,8 @@ import React from 'react';
 import Slider from '../slider/Slider'
 import Item from '../item/Item';
 import BackToTop from '../backtotop/BackToTop';
+import { items } from '../../util/itemsData'
+
             
 const Homepage = () => {
     const categories = [
@@ -49,7 +51,7 @@ const Homepage = () => {
         <div>
             <div className="item-container">
                 {categories && categories.map((category, idx) =>
-                    <p key={idx}>{category}</p>)}
+                    <p key={ idx }>{category}</p>)}
             </div>
 
             <div className="home">
@@ -61,6 +63,7 @@ const Homepage = () => {
                             <Item key={item.id}
                                 id={item.id}
                                 itemName={item.ItemName}
+                                rating={item.rating}
                                 price={item.price}
                                 photo={item.photo}
                                 description={item.description}
@@ -73,6 +76,7 @@ const Homepage = () => {
                             <Item key={item.id}
                                 id={item.id}
                                 itemName={item.ItemName}
+                                rating={item.rating}
                                 price={item.price}
                                 photo={item.photo}
                                 description={item.description}
@@ -85,6 +89,7 @@ const Homepage = () => {
                             <Item key={item.id}
                                 id={item.id}
                                 itemName={item.ItemName}
+                                rating={item.rating}
                                 price={item.price}
                                 photo={item.photo}
                                 description={item.description}

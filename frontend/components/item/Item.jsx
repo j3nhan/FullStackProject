@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Item = ({id, itemName, description, price, rating, photo }) => {
+const Item = ({id, itemName, price, rating, description, photo }) => {
     return (
         <div className="item">
             <div className="info">
@@ -9,12 +9,12 @@ const Item = ({id, itemName, description, price, rating, photo }) => {
                     <p>{ itemName }</p>
                 </Link>
 
-                <p>
+                <p className="price">
                     <strong>$</strong>
                     <strong>{ price }</strong>
                 </p>
 
-                <div>
+                <div className="rating">
                     {Array(rating).fill().map((_, idx) => (
                         <p key={ idx }>
                             <span role="img" aria-label="star">⭐</span>
@@ -22,9 +22,10 @@ const Item = ({id, itemName, description, price, rating, photo }) => {
                     ))}
                 </div>
             </div>
-            {/* <img src={ item.photoUrl } /> */}
-            <img src={photo} />
-            <button>Add To Cart</button>
+
+                {/* <img src={ item.photoUrl } /> */}
+                <img src={ photo } />
+                <button>Add To Cart</button>
         </div>
     );
 };

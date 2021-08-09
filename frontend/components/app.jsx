@@ -27,7 +27,9 @@ import React from 'react';
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Header from "./header/Header"
 import Homepage from "./home/Homepage"
-import ItemShow from "./item/Item_show"
+
+import Item from './item/Item';
+// import ItemShow from './item/Item_show';
 
 function App() {
     return (
@@ -38,6 +40,7 @@ function App() {
                         <Header/>
                         <Homepage/>
                         <Item/>
+                        {/* <ItemShow/> */}
                     </Route>
                 </Switch>
             </div>
