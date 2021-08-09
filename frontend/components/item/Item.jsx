@@ -1,8 +1,7 @@
-import { ButtonBase } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Item = ({id, itemName, description, price, photoUrl }) => {
+const Item = ({id, itemName, description, price, rating, photo }) => {
     return (
         <div className="item">
             <div className="info">
@@ -15,18 +14,17 @@ const Item = ({id, itemName, description, price, photoUrl }) => {
                     <strong>{ price }</strong>
                 </p>
 
-                {/* <div>
+                <div>
                     {Array(rating).fill().map((_, idx) => (
                         <p key={ idx }>
                             <span role="img" aria-label="star">⭐</span>
                         </p>
                     ))}
-                </div> */}
+                </div>
             </div>
-
-            <img src={ item.photoUrl } />
+            {/* <img src={ item.photoUrl } /> */}
+            <img src={photo} />
             <button>Add To Cart</button>
-
         </div>
     );
 };

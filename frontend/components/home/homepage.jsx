@@ -23,8 +23,6 @@ import React from 'react';
             
             
 // -------------------------
-
-
 import Slider from '../slider/Slider'
 import Item from '../item/Item';
 import BackToTop from '../backtotop/BackToTop';

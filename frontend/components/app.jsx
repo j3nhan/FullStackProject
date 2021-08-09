@@ -11,8 +11,8 @@ import React from 'react';
 //         </header>
 
 //         <Switch>
-//             <Route exact path="/signup" component={SignupFormContainer} />
-//             <Route exact path="/signin" component={SigninFormContainer} />
+//             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+//             <AuthRoute exact path="/signin" component={SigninFormContainer} />
 //             <Route exact path="/items/:itemId" component={ItemShowContainer} 
 //             <Route exact path="/" component={HomepageContainer} />
 //         </Switch>
@@ -37,7 +37,7 @@ function App() {
                     <Route path="/">
                         <Header/>
                         <Homepage/>
-                        <ItemShow />
+                        <Item/>
                     </Route>
                 </Switch>
             </div>
