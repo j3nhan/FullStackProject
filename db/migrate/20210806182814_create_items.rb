@@ -4,9 +4,11 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :item_name, null: false
       t.text :description, null: false
       t.integer :price, null: false
+      t.integer :rating
 
       t.timestamps
     end
-    add_index :items, :item_name, unique: true 
+    
+    add_index :items, :item_name, unique: true
   end
 end

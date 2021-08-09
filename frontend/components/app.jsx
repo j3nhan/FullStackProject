@@ -11,8 +11,9 @@ import React from 'react';
 //         </header>
 
 //         <Switch>
-//             <Route exact path="/signup" component={SignupFormContainer} />
-//             <Route exact path="/signin" component={SigninFormContainer} />
+//             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+//             <AuthRoute exact path="/signin" component={SigninFormContainer} />
+//             <Route exact path="/items/:itemId" component={ItemShowContainer} 
 //             <Route exact path="/" component={HomepageContainer} />
 //         </Switch>
 
@@ -27,6 +28,9 @@ import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Header from "./header/Header"
 import Homepage from "./home/Homepage"
 
+import Item from './item/Item';
+// import ItemShow from './item/Item_show';
+
 function App() {
     return (
         <BrowserRouter>
@@ -35,6 +39,8 @@ function App() {
                     <Route path="/">
                         <Header/>
                         <Homepage/>
+                        <Item/>
+                        {/* <ItemShow/> */}
                     </Route>
                 </Switch>
             </div>

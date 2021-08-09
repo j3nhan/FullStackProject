@@ -20,15 +20,15 @@ import React from 'react';
 // };
 
 // export default Homepage;
-
-
+            
+            
 // -------------------------
-
-// import banners here
-// import ban1 from "public/images/ban1.jpg"
 import Slider from '../slider/Slider'
+import Item from '../item/Item';
+import BackToTop from '../backtotop/BackToTop';
+import { items } from '../../util/itemsData'
 
-
+            
 const Homepage = () => {
     const categories = [
     "Minority-Owned",
@@ -51,20 +51,54 @@ const Homepage = () => {
         <div>
             <div className="item-container">
                 {categories && categories.map((category, idx) =>
-                    <p key={idx}>{category}</p>)}
+                    <p key={ idx }>{category}</p>)}
             </div>
 
             <div className="home">
                 <div className="home-container">
-                    {/* images props from slider */}
                     <Slider images={bannerImages} />
 
                     <div className="home-row"> 
-                        {/* items */}
+                        {items.slice(0, 2).map((item) => (
+                            <Item key={item.id}
+                                id={item.id}
+                                itemName={item.ItemName}
+                                rating={item.rating}
+                                price={item.price}
+                                photo={item.photo}
+                                description={item.description}
+                            /> 
+                        ))}
+                    </div>
+
+                    <div className="home-row"> 
+                        {items.slice(2, 5).map((item) => (
+                            <Item key={item.id}
+                                id={item.id}
+                                itemName={item.ItemName}
+                                rating={item.rating}
+                                price={item.price}
+                                photo={item.photo}
+                                description={item.description}
+                            /> 
+                        ))}
+                    </div>
+                    
+                    <div className="home-row"> 
+                        {items.slice(5, 6).map((item) => (
+                            <Item key={item.id}
+                                id={item.id}
+                                itemName={item.ItemName}
+                                rating={item.rating}
+                                price={item.price}
+                                photo={item.photo}
+                                description={item.description}
+                            /> 
+                        ))}
                     </div>
 
                     <div style={{marginTop: "40px"}}>
-                        {/* Back to Top */}
+                        <BackToTop/>
                     </div>
                 </div>
             </div>

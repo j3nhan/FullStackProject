@@ -1,31 +1,32 @@
-import { ButtonBase } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import StarIcon from '@material-ui/icons/Star';
 
-const Item = ({id, itemName, description, price, categoryId }) => {
+const Item = ({id, itemName, price, rating, description, photo }) => {
     return (
-        <div className="product">
+        <div className="item">
             <div className="info">
                 <Link to={`/items/${id}`} className="item-name">
                     <p>{ itemName }</p>
                 </Link>
 
-                <p>
+                <p className="price">
                     <strong>$</strong>
                     <strong>{ price }</strong>
                 </p>
 
-                <div>
+                <div className="rating">
                     {Array(rating).fill().map((_, idx) => (
                         <p key={ idx }>
-                            <span role="img" aria-label="star">⭐</span>
+                            <StarIcon style={{color: "#ffd600"}} />
                         </p>
                     ))}
                 </div>
-
-                <img src={ img } alt="" />
-                <button>Add To Basket</button>
             </div>
+
+                {/* <img src={ item.photoUrl } /> */}
+                <img src={ photo } />
+                <button>Add To Cart</button>
         </div>
     );
 };
