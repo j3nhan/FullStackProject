@@ -59,9 +59,9 @@ export const SIGNOUT_FAIL = "SIGNOUT_FAIL";
 
 export const SET_USER = "SET_USER";
 
-export const signupUser = () => ({
-    type: SIGNUP_USER
-});
+// export const signupUser = () => ({
+//     type: SIGNUP_USER
+// });
 
 export const signupSuccess = user => ({
     type: SIGNUP_SUCCESS,
@@ -73,9 +73,9 @@ export const signupError = error => ({
     error
 });
 
-export const signinUser = () => ({
-    type: SIGNIN_USER
-});
+// export const signinUser = () => ({
+//     type: SIGNIN_USER
+// });
 
 export const signinSuccess = user => ({
     type: SIGNIN_SUCCESS,
@@ -87,9 +87,13 @@ export const signinError = error => ({
     error
 });
 
-export const signoutUser = () => ({
-    type: SIGNOUT_USER
-});
+// export const signoutUser = () => ({
+//     type: SIGNOUT_USER
+// });
+
+export const signoutSucess = () => ({
+    type: SIGNOUT_SUCCESS
+})
 
 export const signoutError = error => ({
     type: SIGNOUT_FAIL,
@@ -113,9 +117,9 @@ export const signinInit = user => dispatch => (
     .catch((error) => dispatch(signinError(error.message))); 
 );
 
-export const signupInit = user => dispatch => (
+export const signoutInit = user => dispatch => (
     signout()
-    .then(res => dispatch(signupSuccess(res))),
+    .then(() => dispatch(signoutSuccess())),
     .catch((error) => dispatch(signoutError(error.message))); 
 );
 
