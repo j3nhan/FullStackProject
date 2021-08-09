@@ -101,13 +101,6 @@ export const setUser = user => ({
     user
 });
 
-// export const signupUser = user => dispatch => (
-//     signup(user)
-//     .then(res => dispatch(receiveCurrentUser(res)),
-//         error => dispatch(receiveSesErrors(error.responseJSON))
-//     )
-// );
-
 export const signupInit = user => dispatch => (
     signup(user)
     .then(res => dispatch(signupSuccess(res))),
