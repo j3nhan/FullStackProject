@@ -107,19 +107,19 @@ export const setUser = user => ({
 
 export const signupInit = user => dispatch => (
     signup(user)
-    .then(res => dispatch(signupSuccess(res))),
-    .catch((error) => dispatch(signupError(error.message))); 
+    .then(res => dispatch(signupSuccess(res)))
+    .catch((error) => dispatch(signupError(error.message))) 
 );
 
 export const signinInit = user => dispatch => (
     signin(user)
-    .then(res => dispatch(signupSuccess(res))),
-    .catch((error) => dispatch(signinError(error.message))); 
+    .then(res => dispatch(signupSuccess(res)))
+    .catch((error) => dispatch(signinError(error.message))) 
 );
 
 export const signoutInit = () => dispatch => (
     signout()
-    .then(() => dispatch(signoutSuccess())),
-    .catch((error) => dispatch(signoutError(error.message))); 
+    .then(() => dispatch(signoutSuccess()))
+    .catch((error) => dispatch(signoutError(error.message))) 
 );
 

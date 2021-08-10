@@ -29,21 +29,41 @@ import Header from "./header/Header"
 import Homepage from "./home/Homepage"
 
 import Item from './item/Item';
+import Signup from './signup/signup';
+import Signin from './signin/signin';
 // import ItemShow from './item/Item_show';
 
 function App() {
-    let dispatch = useDispatch();
+    // let dispatch = useDispatch();
+    // useEffect(() => {
+    //     auth.onAuthStateChanged((authUser) => {
+    //         if (authUser) {
+    //         dispatch(setuser(authUser));
+    //     } else {
+    //         dispatch(setuser(null));
+    //     }
+    //     });
+    // }, [dispatch]);
 
     return (
         <BrowserRouter>
             <div>
                 <Switch>
-                    <Route path="/">
+                    <Route path="/signup">
+                        <Signup />
+                    </Route>
+
+                    <Route path="/signin">
+                        <Signin/>
+                    </Route>
+
+                    <Route exact path="/">
                         <Header/>
                         <Homepage/>
                         <Item/>
                         {/* <ItemShow/> */}
                     </Route>
+
                 </Switch>
             </div>
         </BrowserRouter>

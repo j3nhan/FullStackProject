@@ -26,7 +26,7 @@ const Signup = () => {
     };
     
     return (
-        <di className='register'>
+        <div className='register'>
             <Link to='/'>
                 <img className="login-logo" 
                     src="images/valyou-logo.png"
