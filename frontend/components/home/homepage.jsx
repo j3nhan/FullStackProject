@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
-// const Homepage = ({ currentUser, signoutUser }) => {
+// const Homepage = ({ currentUser, signoutInit }) => {
 //     const initialHome = () => (
 //         <nav>
 //             <Link to='/signin'>Sign-In</Link>
@@ -13,7 +13,7 @@ import React from 'react';
 //     const userHome = () => (
 //         <div>
 //             <h2>Welcome {currentUser.name}!</h2>
-//             <button onClick={signoutUser}>Sign Out</button>
+//             <button onClick={signoutInit}>Sign Out</button>
 //         </div>
 //     );
 //     return currentUser ? userHome() : initialHome();

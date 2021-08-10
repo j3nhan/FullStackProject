@@ -3,3 +3,8 @@ import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signinInit } from "../../actions/session_actions";
 
+const Signin = () => {
+    const []
+};
+
+export default Signin;
