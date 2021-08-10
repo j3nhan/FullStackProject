@@ -3,15 +3,14 @@ import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signinInit } from "../../actions/session_actions";
 
+
 const Signin = () => {
-    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
     const { user } = useSelector((state) => state.data);
-
     let dispatch = useDispatch();
     let history = useHistory();
+
     useEffect(() => {
         if (user) {
             history.push('/');
@@ -69,7 +68,7 @@ const Signin = () => {
 
             <div className="demo-container">
                 <span className="demo-signin"> Feel free to try our
-                    {<span onClick={this.handleDemo}>Demo Sign-In</span>}!
+                    {<span onClick={signingInDemo}>Demo Sign-In</span>}!
                 </span>
             </div>
 
