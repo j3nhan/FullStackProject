@@ -45,23 +45,23 @@ import { signup, signin, signout } from '../util/session_api_util';
 // export const removeErrors = () => dispatch => dispatch(removeSessionErrors());
 
 // ----------------------------------------------------------------
-// export const SIGNUP_USER = "SIGNUP_USER";
+export const SIGNUP_USER = "SIGNUP_USER";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAIL = "SIGNUP_FAIL";
 
-// export const SIGNIN_USER = "SIGNIN_USER";
+export const SIGNIN_USER = "SIGNIN_USER";
 export const SIGNIN_SUCCESS = "SIGNIN_SUCCESS";
 export const SIGNIN_FAIL = "SIGNIN_FAIL";
 
-// export const SIGNOUT_USER = "SIGNOUT_USER";
+export const SIGNOUT_USER = "SIGNOUT_USER";
 export const SIGNOUT_SUCCESS = "SIGNOUT_SUCCESS";
 export const SIGNOUT_FAIL = "SIGNOUT_FAIL";
 
 export const SET_USER = "SET_USER";
 
-// export const signupUser = () => ({
-//     type: SIGNUP_USER
-// });
+export const signupUser = () => ({
+    type: SIGNUP_USER
+});
 
 export const signupSuccess = user => ({
     type: SIGNUP_SUCCESS,
@@ -73,9 +73,9 @@ export const signupError = error => ({
     error
 });
 
-// export const signinUser = () => ({
-//     type: SIGNIN_USER
-// });
+export const signinUser = () => ({
+    type: SIGNIN_USER
+});
 
 export const signinSuccess = user => ({
     type: SIGNIN_SUCCESS,
@@ -87,11 +87,11 @@ export const signinError = error => ({
     error
 });
 
-// export const signoutUser = () => ({
-//     type: SIGNOUT_USER
-// });
+export const signoutUser = () => ({
+    type: SIGNOUT_USER
+});
 
-export const signoutSucess = () => ({
+export const signoutSuccess = () => ({
     type: SIGNOUT_SUCCESS
 })
 
@@ -117,7 +117,7 @@ export const signinInit = user => dispatch => (
     .catch((error) => dispatch(signinError(error.message))); 
 );
 
-export const signoutInit = user => dispatch => (
+export const signoutInit = () => dispatch => (
     signout()
     .then(() => dispatch(signoutSuccess())),
     .catch((error) => dispatch(signoutError(error.message))); 
