@@ -13,7 +13,7 @@ demo_signin = User.create!(name: 'Olympic Medalist', email: 'winning@winning.com
 
 Item.destroy_all
 
-item1 = Item.create!(item_name:"Avocado", description: "freshly picked", price: 150, rating: 5)
+item1 = Item.create!(item_name:"Avocado", description: "Freshly picked", price: 150, rating: 5)
 item1.photo.attach(
     io: URI.open("https://valyou-dev.s3.us-west-1.amazonaws.com/farmersmarket/avocado.jpg"),
     filename: "avocado.png"
