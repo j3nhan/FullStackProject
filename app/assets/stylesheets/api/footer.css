@@ -1,0 +1,84 @@
+.footer {
+    bottom: 0;
+    width: 100%;
+    min-width: 905px;
+    height: 250px;
+    background-color: #242f3e;
+    display: block;
+}
+
+.back-to-top {
+    display: block;
+    color: #fefefe;
+    height: 32px;
+    background-color: #37475a;
+    text-align: center;
+    padding-top: 18px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 13px;
+}
+.back-to-top:hover {
+    cursor: pointer;
+    background: #485769;
+}
+
+.bottom-footer {
+    padding: 33px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.get-to-know {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    width: 500px;
+    display: block;
+    text-align: center;
+    li {
+        font-size: 12px;
+        font-family: inherit;
+        color: #dddddd;
+        list-style-type: none;
+        position: relative;
+        padding: 4px 5px 5px 9px;
+        text-align: left;
+        font-weight: normal;
+    }
+    #first {
+        padding: 15px 5px 5px 9px;
+        text-align: center;
+        font-family: inherit;
+    }
+    .connectlinks {
+        text-decoration: none;
+        color: #dddddd;
+        font-family: inherit;
+    }
+    .connectlinks:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+.last-footer {
+    // background-color: #121b22;
+    background-color: #242f3e;
+    border-top: 1px solid #3a4553;
+    position: 0;
+    bottom: 0;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    .footer-logo {
+        // z-index: 4;
+    }
+    #artazon-footer-logo {
+        height: 30px;
+        width: 85px;
+        background-image: image_url('artazon_logo.png');
+        background-size: contain;
+        background-repeat: none;
+        margin-top: 25px;
+    }
+}

@@ -49,7 +49,7 @@ class SignInForm extends React.Component {
                 <div className="login">
                     <Link to="/">
                     <img className="login-logo" 
-                        src="images/valyou-logo.png"
+                        src="images/user_logo.png"
                         alt="valyou-logo" 
                     />
                     </Link>

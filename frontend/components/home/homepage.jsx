@@ -25,10 +25,8 @@ import React from 'react';
 // -------------------------
 import Slider from '../slider/Slider'
 import Item from '../item/Item';
-import BackToTop from '../backtotop/BackToTop';
 import { items } from '../../util/itemsData'
-
-            
+  
 const Homepage = () => {
     const categories = [
     "Mom & Pop",
@@ -95,10 +93,6 @@ const Homepage = () => {
                                 description={item.description}
                             /> 
                         ))}
-                    </div>
-
-                    <div style={{marginTop: "40px"}}>
-                        <BackToTop/>
                     </div>
                 </div>
             </div>
