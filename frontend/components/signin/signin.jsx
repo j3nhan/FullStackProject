@@ -77,3 +77,45 @@
 // };
 
 // export default Signin;
+
+// return (
+//     <div className="login">
+//         <Link to="/">
+//         <img className="login-logo" 
+//             src="images/valyou-logo.png"
+//             alt="valyou-logo" 
+//         />
+//         </Link>
+//       <div className="login-container">
+//         <h1>Sign-In</h1>
+//         <form>
+//           <h5>E-Mail</h5>
+//           <input
+//             type="text"
+//             value={this.state.email}
+//             onChange={this.handleUpdate("email")}
+//           />
+//           <h5>Password</h5>
+//           <input
+//             type="password"
+//             value={this.state.password}
+//             onChange={this.handleUpdate("password")}
+//             placeholder="At least 6 characters"
+//           />
+//           <button type="submit" className="login-signIn">
+//             Sign-In
+//           </button>
+//         </form>
+
+//         <span>By continuing, you agree to ValYOU's Conditions of Use and Privacy Notice.</span>
+
+        // <div>
+        //     {this.renderErrors()}
+        // </div>
+//       </div>
+//       <p>New to ValYou?</p>
+//       <Link to="/signup">
+//         <button className="login-register">Create your ValYOU account</button>
+//       </Link>
+//     </div>
+//   );

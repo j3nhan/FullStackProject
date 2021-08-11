@@ -11,6 +11,12 @@
   color: darkgray;
 }
 
+.signin-label {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
 .login-logo {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -52,6 +58,13 @@
   font-size: 12px;
 }
 
+.label-name {
+  display: block;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+}
+
 .login-signIn {
   background: #f0c14b;
   border-radius: 2px;
@@ -62,6 +75,18 @@
   color: #111;
   border-color: #a88734 #9c7e31 #846a29;
   cursor: pointer;
+}
+
+.policy {
+  font-size: 12px;
+  line-height: 1.5! important;
+  margin-top: 18px!important;
+}
+
+.new-here {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
 }
 
 .login-register {

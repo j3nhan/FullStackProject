@@ -45,52 +45,52 @@ class SignInForm extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div className="login">
                 <Link to="/">
-                    <img className="login-logo" 
-                        src="images/valyou-logo.png"
-                        alt="valyou-logo" 
-                    />
+                <img className="login-logo" 
+                    src="images/valyou-logo.png"
+                    alt="valyou-logo" 
+                />
                 </Link>
-                <div className="login-container">
-                    <h1>Sign-In</h1>
-                    <form onSubmit={this.handleSubmit}>
-                        <h5>Email</h5>
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.handleUpdate("email")} 
-                        />
-                        
-                        <h5>Password</h5>
-                        <input type="password" 
-                            value={this.state.password}
-                            onChange={this.handleUpdate("password")}
-                            placeholder="At least 6 characters"
-                        />
-
-                        <div>
-                            {this.renderErrors()}
-                        </div>
-
-                        <button className="login-signIn">Sign-In</button>
-
-                    </form>
-
-                    {/* <div className="demo-container">
-                        <span className="demo-signin"> Feel free to try out
-                        {<span onClick={this.handleDemo}>Demo Sign-In</span>}!
-                        </span>
-                    </div> */}
-                </div>
+            <div className="login-container">
+                <h1 className="signin-label">Sign-In</h1>
+                <form>
+                <h5 className="label-name">E-Mail</h5>
+                <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.handleUpdate("email")}
+                />
+                <h5 className="label-name">Password</h5>
+                <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handleUpdate("password")}
+                    placeholder="At least 6 characters"
+                />
+                <Link to="/">
+                    {/* find a link to somewhere */}
+                    {/* errors are not working */}
+                    <button type="submit" className="login-signIn">
+                        Sign-In
+                    </button>
+                </Link>
                 
-                <span>By continuing, you agree to ValYOU's Conditions of Use and Privacy Notice.</span>
-                <span>New to ValYou?</span>
+                <div>
+                    {this.renderErrors()}
+                </div>
+                </form>
+
+                <span className="policy">By continuing, you agree to ValYOU's Conditions of Use and Privacy Notice.</span>
+
+            </div>
+            <p className="new-here">New to ValYou?</p>
                 <Link to="/signup">
                     <button className="login-register">Create your ValYOU account</button>
                 </Link>
             </div>
-        );
+        );    
     }
 };
 
