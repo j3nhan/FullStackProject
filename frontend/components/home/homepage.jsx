@@ -36,10 +36,10 @@ const Homepage = () => {
     "Disability-Owned"
     ]
     
-    const ban1 = "images/ban1.jpg";
-    const ban2 = "images/ban2.jpg";
-    const ban3 = "images/ban3.jpg";
-    const ban4 = "images/ban4.jpg";
+    const ban1 = "images/banner1.jpg";
+    const ban2 = "images/banner2.jpg";
+    const ban3 = "images/banner3.jpg";
+    const ban4 = "images/banner4.jpg";
 
     const bannerImages = [ban1, ban2, ban3, ban4]
 

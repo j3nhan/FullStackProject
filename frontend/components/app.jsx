@@ -42,13 +42,6 @@ function App() {
                         </li>
                     </div>
                 </div>
-                <div className='last-footer'>
-                    <Link to='/'>
-                        <div>
-                            <div id='valyou-logo-footer' />
-                        </div>
-                    </Link>
-                </div>
             </footer>  
 
         </div>
