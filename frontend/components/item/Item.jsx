@@ -24,7 +24,6 @@ const Item = ({id, itemName, price, rating, description, photo }) => {
                 </div>
             </div>
 
-                {/* <img src={ item.photoUrl } /> */}
                 <img src={ photo } />
                 <button>Add To Cart</button>
         </div>
