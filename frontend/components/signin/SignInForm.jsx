@@ -69,14 +69,12 @@ class SignInForm extends React.Component {
                     onChange={this.handleUpdate("password")}
                     placeholder="At least 6 characters"
                 />
-                <Link to="/">
                     {/* find a link to somewhere */}
                     {/* errors are not working */}
-                    <button type="submit" className="login-signIn">
-                        Sign-In
-                    </button>
-                </Link>
-                
+                <button type="submit" className="login-signIn" value={this.props.formType}>
+                    Sign-In
+                </button>
+
                 <div>
                     {this.renderErrors()}
                 </div>

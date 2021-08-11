@@ -26,13 +26,13 @@ class ItemShow extends React.Component {
                         <strong>{ moneyFormatter.format(item.price / 100) } </strong>
                     </p>
 
-                    {/* <div>
-                        {Arrayrating).fill().map((_, idx) => (
+                    <div>
+                        {Array(rating).fill().map((_, idx) => (
                             <p key={ idx }>
                                 <span role="img" aria-label="star">⭐</span>
                             </p>
                         ))}
-                    </div> */}
+                    </div>
                 </div>
 
             <img src={ item.photoUrl } />

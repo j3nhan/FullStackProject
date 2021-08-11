@@ -5,6 +5,7 @@ import { signinUser , receiveSesErrors } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
     errors: state.errors.session,
+    formType: 'signin'
 })
 
 const mapDispatchToProps = dispatch => ({
