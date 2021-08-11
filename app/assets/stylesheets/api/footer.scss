@@ -28,7 +28,7 @@
     justify-content: center;
 }
 
-.get-to-know {
+.meet-me {
     font-size: 16px;
     color: white;
     font-weight: bold;
@@ -62,7 +62,6 @@
     }
 }
 .last-footer {
-    // background-color: #121b22;
     background-color: #242f3e;
     border-top: 1px solid #3a4553;
     position: 0;
@@ -70,13 +69,9 @@
     height: 80px;
     display: flex;
     justify-content: center;
-    .footer-logo {
-        // z-index: 4;
-    }
-    #artazon-footer-logo {
-        height: 30px;
-        width: 85px;
-        background-image: image_url('artazon_logo.png');
+    
+    #valyou-logo-footer {
+        background-image: image_url('valyou-logo.png');
         background-size: contain;
         background-repeat: none;
         margin-top: 25px;

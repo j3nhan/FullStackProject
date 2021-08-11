@@ -33,19 +33,19 @@ function App() {
                     Back to top
                 </div>
                 <div className='bottom-footer'>
-                    <div className='get-to-know'>Meet the Creator
+                    <div className='meet-me'>Meet the Creator
                         <li id='first'>
                             Jenny Nhan  |  
                             <a className='connectlinks' href=''>  LinkedIn</a>  |  
-                            <a className='connectlinks' href=''>  AngelList</a>  |  
+                            <a className='connectlinks' href=''>  Email</a>  |  
                             <a className='connectlinks' href=''>  GitHub</a>
                         </li>
                     </div>
                 </div>
                 <div className='last-footer'>
-                    <Link to='/items/'>
-                        <div className='footer-logo'>
-                            <div id='artazon-footer-logo' />
+                    <Link to='/'>
+                        <div>
+                            <div id='valyou-logo-footer' />
                         </div>
                     </Link>
                 </div>
