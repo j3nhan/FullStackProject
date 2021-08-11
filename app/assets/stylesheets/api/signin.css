@@ -12,16 +12,15 @@
 }
 
 .signin-label {
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 1.2;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
 }
 
 .login-logo {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
   object-fit: contain;
-  width: 100px;
+  width: 220px;
   margin-right: auto;
   margin-left: auto;
 }
