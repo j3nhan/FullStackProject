@@ -29,7 +29,7 @@ class SignInForm extends React.Component {
 
     handleDemo(e){
         e.preventDefault();
-        const user = {email: "winning@winning", password: "winning"};
+        const user = {email: "testing@testing", password: "testing"};
         this.props.signinUser(user)
         .then(() => this.props.history.push('/Homepage')) // history push edit?
     };
@@ -53,20 +53,17 @@ class SignInForm extends React.Component {
                         alt="valyou-logo" 
                     />
                 </Link>
-
-                <form onSubmit={this.handleSubmit}>
+                <div className="login-container">
                     <h1>Sign-In</h1>
-                    <div>
+                    <form onSubmit={this.handleSubmit}>
                         <h5>Email</h5>
-                            <input
-                                type="text"
-                                value={this.state.email}
-                                onChange={this.handleUpdate("email")} 
-                            />
+                        <input type="text"
+                            value={this.state.email}
+                            onChange={this.handleUpdate("email")} 
+                        />
                         
                         <h5>Password</h5>
-                        <input className="password-label" 
-                            type="password" 
+                        <input type="password" 
                             value={this.state.password}
                             onChange={this.handleUpdate("password")}
                             placeholder="At least 6 characters"
@@ -78,19 +75,20 @@ class SignInForm extends React.Component {
 
                         <button className="login-signIn">Sign-In</button>
 
-                        <span>By continuing, you agree to ValYOU's Conditions of Use and Privacy Notice.</span>
+                    </form>
 
-                        <div>
-                            <span>New to ValYou?</span>
-                            <Link to="/signup">Create your ValYOU account</Link>
-                        </div>
-                    </div>
-                </form>
-                <div className="demo-container">
-                    <span className="demo-signin"> Feel free to try out
+                    {/* <div className="demo-container">
+                        <span className="demo-signin"> Feel free to try out
                         {<span onClick={this.handleDemo}>Demo Sign-In</span>}!
-                    </span>
+                        </span>
+                    </div> */}
                 </div>
+                
+                <span>By continuing, you agree to ValYOU's Conditions of Use and Privacy Notice.</span>
+                <span>New to ValYou?</span>
+                <Link to="/signup">
+                    <button className="login-register">Create your ValYOU account</button>
+                </Link>
             </div>
         );
     }
