@@ -4,51 +4,31 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import SignupContainer from './signup/Signup_container';
 import SigninContainer from './signin/Signin_container';
-// import HomepageContainer from './home/homepage_container';
 import ItemShowContainer from './item/item_show_container'
+// import HomepageContainer from './home/homepage_container';
 
-// const App = () => (
-    //     <div>
-    //         <header>
+import Header from "./header/Header"
+import Homepage from "./home/Homepage"
     
-    //         </header>
-    
-    //         <Switch>
-    //             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    //             <AuthRoute exact path="/signin" component={SigninFormContainer} />
-    //             <Route exact path="/items/:itemId" component={ItemShowContainer} 
-    //             <Route exact path="/" component={HomepageContainer} />
-    //         </Switch>
-    
-    //     </div>
-    // );
-    
-    // export default App;
-    
-    // ----------------------
-    
-    import Header from "./header/Header"
-    import Homepage from "./home/Homepage"
-    
-    
-    
-    function App() {
+function App() {
     return (
-            <div>
-                <Switch>
-                    <AuthRoute exact path="/signup" component={SignupContainer} />
-                    <AuthRoute exact path="/signin" component={SigninContainer} />
-                    <Route exact path="/items/:itemId" component={ItemShowContainer} />
+        <div>
+            <Switch>
+                <AuthRoute exact path="/signup" component={SignupContainer} />
+                <AuthRoute exact path="/signin" component={SigninContainer} />
+                <Route exact path="/items/:itemId" component={ItemShowContainer} />
+                {/* <Route exact path="/" component={HomepageContainer} /> */}
 
-                    <Route exact path="/">
-                        <Header/>
-                        <Homepage/>
-                        {/* <Item/> */}
-                        {/* <ItemShow/> */}
-                    </Route>
+                <Route exact path="/">
+                    <Header/>
+                    <Homepage/>
+                    {/* <Item/> */}
+                    {/* <ItemShow/> */}
+                </Route>
 
-                </Switch>
-            </div>
+            </Switch>
+        </div>
     )
 }
+
 export default App;

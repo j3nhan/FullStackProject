@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import SignInForm from './SignInForm';
 import { signinUser , receiveSesErrors } from '../../actions/session_actions';
 
-const mapStateToProps = state => ({
-    errors: state.errors.session,
+const mapStateToProps = ({errors}) => ({
+    errors: errors.session,
     formType: 'signin'
 })
 
