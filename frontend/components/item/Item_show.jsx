@@ -27,7 +27,7 @@ class ItemShow extends React.Component {
                     </p>
 
                     <div>
-                        {Array(rating).fill().map((_, idx) => (
+                        {Array(item.rating).fill().map((_, idx) => (
                             <p key={ idx }>
                                 <span role="img" aria-label="star">⭐</span>
                             </p>
