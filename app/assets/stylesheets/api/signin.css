@@ -84,9 +84,10 @@
 }
 
 .new-here {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 13px;
     line-height: 19px;
+    color: #767676!important;
 }
 
 .login-register {

@@ -31,7 +31,7 @@ import { items } from '../../util/itemsData'
             
 const Homepage = () => {
     const categories = [
-    "Minority-Owned",
+    "Mom & Pop",
     "Farmers Market",
     "Women-Owned",
     "Veteran-Owned",

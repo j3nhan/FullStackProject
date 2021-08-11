@@ -1,76 +1,96 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { signupInit } from '../../actions/session_actions';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Signup = () => {
-    const [name, setName] = useState;
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const { user } = useSelector((state) => state.data);
-    let dispatch = useDispatch();
-    const history = useHistory();
+class SignUpForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "",
+            email: "",
+            password: "",
+        };
 
-    useEffect(() => {
-        if (user) {
-            history.push('/');
-        }
-    }, [user, dispatch]);
-
-    const signingUp = (e) => {
-        e.preventDefault();
-        dispatch(signupInit(name, email, password));
-        setName("");
-        setEmail("");
-        setPassword("");
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
-    
-    return (
-        <div className='register'>
-            <Link to='/'>
-                <img className="login-logo" 
-                    src="images/valyou-logo.png"
-                    alt="valyou-logo" 
-                />
-            </Link>
 
-            <div className="register-container">
-                <h1>Create account</h1>
-                <form>
-                    <h5>Your name</h5>
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
+    handleSubmit(e) {
+        e.preventDefault();
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user)
+        .then(() => this.props.history.push('/Homepage')) // history push edit?
+    }
 
-                    <h5>Email</h5>
-                    <input
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
+    handleUpdate(type) {
+        return e => this.setState({ 
+            [type]: e.currentTarget.value
+        });
+    }
 
-                    <h5>Password</h5>
-                    <input
-                        type='password'
-                        value='{password}'
-                        onChange={(e) => setPassword(e.target.value)}
+    renderErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error, idx) => (
+                    <li key={`error-${idx}`}>{ error }</li>
+                ))}
+            </ul>
+        );
+    }
+
+    render() {
+        if (this.props.formType === 'signup') {
+            return(
+                <div className="register">
+                    <Link to="/">
+                    <img className="login-logo" 
+                        src="images/valyou-logo.png"
+                        alt="valyou-logo" 
                     />
+                    </Link>
+                
+                    <div className="register-container">
+                        <h1 className="title-name">Create Account</h1>
                     
-                    <button className="continue" type="submit" onClick={signingUp}>Create your ValYOU account</button>
-                    <span className="private-conditons">By creating an account, you agree to ValYOU's Conditions of Use and Privacy Notice.</span>
+                        <form>
+                        <h5 className="sub-title">Name</h5>
+                        <input
+                            type="text"
+                            value={this.state.name}
+                            onChange={this.handleUpdate("name")}
+                        />
+                        <h5 className="sub-title">Email</h5>
+                        <input
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleUpdate("email")}
+                        />
+                        <h5 className="sub-title">Password</h5>
+                        <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleUpdate("password")}
+                            placeholder="At least 6 characters"
+                        />
+                        <div className="errors">
+                            {this.renderErrors()}
+                        </div>
+                        <button type="submit" value={this.props.formType} className="continue">
+                            Create your ValYOU account
+                        </button>
+                        <span className="private-condition">By creating an account, you agree to ValYOU's Conditions of Use and Privacy Notice.</span>
 
-                    <div className="detail">
-                        <p>Already have an account?</p>
-                        <Link to="/signin" className="signin-link">
-                            <p>Sign-In</p>
-                        </Link>
+                        <div className="detail">
+                            <p>Already have an account?</p>
+                            <Link to="/signin" className="signin-link">
+                                <p>Sign-In</p>
+                            </Link>
+                        </div>
+                    
+                        </form> 
                     </div>
-                </form>
-            </div>
-        </div>
-    )
+                </div>
+            );
+        }
+    }    
 };
 
-export default Signup;
+export default SignUpForm;
