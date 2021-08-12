@@ -13,6 +13,10 @@ class SignInForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this);
     };
 
+    componentWillUnmount() {
+        this.props.receiveSesErrors([])
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
@@ -41,7 +45,7 @@ class SignInForm extends React.Component {
                 ))}
             </ul>
         );
-    }
+    };
 
     render() {
         if (this.props.formType === 'signin') {
@@ -56,7 +60,7 @@ class SignInForm extends React.Component {
                 <div className="login-container">
                     <h1 className="signin-label">Sign-In</h1>
                     <form>
-                    <h5 className="label-name">E-Mail</h5>
+                    <h5 className="label-name">Email</h5>
                     <input
                         type="text"
                         value={this.state.email}

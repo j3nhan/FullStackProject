@@ -13,10 +13,14 @@ class SignUpForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
+    componentWillUnmount() {
+        this.props.receiveSesErrors([])
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user)
+        this.props.signupUser(user)
         .then(() => this.props.history.push('/Homepage')) // history push edit?
     }
 
