@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { fetchItems } from '../../actions/session_actions';
-import { selectItems } from '../../reducers/selectors';
+import { fetchItems } from '../../actions/item_actions';
+import ItemIndex from './Item_index'
 
 const mapStateToProps = state => ({
-    items: selectItems(state)
+    items: Object.values(state.entities.items)
 });
 
 const mapDispatchToProps = dispatch => ({

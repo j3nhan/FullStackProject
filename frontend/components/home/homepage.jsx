@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom';
 import Slider from '../slider/Slider'
-import Item from '../item/Item';
-import { items } from '../../util/itemsData'
 import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -171,4 +169,4 @@ class Homepage extends React.Component {
     };
 };
 
-export default Homepage;
+export default withRouter(Homepage);

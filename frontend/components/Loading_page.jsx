@@ -4,8 +4,7 @@ class LoadingPage extends React.Component {
   render() {
     return(
       <div>
-        <div>
-          <img src={"images/loadingpage.gif"} alt="circles" />
+        <div className="loading">
           <img src={"images/loadingpedals.gif"} alt="pedals" />
         </div>
       </div>
