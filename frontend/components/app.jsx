@@ -22,8 +22,6 @@ function App() {
                 <Route exact path="/">
                     <Header/>
                     <Homepage/>
-                    {/* <Item/> */}
-                    {/* <ItemShow/> */}
                 </Route>
 
             </Switch>
@@ -43,7 +41,6 @@ function App() {
                     </div>
                 </div>
             </footer>  
-
         </div>
     )
 };

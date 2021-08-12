@@ -76,6 +76,35 @@
   cursor: pointer;
 }
 
+.try-demo {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 15px;
+  color: gray!important;
+}
+
+.error-message {
+    margin-top: 5px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 15px;
+    padding-left: 16px;
+    color: #c40000;
+}
+
+.demo-button {
+  background: #f0c14b;
+  border-radius: 2px;
+  height: 30px;
+  width: 100%;
+  border: 1px solid;
+  margin-top: 5px;
+  color: #111;
+  border-color: #a88734 #9c7e31 #846a29;
+  cursor: pointer;
+}
+
 .policy {
   font-size: 12px;
   line-height: 1.5! important;

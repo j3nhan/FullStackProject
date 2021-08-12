@@ -28,7 +28,7 @@ class SignInForm extends React.Component {
 
     handleDemo(e){
         e.preventDefault();
-        const user = {email: "testing@testing", password: "testing"};
+        const user = {email: "winning@testing", password: "winning"};
         this.props.signinUser(user)
         .then(() => this.props.history.push('/Homepage')) // history push edit?
     };
@@ -74,10 +74,14 @@ class SignInForm extends React.Component {
                     <button type="submit" className="login-signIn" value={this.props.formType}>
                         Sign-In
                     </button>
+                    
+                    <p className='try-demo'>- Or -</p>
+                    <button className='demo-button' onClick={this.handleDemo}>Demo Sign-In</button>
 
-                    <div>
+                    <div className='error-message'>
                         {this.renderErrors()}
                     </div>
+
                     </form>
 
                     <span className="policy">By continuing, you agree to ValYOU's Conditions of Use and Privacy Notice.</span>

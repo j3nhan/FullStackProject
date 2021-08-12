@@ -70,7 +70,7 @@ class SignUpForm extends React.Component {
                             onChange={this.handleUpdate("password")}
                             placeholder="At least 6 characters"
                         />
-                        <div className="errors">
+                        <div className="error-message">
                             {this.renderErrors()}
                         </div>
                         <button type="submit" value={this.props.formType} className="continue">

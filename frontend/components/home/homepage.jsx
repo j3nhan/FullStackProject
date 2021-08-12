@@ -1,28 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// const Homepage = ({ currentUser, signoutInit }) => {
-//     const initialHome = () => (
-//         <nav>
-//             <Link to='/signin'>Sign-In</Link>
-//             <br />
-//             <Link to='/signup'>Sign Up</Link>
-//         </nav>
-//     );
-
-//     const userHome = () => (
-//         <div>
-//             <h2>Welcome {currentUser.name}!</h2>
-//             <button onClick={signoutInit}>Sign Out</button>
-//         </div>
-//     );
-//     return currentUser ? userHome() : initialHome();
-// };
-
-// export default Homepage;
-            
-            
-// -------------------------
 import Slider from '../slider/Slider'
 import Item from '../item/Item';
 import { items } from '../../util/itemsData'
@@ -60,7 +36,7 @@ const Homepage = () => {
                         {items.slice(0, 2).map((item) => (
                             <Item key={item.id}
                                 id={item.id}
-                                itemName={item.ItemName}
+                                itemName={item.name}
                                 rating={item.rating}
                                 price={item.price}
                                 photo={item.photo}
@@ -73,7 +49,7 @@ const Homepage = () => {
                         {items.slice(2, 5).map((item) => (
                             <Item key={item.id}
                                 id={item.id}
-                                itemName={item.ItemName}
+                                name={item.name}
                                 rating={item.rating}
                                 price={item.price}
                                 photo={item.photo}
@@ -86,7 +62,7 @@ const Homepage = () => {
                         {items.slice(5, 6).map((item) => (
                             <Item key={item.id}
                                 id={item.id}
-                                itemName={item.ItemName}
+                                name={item.name}
                                 rating={item.rating}
                                 price={item.price}
                                 photo={item.photo}
@@ -96,6 +72,7 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }
