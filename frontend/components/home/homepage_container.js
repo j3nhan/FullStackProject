@@ -1,13 +1,14 @@
-// import { connect } from 'react-redux';
-// import { signoutInit } from '../../actions/session_actions';
-// import Homepage from './Homepage';
+import { connect } from 'react-redux';
+import { signoutUser } from '../../actions/session_actions';
 
-// const mapStateToProps = ({ session, entities: { users } }) => ({
-//     currentUser: users[session.id]
-// });
+import Homepage from './Homepage';
 
-// const mapDispatchToProps = dispatch => ({
-//     signoutUser: () => dispatch(signoutUser())
-// });
+const mapStateToProps = state => ({
+    currentUser: state.entities.users[state.session.id],
+});
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Homepage)
+const mapDispatchToProps = dispatch => ({
+    signoutUser: () => dispatch(signoutUser())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage)
