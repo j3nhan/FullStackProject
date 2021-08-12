@@ -7,21 +7,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-const categories = [
-"Mom & Pop",
-"Farmers Market",
-"Women-Owned",
-"Veteran-Owned",
-"Disability-Owned"
-]
-
-const ban1 = "images/banner1.jpg";
-const ban2 = "images/banner2.jpg";
-const ban3 = "images/banner3.jpg";
-const ban4 = "images/banner4.jpg";
-
-const bannerImages = [ban1, ban2, ban3, ban4]
-
 class Homepage extends React.Component {
     constructor(props) {
         super(props);
@@ -32,8 +17,6 @@ class Homepage extends React.Component {
         this.returnHome = this.returnHome.bind(this);
     }
     
-    // {bannerImages.map(ban => <img src={ban}/> )}
-
     signedoutHome() {
         this.props.signoutUser();
         this.props.history.push('/');
@@ -57,7 +40,7 @@ class Homepage extends React.Component {
                     </div>
 
                     <div className="header-option">
-                        <span className="header-option1">Deliver to {this.props.currentUser.name.split(" ")[0]}</span>
+                        <span className="header-option1">Deliver to {this.props.currentUser.name}</span>
                         <span className="header-option2">Select Your Address</span>
                     </div>
 
@@ -72,7 +55,7 @@ class Homepage extends React.Component {
                     <div className="header-nav">
                         <Link to='/signin' className='header-link'>
                             <div className="header-option">
-                                <span className="header-option1">Hello, {this.props.currentUser.name.split(" ")[0]}</span>
+                                <span className="header-option1">Hello, {this.props.currentUser.name}</span>
                                 <button className='header-option2' type='submit' onClick={this.signedoutHome}>Sign Out</button>
                             </div>
                         </Link>
@@ -92,56 +75,6 @@ class Homepage extends React.Component {
                         </Link>
                     </div>
                 </nav>
-
-                <div className="item-container">
-                    {categories && categories.map((category, idx) =>
-                        <p key={ idx }>{category}</p>)}
-                </div>
-
-                <div className="home">
-                    <div className="home-container">
-                        <Slider images={bannerImages} />
-
-                        <div className="home-row"> 
-                            {items.slice(0, 2).map((item) => (
-                                <Item key={item.id}
-                                    id={item.id}
-                                    itemName={item.name}
-                                    rating={item.rating}
-                                    price={item.price}
-                                    photo={item.photo}
-                                    description={item.description}
-                                /> 
-                            ))}
-                        </div>
-
-                        <div className="home-row"> 
-                            {items.slice(2, 5).map((item) => (
-                                <Item key={item.id}
-                                    id={item.id}
-                                    name={item.name}
-                                    rating={item.rating}
-                                    price={item.price}
-                                    photo={item.photo}
-                                    description={item.description}
-                                /> 
-                            ))}
-                        </div>
-                            
-                        <div className="home-row"> 
-                            {items.slice(5, 6).map((item) => (
-                                <Item key={item.id}
-                                    id={item.id}
-                                    name={item.name}
-                                    rating={item.rating}
-                                    price={item.price}
-                                    photo={item.photo}
-                                    description={item.description}
-                                /> 
-                            ))}
-                        </div>
-                    </div>
-                </div>
             </div> 
         )
     };
@@ -202,7 +135,39 @@ class Homepage extends React.Component {
     };
 
     render() {
-        return this.props.currentUser ? this.userHomepage() : this.guestHomepage();
+        const categories = [
+            "Mom & Pop",
+            "Farmers Market",
+            "Women-Owned",
+            "Veteran-Owned",
+            "Disability-Owned"
+        ]
+
+        const ban1 = "images/banner1.jpg";
+        const ban2 = "images/banner2.jpg";
+        const ban3 = "images/banner3.jpg";
+        const ban4 = "images/banner4.jpg";
+
+        const bannerImages = [ban1, ban2, ban3, ban4]
+        
+        return (
+            <div>
+                <span>
+                    {this.props.currentUser ? this.userHomepage() : this.guestHomepage()}
+                </span>
+
+                <div className="item-container">
+                    {categories && categories.map((category, idx) =>
+                        <p key={ idx }>{category}</p>)}
+                </div>
+
+                <div className="home">
+                    <div className="home-container">
+                        <Slider images={bannerImages} />
+                    </div>
+                </div>
+            </div>
+        )
     };
 };
 

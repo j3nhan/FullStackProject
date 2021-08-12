@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SignInForm from './SignInForm';
-import { signinUser , receiveSesErrors } from '../../actions/session_actions';
+import { signinUser , receiveSesErrors, removeSesErrors } from '../../actions/session_actions';
 
 const mapStateToProps = ({errors}) => ({
     errors: errors.session,
@@ -10,6 +10,7 @@ const mapStateToProps = ({errors}) => ({
 const mapDispatchToProps = dispatch => ({
     signinUser: user => dispatch(signinUser(user)),
     receiveSesErrors: errors => dispatch(receiveSesErrors(errors)),
+    removeSesErrors: () => dispatch(removeSesErrors()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);

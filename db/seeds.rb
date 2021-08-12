@@ -9,7 +9,7 @@
 require 'open-uri'
 
 User.destroy_all
-demo_signin = User.create!(name: 'Olympic Medalist', email: 'winning@winning.com', password: 'winning')
+demo_signin = User.create!(name: 'Winner', email: 'winning@winning.com', password: 'winning')
 
 Item.destroy_all
 

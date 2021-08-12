@@ -11,6 +11,7 @@ class SignUpForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     };
 
     componentWillUnmount() {
@@ -21,13 +22,17 @@ class SignUpForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.signupUser(user)
-        .then(() => this.props.history.push('/Homepage')) // history push edit?
+        .then(() => this.props.history.go(-1))
     }
-
+    
     handleUpdate(type) {
         return e => this.setState({ 
             [type]: e.currentTarget.value
         });
+    }
+
+    componentDidMount() {
+        this.props.removeSesErrors();
     }
 
     renderErrors() {
@@ -54,7 +59,7 @@ class SignUpForm extends React.Component {
                     <div className="register-container">
                         <h1 className="title-name">Create Account</h1>
                     
-                        <form>
+                        <form onSubmit={this.handleSubmit}>
                         <h5 className="sub-title">Name</h5>
                         <input
                             type="text"

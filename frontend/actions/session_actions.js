@@ -19,7 +19,7 @@ export const receiveSesErrors = errors => ({
     errors
 });
 
-export const removeSessionErrors = () => ({
+export const removeSesErrors = () => ({
     type: REMOVE_SESSION_ERRORS
 });
 

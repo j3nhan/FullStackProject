@@ -4,17 +4,17 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SignupContainer from './signup/Signup_container';
 import SigninContainer from './signin/Signin_container';
 import ItemShowContainer from './item/Item_show_container'
-import HomepageContainer from './homepage/Homepage_container'
+import HomepageContainer from './home/Homepage_container'
     
 function App() {
     return (
         <div>
-            <HomepageContainer />
             <Switch>
+                <Route exact path="/" component={HomepageContainer} />
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/signin" component={SigninContainer} />
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
-                <Route path="/items" component={} />
+                {/* <Route path="/items" component={} /> */}
 
                 <Redirect to='/' />
             </Switch>
