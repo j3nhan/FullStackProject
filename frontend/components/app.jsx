@@ -5,6 +5,7 @@ import SignupContainer from './signup/Signup_container';
 import SigninContainer from './signin/Signin_container';
 import ItemShowContainer from './item/Item_show_container'
 import HomepageContainer from './home/Homepage_container'
+import NoPageFound from './No_page_found';
     
 function App() {
     return (
@@ -15,8 +16,7 @@ function App() {
                 <AuthRoute exact path="/signin" component={SigninContainer} />
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
                 {/* <Route path="/items" component={} /> */}
-
-                <Redirect to='/' />
+                <Route path="*" component={NoPageFound} />
             </Switch>
 
             <footer className='footer'>
