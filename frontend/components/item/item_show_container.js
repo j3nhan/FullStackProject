@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchItems, fetchItem } from '../../actions/item_actions';
+import { fetchItem } from '../../actions/item_actions';
 import ItemShow from './Item_show';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -7,7 +7,6 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    fetchItems: () => dispatch(fetchItems()),
     fetchItem: itemId => dispatch(fetchItem(itemId))
 })
 
