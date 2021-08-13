@@ -17,14 +17,15 @@ const Protected = ({ component: Component, path, signedIn, exact }) => (
         path={path}
         exact={exact}
         render={props =>
-            signedIn ? <Component {...props} /> : <Redirect to='/signin' />
+            signedIn ? <Component {...props} /> : <Redirect to='/' />
         }
     />
 )
 
-const mapStateToProps = state => {
-    return { signedIn: Boolean(state.session.id) };
-};
+const mapStateToProps = state => (
+    { signedIn: Boolean(state.session.id) }
+)
+
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));

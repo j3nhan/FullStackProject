@@ -1,0 +1,28 @@
+.item-index-item {
+    float: left;
+    width: 250px;
+    height: 340px;
+    list-style-type: none;
+    display: flex;
+    text-align: left;
+    text-decoration: none;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #111111;
+    cursor: pointer;
+    margin: 20px 15px 5px 15px; 
+    .item-body {
+        text-decoration: none;
+        color: #111111;
+    }
+    .photo-cont {
+        display: block;
+        text-align: center;
+        width: 250px;
+        .index-item-photo {
+            max-width: 250px;
+            max-height: 200px;
+            justify-content: center;
+        }
+    }
+    
+}

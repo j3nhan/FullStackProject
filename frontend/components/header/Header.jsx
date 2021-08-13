@@ -10,7 +10,7 @@ const Header = () => {
             <Link to="/">
                 <img className="header-logo" 
                     src="images/valyou-logo.png"
-                    alt="amazon-logo" 
+                    alt="valyou-logo" 
                     />
             </Link>
 

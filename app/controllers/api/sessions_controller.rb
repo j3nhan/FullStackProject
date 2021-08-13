@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
             signin(@user)
             render "api/users/show"
         else
-            render json: ["Email/password combination cannot be found."], status: 401
+            render json: ["Email/password combination does not exist."], status: 401
         end
     end
 
@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
             signout
             render "api/users/show"
         else
-            render json: ["No user signed in."], status: 404
+            render json: ["No user has signed in."], status: 404
         end
     end
 end

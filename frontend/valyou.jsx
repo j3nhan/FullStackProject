@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { signinUser, signupUser} from './actions/session_actions';
 import Root from './components/root';
 import configureStore from './store/store';
-import { signupUser, signinUser, signoutUser} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -26,8 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.store = store;
     window.dispatch = store.dispatch;
     window.getState = store.getState;
-    window.signupUser = signupUser;
     window.signinUser = signinUser;
-    window.signoutUser = signoutUser;
-    
+    window.signupUser = signupUser;
 });
