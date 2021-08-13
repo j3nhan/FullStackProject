@@ -3,6 +3,7 @@
     background-color: #131921;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -18,7 +19,7 @@
   
   .header-nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
   
   
@@ -37,6 +38,7 @@
   
   .header-option1 {
     font-size: 12px;
+    line-height: 14px;
     font-weight: 400;
     font-family: Arial, sans-serif;
   }
@@ -51,6 +53,7 @@
     display: flex;
     flex: 1;
     align-items: center;
+    justify-content: center;
     border-radius: 24px;
   }
   

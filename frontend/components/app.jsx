@@ -13,11 +13,9 @@ function App() {
         <div>
             <Switch>
                 <Route exact path="/" component={HomepageContainer} />
-                <Route exact path="/items" component={ItemIndexContainer}/>
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/signin" component={SigninContainer} />
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
-                {/* <Route path="/items" component={} /> */}
                 <Route path="*" component={NoPageFound} />
             </Switch>
         </div>

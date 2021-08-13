@@ -157,7 +157,8 @@ class Homepage extends React.Component {
 
                 <div className="item-container">
                     {categories && categories.map((category, idx) =>
-                        <p key={ idx }>{category}</p>)}
+                        <p key={ idx }>{category}</p>
+                    )}
                 </div>
 
                 <div className="home">
