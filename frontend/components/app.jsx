@@ -20,22 +20,6 @@ function App() {
                 {/* <Route path="/items" component={} /> */}
                 <Route path="*" component={NoPageFound} />
             </Switch>
-
-            <footer className='footer'>
-                <div className='back-to-top' onClick={() => window.scrollTo(0, 0)}>
-                    Back to top
-                </div>
-                <div className='bottom-footer'>
-                    <div className='meet-me'>Meet the Creator
-                        <li id='first'>
-                            Jenny Nhan  |  
-                            <a className='connectlinks' href=''>LinkedIn</a>  |  
-                            <a className='connectlinks' href=''>Email</a>  |  
-                            <a className='connectlinks' href=''>GitHub</a>
-                        </li>
-                    </div>
-                </div>
-            </footer>  
         </div>
     )
 };

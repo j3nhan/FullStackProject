@@ -4,6 +4,7 @@ import Slider from '../slider/Slider'
 import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ItemIndexContainer from '../item/Item_index_container';
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -163,52 +164,27 @@ class Homepage extends React.Component {
                     <div className="home-container">
                         <Slider images={bannerImages} />
                     </div>
-                
-                    {/* <div className="home-row">
-                        {products.slice(0, 2).map((item) => (
-                        <Product
-                            key={item.id}
-                            id={item.id}
-                            title={item.title}
-                            price={item.price}
-                            rating={item.rating}
-                            image={item.image}
-                            specification={item.specification}
-                            detail={item.detail}
-                        />
-                        ))}
-                    </div>
 
-                    <div className="home-row">
-                        {products.slice(2, 5).map((item) => (
-                        <Product
-                            key={item.id}
-                            id={item.id}
-                            title={item.title}
-                            price={item.price}
-                            rating={item.rating}
-                            image={item.image}
-                            specification={item.specification}
-                            detail={item.detail}
-                        />
-                        ))}
+                    <div>
+                        <ItemIndexContainer/>
                     </div>
-
-                    <div className="home-row">
-                        {products.slice(5, 6).map((item) => (
-                        <Product
-                            key={item.id}
-                            id={item.id}
-                            title={item.title}
-                            price={item.price}
-                            rating={item.rating}
-                            image={item.image}
-                            specification={item.specification}
-                            detail={item.detail}
-                        />
-                        ))}
-                    </div> */}
                 </div>
+
+                <footer className='footer'>
+                    <div className='back-to-top' onClick={() => window.scrollTo(0, 0)}>
+                        Back to top
+                    </div>
+                    <div className='bottom-footer'>
+                        <div className='meet-me'>Meet the Creator
+                            <li id='first'>
+                                Jenny Nhan  |  
+                                <a className='connectlinks' href=''>LinkedIn</a>  |  
+                                <a className='connectlinks' href=''>Email</a>  |  
+                                <a className='connectlinks' href=''>GitHub</a>
+                            </li>
+                        </div>
+                    </div>
+                </footer>  
             </div>
         )
     };
