@@ -28,9 +28,6 @@ class ItemIndex extends React.Component {
             return (
                 <div>
                     <div className="item-index">
-                        <div className="row-container">
-
-                        </div>
                     <h1 className="all-items-head">Recommended For You</h1> 
                     <div className="home">
                         <div className="home-row">
@@ -40,14 +37,16 @@ class ItemIndex extends React.Component {
                                 {this.props.items.slice(5, 10).map((item, idx) => <ItemCard key={idx} item={item} />)}
                         </div>
                         <div className="home-row">
-                                {this.props.items.slice(10, 20).map((item, idx) => <ItemCard key={idx} item={item} />)}
+                                {this.props.items.slice(10, 15).map((item, idx) => <ItemCard key={idx} item={item} />)}
+                        </div>
+                        <div className="home-row">
+                                {this.props.items.slice(15, 20).map((item, idx) => <ItemCard key={idx} item={item} />)}
                         </div>
                         <div className="home-row">
                                 {this.props.items.slice(20, 25).map((item, idx) => <ItemCard key={idx} item={item} />)}
                         </div>
                     </div>
                     </div>
-
                 </div>
             )
         }

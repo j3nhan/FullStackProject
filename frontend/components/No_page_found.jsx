@@ -3,8 +3,8 @@ import React from 'react';
 class NoPageFound extends React.Component {
     render() {
         return(
-            <div>
-                <img src={'public/images/nopagefound.jpg'}/>
+            <div className="no-page-center">
+                <img src={'images/nopagefound.jpg'}/>
             </div>
         )
     }
