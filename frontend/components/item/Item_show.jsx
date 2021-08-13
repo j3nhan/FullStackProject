@@ -35,7 +35,7 @@ class ItemShow extends React.Component {
                     </p>
 
                     {/* description */}
-
+                    
                 </div>
 
                 <img src={ item.photoUrl } />
