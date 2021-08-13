@@ -22,7 +22,7 @@
     margin-left: 55px;
 }
 
-.item-index-item {
+.item-card-index {
     border-bottom: 2px solid #ccc;
     width: 20%;
     height: 20%;
@@ -34,19 +34,22 @@
     cursor: pointer;
     margin: 20px 15px 5px 15px; 
 }
+
+
 .item-body {
     text-decoration: none;
     color: #111111;
 }
-.photo-cont {
+
+.photo-card-cont {
     justify-content: center;
     display: flex;
     text-align: center;
-    width: 20px;
+    width: 100px;
 }
-.index-item-photo {
-    width: 20%;
-    height: 20%;
+.photo-card-url {
+    width: 100%;
+    height: 100%;
     justify-content: center;
 }
 

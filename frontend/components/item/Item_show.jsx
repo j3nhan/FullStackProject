@@ -34,10 +34,7 @@ class ItemShow extends React.Component {
                         <strong>{ moneyFormatter.format(item.price / 100) } </strong>
                     </p>
 
-                    <ul>
-                        
-                    </ul>
-
+                    {/* description */}
 
                 </div>
 

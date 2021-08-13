@@ -30,30 +30,12 @@ class ItemIndex extends React.Component {
                 <div className="item-index">
                     
                    <h1 className="all-items-head">Recommended For You</h1> 
-                   <ul className="item-listing">
-                       {this.props.items.map((item, idx) => <ItemCard key={idx} item={item} />)}
-                   </ul>
-                    {/* <div c
-                    lassName="item-home">
-                        <div className="item-container">
-                            <div className="items-row">
-                                {this.props.items.slice(0, 2).map((item, idx) => (
-                                    <img src={ item.photoUrl } className="item-img" key={idx}/>
-                                ))}
-                            </div>
-                            <div className="items-row">
-                                {this.props.items.slice(2, 5).map((item, idx) => (
-                                    <img src={ item.photoUrl } className="item-img" key={idx}/>
+                   <div className="home">
+                       <div className="home-row">
+                            {this.props.items.slice(0, 2).map((item, idx) => <ItemCard key={idx} item={item} />)}
+                       </div>
 
-                                ))}
-                            </div>
-                            <div className="items-row">
-                                {this.props.items.slice(5, 6).map((item, idx) => (
-                                    <img src={ item.photoUrl } className="item-img" key={idx}/>
-                                ))}
-                            </div>
-                        </div>
-                    </div> */}
+                   </div>
                 </div>
             )
         }
