@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LoadingPage from '../Loading_page';
+import ItemCard from './Item_card';
 
 class ItemIndex extends React.Component {
     constructor(props) {
@@ -26,9 +26,15 @@ class ItemIndex extends React.Component {
             )
         } else {
             return (
-                <div className="cat-modules cat-mod">
-                   <h1 className="cat-title">Recommended For You</h1> 
-                    <div className="item-home">
+
+                <div className="item-index">
+                    
+                   <h1 className="all-items-head">Recommended For You</h1> 
+                   <ul className="item-listing">
+                       {this.props.items.map((item, idx) => <ItemCard key={idx} item={item} />)}
+                   </ul>
+                    {/* <div c
+                    lassName="item-home">
                         <div className="item-container">
                             <div className="items-row">
                                 {this.props.items.slice(0, 2).map((item, idx) => (
@@ -47,7 +53,7 @@ class ItemIndex extends React.Component {
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             )
         }
