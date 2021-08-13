@@ -22,7 +22,7 @@ class ItemShow extends React.Component {
                         <p>{ item.itemName }</p>
                     </Link>
 
-                    <div className="star-cont">
+                    <div className="rating">
                         {Array(item.rating).fill().map((_, idx) => (
                             <div key={ idx }>
                                 <span role="img" aria-label="star">⭐</span>
@@ -38,11 +38,9 @@ class ItemShow extends React.Component {
 
                 </div>
 
-            <img src={ item.photoUrl } />
-            <button>Add To Cart</button>
-
-        </div>
-
+                <img src={ item.photoUrl } />
+                <button onClick={}>Add To Cart</button>
+            </div>
         )
     }
 }
