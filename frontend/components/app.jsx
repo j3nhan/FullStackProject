@@ -1,54 +1,27 @@
 import React from 'react';
-import { Route, Switch, Link, Redirect, HashRouter } from 'react-router-dom';
+import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
 import SignupContainer from './signup/Signup_container';
 import SigninContainer from './signin/Signin_container';
-// import HomepageContainer from './home/homepage_container';
-import ItemShowContainer from './item/item_show_container'
-
-// const App = () => (
-    //     <div>
-    //         <header>
+import ItemShowContainer from './item/Item_show_container'
+import ItemIndexContainer from './item/Item_index_container'
+import HomepageContainer from './home/Homepage_container'
+import NoPageFound from './No_page_found';
     
-    //         </header>
-    
-    //         <Switch>
-    //             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    //             <AuthRoute exact path="/signin" component={SigninFormContainer} />
-    //             <Route exact path="/items/:itemId" component={ItemShowContainer} 
-    //             <Route exact path="/" component={HomepageContainer} />
-    //         </Switch>
-    
-    //     </div>
-    // );
-    
-    // export default App;
-    
-    // ----------------------
-    
-    import Header from "./header/Header"
-    import Homepage from "./home/Homepage"
-    
-    
-    
-    function App() {
+function App() {
     return (
-            <div>
-                <Switch>
-                    <AuthRoute exact path="/signup" component={SignupContainer} />
-                    <AuthRoute exact path="/signin" component={SigninContainer} />
-                    <Route exact path="/items/:itemId" component={ItemShowContainer} />
-
-                    <Route exact path="/">
-                        <Header/>
-                        <Homepage/>
-                        {/* <Item/> */}
-                        {/* <ItemShow/> */}
-                    </Route>
-
-                </Switch>
-            </div>
+        <div>
+            <Switch>
+                <Route exact path="/" component={HomepageContainer} />
+                <Route exact path="/items" component={ItemIndexContainer}/>
+                <AuthRoute exact path="/signup" component={SignupContainer} />
+                <AuthRoute exact path="/signin" component={SigninContainer} />
+                <Route exact path="/items/:itemId" component={ItemShowContainer} />
+                {/* <Route path="/items" component={} /> */}
+                <Route path="*" component={NoPageFound} />
+            </Switch>
+        </div>
     )
-}
+};
+
 export default App;

@@ -1,0 +1,58 @@
+.item-index {
+    display: flex;
+    padding: 90px 10px 20px 10px;
+    min-height: 500px;
+}
+
+.item-index {
+    display: flex;
+    padding: 90px 10px 20px 10px;
+    min-height: 500px;
+}
+
+.all-items-head {
+    font-size: 20px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    color: #111111;
+    display: block;
+    width: 500px;
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 55px;
+}
+
+.item-card-index {
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    text-align: left;
+    text-decoration: none;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #111111;
+    cursor: pointer;
+    margin: 20px 15px 5px 15px; 
+}
+
+
+.item-body {
+    text-decoration: none;
+    color: #111111;
+}
+
+.photo-card-cont {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    width: 100px;
+}
+.photo-card-url {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.item-listing {
+    display: flex;
+}

@@ -22,17 +22,20 @@ class ItemShow extends React.Component {
                         <p>{ item.itemName }</p>
                     </Link>
 
+                    <div className="star-cont">
+                        {Array(item.rating).fill().map((_, idx) => (
+                            <div key={ idx }>
+                                <span role="img" aria-label="star">⭐</span>
+                            </div>
+                        ))}
+                    </div>
+
                     <p>
                         <strong>{ moneyFormatter.format(item.price / 100) } </strong>
                     </p>
 
-                    <div>
-                        {Array(item.rating).fill().map((_, idx) => (
-                            <p key={ idx }>
-                                <span role="img" aria-label="star">⭐</span>
-                            </p>
-                        ))}
-                    </div>
+                    {/* description */}
+
                 </div>
 
             <img src={ item.photoUrl } />

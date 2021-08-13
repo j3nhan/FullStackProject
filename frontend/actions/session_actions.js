@@ -19,21 +19,21 @@ export const receiveSesErrors = errors => ({
     errors
 });
 
-export const removeSessionErrors = () => ({
+export const removeSesErrors = () => ({
     type: REMOVE_SESSION_ERRORS
 });
 
 export const signupUser = user => dispatch => (
     signup(user)
     .then(res => dispatch(receiveCurrentUser(res)),
-        error => dispatch(receiveSesErrors(error.responseJSON))
+        errors => dispatch(receiveSesErrors(errors.responseJSON))
     )
 );
 
 export const signinUser = user => dispatch => (
     signin(user)
     .then(res => dispatch(receiveCurrentUser(res)),
-        error => dispatch(receiveSesErrors(error.responseJSON))
+        errors => dispatch(receiveSesErrors(errors.responseJSON))
     )
 );
 
@@ -41,6 +41,3 @@ export const signoutUser = () => dispatch => (
     signout()
     .then(() => dispatch(signoutCurrentUser()))
 );
-
-export const removeErrors = () => dispatch => dispatch(removeSessionErrors());
-

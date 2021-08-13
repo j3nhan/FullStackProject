@@ -1,7 +1,7 @@
 const items = [
   {
     id: "1",
-    itemName: "Diverse Men's Regular Formal Shirt",
+    name: "Diverse Men's Regular Formal Shirt",
     price: 10,
     rating: 5,
     description: [
@@ -19,7 +19,7 @@ const items = [
   },
   {
     id: "2",
-    itemName: "REDMI Note 10 (Aqua Green, 64 GB)  (4 GB RAM)",
+    name: "REDMI Note 10 (Aqua Green, 64 GB)  (4 GB RAM)",
     price: 20,
     rating: 3,
     description: [
@@ -34,7 +34,7 @@ const items = [
   },
   {
     id: "3",
-    itemName: "Lenovo Tab M10 HD 2nd Gen (10.1 inch, 4 GB, 64 GB, Wi-Fi+LTE)",
+    name: "Lenovo Tab M10 HD 2nd Gen (10.1 inch, 4 GB, 64 GB, Wi-Fi+LTE)",
     price: 30,
     rating: 4,
     description: [
@@ -49,7 +49,7 @@ const items = [
   },
   {
     id: "4",
-    itemName:
+    name:
       "HP Pavilion Gaming 10th Gen Intel Core i5 Processor 16.1 (40.9 cms) FHD Gaming Laptop",
     price: 40,
     rating: 4,
@@ -66,7 +66,7 @@ const items = [
   },
   {
     id: "5",
-    itemName: "crocs Unisex-Adult Bayaband Clog",
+    name: "crocs Unisex-Adult Bayaband Clog",
     price: 50,
     rating: 4,
     description: [
@@ -83,7 +83,7 @@ const items = [
   },
   {
     id: "1234",
-    itemName:
+    name:
       "LG 27 inch 4K-UHD (3840 x 2160) HDR 10 Monitor (Gaming & Design) with IPS Panel",
     price: 60,
     rating: 5,

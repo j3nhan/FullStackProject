@@ -1,109 +1,193 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// const Homepage = ({ currentUser, signoutInit }) => {
-//     const initialHome = () => (
-//         <nav>
-//             <Link to='/signin'>Sign-In</Link>
-//             <br />
-//             <Link to='/signup'>Sign Up</Link>
-//         </nav>
-//     );
-
-//     const userHome = () => (
-//         <div>
-//             <h2>Welcome {currentUser.name}!</h2>
-//             <button onClick={signoutInit}>Sign Out</button>
-//         </div>
-//     );
-//     return currentUser ? userHome() : initialHome();
-// };
-
-// export default Homepage;
-            
-            
-// -------------------------
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import Slider from '../slider/Slider'
-import Item from '../item/Item';
-import BackToTop from '../backtotop/BackToTop';
-import { items } from '../../util/itemsData'
+import SearchIcon from '@material-ui/icons/Search';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ItemIndexContainer from '../item/Item_index_container';
 
-            
-const Homepage = () => {
-    const categories = [
-    "Minority-Owned",
-    "Farmers Market",
-    "Women-Owned",
-    "Veteran-Owned",
-    "Disability-Owned"
-    ]
+class Homepage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.userHomepage = this.userHomepage.bind(this);
+        this.guestHomepage = this.guestHomepage.bind(this);
+        this.signedoutHome = this.signedoutHome.bind(this);
+        this.returnHome = this.returnHome.bind(this);
+    }
     
-    const ban1 = "images/ban1.jpg";
-    const ban2 = "images/ban2.jpg";
-    const ban3 = "images/ban3.jpg";
-    const ban4 = "images/ban4.jpg";
+    signedoutHome() {
+        this.props.signoutUser();
+        this.props.history.push('/');
+    }
 
-    const bannerImages = [ban1, ban2, ban3, ban4]
+    returnHome() {
+        let data = '';
+        this.props.fetchItems(data);
+    }
 
-    {bannerImages.map(ban => <img src={ban}/> )}
-    
-    return (
-        <div>
-            <div className="item-container">
-                {categories && categories.map((category, idx) =>
-                    <p key={ idx }>{category}</p>)}
+    userHomepage() {
+        return (
+            <div>
+                <nav className="header">   
+                    <Link to="/">
+                        <img className="header-logo" src="images/valyou-logo.png"/>
+                    </Link>
+
+                    <div className="header-option" style={{marginRight: "-10px"}}>
+                        <LocationOnIcon/>
+                    </div>
+
+                    <div className="header-option">
+                        <span className="header-option1">Deliver to {this.props.currentUser.name}</span>
+                        <span className="header-option2">Select Your Address</span>
+                    </div>
+
+                    <div className="search">
+                        <select>
+                            <option>All</option>
+                        </select>
+                        <input type="text" className="searchInput" />
+                        <SearchIcon className="searchIcon" />
+                    </div>
+
+                    <div className="header-nav">
+                        <Link to='/signin' className='header-link'>
+                            <div className="header-option">
+                                <span className="header-option1">Hello, {this.props.currentUser.name}</span>
+                                <button className='header-option2' type='submit' onClick={this.signedoutHome}>Sign Out</button>
+                            </div>
+                        </Link>
+
+                        <Link to='/orders' className='header-link'>
+                            <div className="header-option">
+                                <span className="header-option1">Returns</span>
+                                <span className="header-option2">& Orders</span>
+                            </div>
+                        </Link>
+
+                        <Link to='/checkout' className='header-link'>
+                            <div className="header-basket">
+                                <ShoppingCartIcon/>
+                                <span className="header-option2 basket-count">0</span>
+                            </div>
+                        </Link>
+                    </div>
+                </nav>
+            </div> 
+        )
+    };
+
+    guestHomepage() {
+        return (
+            <div>
+                <nav className="header">   
+                    <Link to="/">
+                        <img className="header-logo" 
+                            src="images/valyou-logo.png"
+                            alt="valyou-logo" 
+                            />
+                    </Link>
+
+                    <div className="header-option" style={{marginRight: "-10px"}}>
+                        <LocationOnIcon/>
+                    </div>
+
+                    <div className="header-option">
+                        <span className="header-option1">Deliver to</span>
+                        <span className="header-option2">Select Your Address</span>
+                    </div>
+
+                    <div className="search">
+                        <select>
+                            <option>All</option>
+                        </select>
+                        <input type="text" className="searchInput" />
+                        <SearchIcon className="searchIcon" />
+                    </div>
+
+                    <div className="header-nav">
+                        <Link to='/signin' className='header-link'>
+                            <div className="header-option">
+                                <span className="header-option1">Hello</span>
+                                <span className="header-option2">Sign In</span>
+                            </div>
+                        </Link>
+
+                        <Link to='/orders' className='header-link'>
+                            <div className="header-option">
+                                <span className="header-option1">Returns</span>
+                                <span className="header-option2">& Orders</span>
+                            </div>
+                        </Link>
+
+                        <Link to='/checkout' className='header-link'>
+                            <div className="header-basket">
+                                <ShoppingCartIcon/>
+                                <span className="header-option2 basket-count">0</span>
+                            </div>
+                        </Link>
+                    </div>
+                </nav>
             </div>
+        );
+    };
 
-            <div className="home">
-                <div className="home-container">
-                    <Slider images={bannerImages} />
+    render() {
+        const categories = [
+            "Mom & Pop",
+            "Farmers Market",
+            "Women-Owned",
+            "Veteran-Owned",
+            "Disability-Owned"
+        ]
 
-                    <div className="home-row"> 
-                        {items.slice(0, 2).map((item) => (
-                            <Item key={item.id}
-                                id={item.id}
-                                itemName={item.ItemName}
-                                rating={item.rating}
-                                price={item.price}
-                                photo={item.photo}
-                                description={item.description}
-                            /> 
-                        ))}
+        const ban1 = "images/banner1.jpg";
+        const ban2 = "images/banner2.jpg";
+        const ban3 = "images/banner3.jpg";
+        const ban4 = "images/banner4.jpg";
+
+        const bannerImages = [ban1, ban2, ban3, ban4]
+        
+        return (
+            <div>
+                <span>
+                    {this.props.currentUser ? this.userHomepage() : this.guestHomepage()}
+                </span>
+
+                <div className="item-container">
+                    {categories && categories.map((category, idx) =>
+                        <p key={ idx }>{category}</p>)}
+                </div>
+
+                <div className="home">
+                    <div className="home-container">
+                        <Slider images={bannerImages} />
                     </div>
 
-                    <div className="home-row"> 
-                        {items.slice(2, 5).map((item) => (
-                            <Item key={item.id}
-                                id={item.id}
-                                itemName={item.ItemName}
-                                rating={item.rating}
-                                price={item.price}
-                                photo={item.photo}
-                                description={item.description}
-                            /> 
-                        ))}
-                    </div>
-                    
-                    <div className="home-row"> 
-                        {items.slice(5, 6).map((item) => (
-                            <Item key={item.id}
-                                id={item.id}
-                                itemName={item.ItemName}
-                                rating={item.rating}
-                                price={item.price}
-                                photo={item.photo}
-                                description={item.description}
-                            /> 
-                        ))}
-                    </div>
-
-                    <div style={{marginTop: "40px"}}>
-                        <BackToTop/>
+                    <div>
+                        <ItemIndexContainer/>
                     </div>
                 </div>
-            </div>
-        </div>
-    )
-}
 
-export default Homepage;
+                <footer className='footer'>
+                    <div className='back-to-top' onClick={() => window.scrollTo(0, 0)}>
+                        Back to top
+                    </div>
+                    <div className='bottom-footer'>
+                        <div className='meet-me'>Meet the Creator
+                            <li id='first'>
+                                Jenny Nhan  |  
+                                <a className='connectlinks' href=''>LinkedIn</a>  |  
+                                <a className='connectlinks' href=''>Email</a>  |  
+                                <a className='connectlinks' href=''>GitHub</a>
+                            </li>
+                        </div>
+                    </div>
+                </footer>  
+            </div>
+        )
+    };
+};
+
+export default withRouter(Homepage);

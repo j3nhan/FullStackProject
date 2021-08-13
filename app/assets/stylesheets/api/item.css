@@ -50,3 +50,7 @@
   i {
     vertical-align: middle;
   }
+
+  .star-cont {
+    display: flex;
+  }
