@@ -7,7 +7,7 @@ import ItemShowContainer from './item/item_show_container'
 import HomepageContainer from './home/homepage_container'
 import NoPageFound from './No_page_found';
     
-function App() {
+const App = () => {
     return (
         <div>
             <Switch>
