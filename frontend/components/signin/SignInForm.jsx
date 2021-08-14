@@ -35,7 +35,6 @@ class SignInForm extends React.Component {
         const user = {email: "winning@winning.com", password: "winning"};
         this.props.signinUser(user)
         .then(() => this.props.history.go(-1))
-        // .then(() => this.props.history.push('/Homepage'))
     };
 
     componentDidMount() {

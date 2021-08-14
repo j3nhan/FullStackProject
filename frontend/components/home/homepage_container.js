@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { signoutUser } from '../../actions/session_actions';
 
-import Homepage from './homepage';
+import Homepage from './Homepage';
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
