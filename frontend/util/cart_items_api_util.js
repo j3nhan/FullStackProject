@@ -1,34 +1,34 @@
-export const fetchCartItems = () => {
-    return (
-        $.ajax({
-            url: `/api/cart_items`
-        })
-    )
-}
+export const fetchCartItems = () => (
+    $.ajax({
+        url: `/api/cart_items`
+    })
+)
 
-export const fetchCartItem = cartItemId => {
-    return (
-        $.ajax({
-            url: `/api/cart_items/${cartItemId}`
-        })
-    )
-}
+export const fetchCartItem = cartItemId => (
+    $.ajax({
+        url: `/api/cart_items/${cartItemId}`
+    })
+) 
 
-export const createCartItem = cartItem => {
-    return (
-        $.ajax({
-            method: 'POST',
-            url: `/api/cart_items`,
-            data: { cartItem }
-        })
-    )
-}
+export const createCartItem = cartItem => (
+    $.ajax({
+        method: 'POST',
+        url: `/api/cart_items`,
+        data: { cartItem }
+    })
+)
 
-export const deleteCartItem = (cartItemId) => {
-    return (
-        $.ajax({
-            method: 'DELETE',
-            url: `/api/cart_items/${cartItemId}`
-        })
-    )
-}
+export const updateCartItem = (cartItemId, cartItem) => (
+    $.ajax({
+        url: `/api/cart_items/${cartItemId}`,
+        method: 'PATCH',
+        data: { cartItem }
+    })
+)
+
+export const deleteCartItem = (cartItemId) => (
+    $.ajax({
+        url: `/api/cart_items/${cartItemId}`,
+        method: 'DELETE'
+    })
+)

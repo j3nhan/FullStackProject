@@ -1,54 +1,45 @@
-import * as CartItemsAPIUtil from '../util/cart_items_api_util';
+import { fetchCartItems, fetchCartItem, createCartItem, updateCartItem, deleteCartItem } from '../util/cart_items_api_util';
 
 export const RECEIVE_CART_ITEM = 'RECEIVE_CART_ITEM';
 export const RECEIVE_CART_ITEMS = 'RECEIVE_CART_ITEMS';
 export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 
-const receiveCartItems = cartItems => {
-    return {
-        type: RECEIVE_CART_ITEMS,
-        cartItems
-    }
-}
+const receiveCartItems = cartItems => ({
+    type: RECEIVE_CART_ITEMS,
+    cartItems
+});
 
-const recieveCartItem = cartItem => {
-    return {
-        type: RECEIVE_CART_ITEM,
-        cartItem
-    }
-}
+const recieveCartItem = cartItem => ({
+    type: RECEIVE_CART_ITEM,
+    cartItem
+});
 
-const removeCartItem = cartItemId => {
-    return {
-        type: REMOVE_CART_ITEM,
-        cartItemId: cartItemId.id
-    }
-}
+const removeCartItem = cartItemId => ({
+    type: REMOVE_CART_ITEM,
+    cartItemId: cartItemId.id
+});
 
-export const fetchCartItems = () => dispatch => {
-    return (
-        CartItemsAPIUtil.fetchCartItems()
-            .then(cartItems => dispatch(receiveCartItems(cartItems)))
-    )
-}
+export const fetchCartItems = () => dispatch => (
+    fetchCartItems()
+    .then(res => dispatch(receiveCartItems(res)))
+);
 
-export const fetchCartItem = cartItemId => dispatch => {
-    return (
-        CartItemsAPIUtil.fetchCartItem(cartItemId)
-            .then(cartItem => dispatch(receiveCartItem(cartItem)))
-    )
-}
+export const fetchCartItem = cartItemId => dispatch => (
+    fetchCartItem(cartItemId)
+    .then(res => dispatch(receiveCartItem(res)))
+);
 
-export const createCartItem = cartItem => dispatch => {
-    return (
-        CartItemsAPIUtil.createCartItem(cartItem)
-            .then(cartItem => dispatch(recieveCartItem(cartItem)))
-    )
-}
+export const addCartItem = cartItem => dispatch => (
+    createCartItem(cartItem)
+    .then(res => dispatch(receiveCartItems(res)))
+);
 
-export const deleteCartItem = cartItemId => dispatch => {
-    return (
-        CartItemsAPIUtil.deleteCartItem(cartItemId)
-            .then((cartItemId) => dispatch(removeCartItem(cartItemId)))
-    )
-}
+export const editCartItem = (cartItemId, cartItem) => dispatch => (
+    updateCartItem(cartItemId, cartItem)
+    .then(res => dispatch(receiveCartItems(res)))
+);
+
+export const deleteCartItem = cartItemId => dispatch => (
+    deleteCartItem(cartItemId)
+    .then(res => dispatch(removeCartItem(res)))
+);
