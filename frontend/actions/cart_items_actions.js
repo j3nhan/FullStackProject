@@ -2,6 +2,7 @@ import { fetchCartItems, fetchCartItem, createCartItem, updateCartItem, deleteCa
 
 export const RECEIVE_CART_ITEM = 'RECEIVE_CART_ITEM';
 export const RECEIVE_CART_ITEMS = 'RECEIVE_CART_ITEMS';
+export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 export const CLEAR_CART_ITEMS = 'CLEAR_CART_ITEMS';
 
 const receiveCartItems = cartItems => ({
@@ -28,15 +29,10 @@ export const fetchCartItem = cartItemId => dispatch => (
     .then(res => dispatch(receiveCartItem(res)))
 );
 
-export const addCartItem = cartItem => dispatch => (
-    createCartItem(cartItem)
-    .then(res => dispatch(receiveCartItems(res)))
-);
-
-export const editCartItem = (cartItemId, cartItem) => dispatch => (
-    updateCartItem(cartItemId, cartItem)
-    .then(res => dispatch(receiveCartItems(res)))
-);
+export const updateCart = cartItem => dispatch => (
+    updateCartItem(cartItem)
+    .then(res => dispatch(receiveCartItem(res)))
+)
 
 export const deleteCartItem = cartItemId => dispatch => (
     deleteCartItem(cartItemId)
