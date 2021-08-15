@@ -1,4 +1,4 @@
-import { fetchItems, fetchItem } from "./item_actions"; ItemAPIUtil from '../util/item_api_util';
+import * as ItemAPIUtil from '../util/item_api_util';
 
 export const RECEIVE_ITEMS = 'RECEIVE_ITEMS';
 export const RECEIVE_ITEM = 'RECEIVE_ITEM';
@@ -13,13 +13,13 @@ const receiveItem = item => ({
     item
 });
 
-export const fetchItems = () => dispatch => (
-    fetchItems()
+export const fetchItems = (items) => dispatch => (
+    ItemAPIUtil.fetchItems(items)
     .then(res => dispatch(receiveItems(res)))
 );
 
 
 export const fetchItem = itemId => dispatch => (
-    fetchItem(itemId)
+    ItemAPIUtil.fetchItem(itemId)
     .then(res => dispatch(receiveItem(res)))
 );

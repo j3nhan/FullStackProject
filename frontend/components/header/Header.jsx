@@ -34,7 +34,7 @@ const Header = () => {
             <div className="header-nav">
                 <Link to='/signin' className='header-link'>
                     <div className="header-option">
-                        <span className="header-option1">Hello Guest</span>
+                        <span className="header-option1">Hello </span>
                         <span className="header-option2">Sign In</span>
                     </div>
                 </Link>

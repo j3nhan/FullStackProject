@@ -1,7 +1,7 @@
-import { RECEIVE_CART_ITEM, RECEIVE_CART_ITEMS, CLEAR_CART_ITEMS } from "../actions/cart_items_actions";
+import { RECEIVE_CART_ITEM, RECEIVE_CART_ITEMS, REMOVE_CART_ITEM, CLEAR_CART_ITEMS } from "../actions/cart_items_actions";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
-export default (state = {}, action) => {
+const cartItemsReducer = (state = {}, action) => {
     Object.freeze(state);
 
     switch (action.type) {
@@ -23,7 +23,7 @@ export default (state = {}, action) => {
         
         case CLEAR_CART_ITEMS:
             return {};
-            
+
         default: 
             return state;
     }
