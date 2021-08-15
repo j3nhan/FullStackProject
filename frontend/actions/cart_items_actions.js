@@ -2,21 +2,20 @@ import { fetchCartItems, fetchCartItem, createCartItem, updateCartItem, deleteCa
 
 export const RECEIVE_CART_ITEM = 'RECEIVE_CART_ITEM';
 export const RECEIVE_CART_ITEMS = 'RECEIVE_CART_ITEMS';
-export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
+export const CLEAR_CART_ITEMS = 'CLEAR_CART_ITEMS';
 
 const receiveCartItems = cartItems => ({
     type: RECEIVE_CART_ITEMS,
     cartItems
 });
 
-const recieveCartItem = cartItem => ({
+const receiveCartItem = cartItem => ({
     type: RECEIVE_CART_ITEM,
     cartItem
 });
 
-const removeCartItem = cartItemId => ({
-    type: REMOVE_CART_ITEM,
-    cartItemId: cartItemId.id
+const clearCartItems = () => ({
+    type: CLEAR_CART_ITEMS
 });
 
 export const fetchCartItems = () => dispatch => (
@@ -43,3 +42,5 @@ export const deleteCartItem = cartItemId => dispatch => (
     deleteCartItem(cartItemId)
     .then(res => dispatch(removeCartItem(res)))
 );
+
+export const clearCartItems = () => dispatch => dispatch(clearCartItems())
