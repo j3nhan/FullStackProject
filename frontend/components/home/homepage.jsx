@@ -39,8 +39,8 @@ class Homepage extends React.Component {
                     </div>
 
                     <div className="header-option">
-                        <span className="header-option1">Deliver to {this.props.currentUser.name}</span>
-                        <span className="header-option2">Select Your Address</span>
+                        <span className="header-option1">Deliver to {this.props.currentUser.name}'s</span>
+                        <span className="header-option2">Home Sweet Home</span>
                     </div>
 
                     <div className="search">
@@ -55,7 +55,7 @@ class Homepage extends React.Component {
                         <Link to='/signin' className='header-link'>
                             <div className="header-option">
                                 <span className="header-option1">Hello, {this.props.currentUser.name}</span>
-                                <button className='header-option2' type='submit' onClick={this.signedoutHome}>Sign Out</button>
+                                <button className='header-option2-signout' type='submit' onClick={this.signedoutHome}>Sign Out</button>
                             </div>
                         </Link>
 
@@ -95,7 +95,7 @@ class Homepage extends React.Component {
 
                     <div className="header-option">
                         <span className="header-option1">Deliver to</span>
-                        <span className="header-option2">Select Your Address</span>
+                        <span className="header-option2">Home Sweet Home</span>
                     </div>
 
                     <div className="search">
