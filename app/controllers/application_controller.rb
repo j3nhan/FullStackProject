@@ -42,13 +42,10 @@ class ApplicationController < ActionController::Base
     end
 
     def require_signed_in
-        # NOTE - refactor this for api/route
-        # Prevent signed-out users from seeing certain pages
         redirect_to new_session_url unless signed_in?
     end
 
     def require_signed_out
-    # Prevent signed-in users from seeing certain pages
         redirect_to user_url(current_user) if signed_in?
     end    
 end
