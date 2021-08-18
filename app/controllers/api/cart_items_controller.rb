@@ -10,28 +10,14 @@ class Api::CartItemsController < ApplicationController
         @cart_item = CartItem.find(params[:id])
     end
 
-    def create 
-        if current_user && current_user.cart_items.any? {|cart_item| cart_item.item_id == params[:cart_item][:item_id].to_i}
-            @cart_item = current_user.cart_items.find_by(item_id: params[:cart_item][:item_id].to_i)
-            new_qty = @cart_item.quantity + params[:cart_item][:quantity].to_i
-
-            if @cart_item.update_attributes({user_id: params[:cart_item][:user_id], item_id: params[:cart_item][:item_id], quantity: new_qty, fulfilled: false})
-                    @cart_items = CartItem.all.select {|cart_item| cart_item.user_id == current_user.id}        
-                    render :show
-                else
-                    render json: ['Item is not available.'], status: 401
-                end
-            else
-                @cart_item = CartItem.new(cart_item_params)
-
-                if @cart_item.save!
-                    @cart_items = CartItem.all.select {|cart_item| cart_item.user_id == current_user.id}        
-                    render :show
-                end
-            end
+    def create
+        @cart_item = CartItem.new(cart_item_params)
+        if @item.save
+            render :show
+        else 
+            render json: @item.errors.full_messages, status: 422
         end
     end
-
 
     def update 
         @cart_item = CartItem.find_by(id: params[:id])
@@ -61,4 +47,5 @@ class Api::CartItemsController < ApplicationController
     def cart_item_params 
         params.require(:cart_item).permit(:user_id, :item_id, :quantity)
     end
+
 end
