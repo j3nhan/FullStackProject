@@ -9,5 +9,4 @@ class AddItemColumn < ActiveRecord::Migration[5.2]
     add_index :users, :review_id
   end
 
-
 end

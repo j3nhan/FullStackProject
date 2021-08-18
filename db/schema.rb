@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_06_182814) do
+ActiveRecord::Schema.define(version: 2021_08_18_043719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 2021_08_06_182814) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
     t.datetime "created_at", null: false
@@ -49,7 +55,24 @@ ActiveRecord::Schema.define(version: 2021_08_06_182814) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cart_item_id"
+    t.integer "review_id"
+    t.index ["cart_item_id"], name: "index_items_on_cart_item_id"
     t.index ["item_name"], name: "index_items_on_item_name", unique: true
+    t.index ["review_id"], name: "index_items_on_review_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.integer "rating", null: false
+    t.integer "item_id", null: false
+    t.string "author", null: false
+    t.integer "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_reviews_on_author_id"
+    t.index ["item_id"], name: "index_reviews_on_item_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,7 +82,9 @@ ActiveRecord::Schema.define(version: 2021_08_06_182814) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "review_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["review_id"], name: "index_users_on_review_id"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
