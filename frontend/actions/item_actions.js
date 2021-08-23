@@ -2,6 +2,7 @@ import * as ItemAPIUtil from '../util/item_api_util';
 
 export const RECEIVE_ITEMS = 'RECEIVE_ITEMS';
 export const RECEIVE_ITEM = 'RECEIVE_ITEM';
+export const REMOVE_ITEM = 'REMOVE_ITEM';
 
 const receiveItems = items => ({
     type: RECEIVE_ITEMS,
@@ -13,6 +14,11 @@ const receiveItem = item => ({
     item
 });
 
+const removeItem = itemId => ({
+    type: REMOVE_ITEM,
+    itemId
+})
+
 export const fetchItems = (items) => dispatch => (
     ItemAPIUtil.fetchItems(items)
     .then(res => dispatch(receiveItems(res)))
@@ -22,4 +28,9 @@ export const fetchItems = (items) => dispatch => (
 export const fetchItem = itemId => dispatch => (
     ItemAPIUtil.fetchItem(itemId)
     .then(res => dispatch(receiveItem(res)))
+);
+
+export const deleteItem = itemId => dispatch => (
+    ItemApiUtil.deleteItem(itemId)
+    .then(() => dispatch(removeItem(itemId)))
 );
