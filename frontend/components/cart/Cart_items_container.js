@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
     clearCart: () => dispatch(clearCart())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CartItems); 
+export default connect(mapStateToProps, mapDispatchToProps)(CartItems);

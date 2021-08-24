@@ -23,6 +23,7 @@ class CartItems extends React.Component {
     componentWillUnmount() {
         this.props.clearCart();
     }
+    
     handleQuantity(e) {
         this.setState({quantity: e.target.value})
         let nextState = Object.assign({}, this.state, {quantity: e.target.value})
