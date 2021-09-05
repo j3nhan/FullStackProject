@@ -51,7 +51,7 @@ class CartItems extends React.Component {
         
         if (this.state.quantity === 0) return (
             <div className='cart-item-deleted'>
-                <p><Link className='cart-item-deleted-link' to={`snacks/${item.snack.id}`}>{item.snack.name}</Link> was removed from your Shopping Cart.</p>
+                <p><Link className='cart-item-deleted-link' to={`items/${item.item.id}`}>{item.item.name}</Link> was removed from your Shopping Cart.</p>
             </div>
         )
 
@@ -94,11 +94,6 @@ class CartItems extends React.Component {
                         <option value={3}>3</option>
                         <option value={4}>4</option>
                         <option value={5}>5</option>
-                        <option value={6}>6</option>
-                        <option value={7}>7</option>
-                        <option value={8}>8</option>
-                        <option value={9}>9</option>
-                        <option value={10}>10</option>
                         </select>
                     </div>
                     <p className='cart-item-delete' onClick={this.handleDelete}>Delete</p>
