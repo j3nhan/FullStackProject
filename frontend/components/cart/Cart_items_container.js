@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import CartItems from './Cart_items';
 import { fetchCartItem, clearCart } from '../../actions/cart_items_actions';
-import { deleteCartItem } from '../../actions/item_actions';
+import { deleteItem } from '../../actions/item_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchCartItem: cartItemId => dispatch(fetchCartItem(cartItemId)),
-    deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId)),
+    deleteItem: itemId => dispatch(deleteItem(itemId)),
     clearCart: () => dispatch(clearCart())
 });
 
