@@ -17,8 +17,16 @@ const cartItemsReducer = (state = {}, action) => {
                 return cartItems;
             }
         case RECEIVE_CART_ITEM:
-            return Object.assign({}, state, action.cartItem);
-            
+            let newState = Object.assign({}, state);
+            (Object.values(state.items).length === 0) {
+                newState = action.cartItem
+                let cartState = action.cartItem.items
+                newState.items = {}
+                cartState.forEach(item => {
+                    newState.items[Object.values(item)[0].id] = Object.values(item)[0]
+                })
+                return newState
+            }
 
         case RECEIVE_CURRENT_USER: 
             return Object.assign({}, state, action.user.cartItems);
