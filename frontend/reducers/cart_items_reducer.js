@@ -4,8 +4,17 @@ import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const cartItemsReducer = (state = {}, action) => {
     Object.freeze(state);
+    let newState = Object.assign({}, state);
 
     switch (action.type) {
+        case RECEIVE_ITEM:
+            newState.items[action.item.id] = action.item
+            return newState;
+
+        case REMOVE_ITEM:
+            delete newState.items[action.itemId]
+            return newState;
+
         case RECEIVE_CART_ITEMS:
             const cartItems = {}
             if (!action.cartItems.cartItems) {
@@ -16,9 +25,12 @@ const cartItemsReducer = (state = {}, action) => {
                 });
                 return cartItems;
             }
+
         case RECEIVE_CART_ITEM:
-            let newState = Object.assign({}, state);
-            (Object.values(state.items).length === 0) {
+            if (Object.values(state.items).length === 0) {
+                newState = action.cartItem
+                return newState
+            } else {
                 newState = action.cartItem
                 let cartState = action.cartItem.items
                 newState.items = {}
@@ -30,16 +42,6 @@ const cartItemsReducer = (state = {}, action) => {
 
         case RECEIVE_CURRENT_USER: 
             return Object.assign({}, state, action.user.cartItems);
-            
-        case REMOVE_ITEM:
-            let updatedCart = [...state.cart];
-            const index = state.cart.findIndex(
-                (item) => item.id === action.item
-            );
-            if (index >= 0) {
-                updatedCart.splice(index, 1);
-            }
-            return {...state, cart: updatedCart};
 
         case CLEAR_CART:
             return {...state, cart: []};
