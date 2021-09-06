@@ -8,8 +8,8 @@
 
 require 'open-uri'
 
-User.destroy_all.
-demo_signin = User.create!(name: 'Demo', email: 'demo@demo.com', password: 'demodemo')
+User.destroy_all
+demo = User.create!(name: 'Demo', email: 'demo@demo.com', password: 'demodemo')
 
 Item.destroy_all
 
