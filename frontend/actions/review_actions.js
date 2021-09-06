@@ -15,7 +15,7 @@ export const receiveReview = review => ({
     review
 })
 
-const removeReview = (review) =>({
+const removeReview = review =>({
     type: REMOVE_REVIEW,
     review
 })
@@ -25,7 +25,7 @@ export const receiveReviewErrors = errors => ({
     errors
 })
 
-export const fetchReviews = (itemId) => dispatch => (
+export const fetchReviews = itemId => dispatch => (
     ReviewApiUtil.fetchReviews(itemId)
     .then(res => dispatch(receiveReviews(res))),
     err => (dispatch(receiveReviewErrors(err)))
