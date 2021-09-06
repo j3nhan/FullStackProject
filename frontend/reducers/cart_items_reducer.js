@@ -4,16 +4,16 @@ import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const cartItemsReducer = (state = {}, action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, state);
+    let nextState = Object.assign({}, state);
 
     switch (action.type) {
         case RECEIVE_ITEM:
-            newState.items[action.item.id] = action.item
-            return newState;
+            nextState.items[action.item.id] = action.item
+            return nextState;
 
         case REMOVE_ITEM:
-            delete newState.items[action.itemId]
-            return newState;
+            delete nextState.items[action.itemId]
+            return nextState;
 
         case RECEIVE_CART_ITEMS:
             const cartItems = {}
@@ -28,16 +28,16 @@ const cartItemsReducer = (state = {}, action) => {
 
         case RECEIVE_CART_ITEM:
             if (Object.values(state.items).length === 0) {
-                newState = action.cartItem
-                return newState
+                nextState = action.cartItem
+                return nextState
             } else {
-                newState = action.cartItem
+                nextState = action.cartItem
                 let cartState = action.cartItem.items
-                newState.items = {}
+                nextState.items = {}
                 cartState.forEach(item => {
-                    newState.items[Object.values(item)[0].id] = Object.values(item)[0]
+                    nextState.items[Object.values(item)[0].id] = Object.values(item)[0]
                 })
-                return newState
+                return nextState
             }
 
         case RECEIVE_CURRENT_USER: 
