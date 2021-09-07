@@ -9,8 +9,10 @@
 require 'open-uri'
 
 User.destroy_all
-demo = User.create!(name: 'Demo', email: 'demo@demo.com', password: 'demodemo')
+demo = User.create!(name: 'Shopper', email: 'shopper@shopper.com', password: 'shopper')
 
+CartItem.destroy_all
+Review.destroy_all
 Item.destroy_all
 
 item1 = Item.create!(item_name:'Avocado', description: 'Freshly picked', price: 150, rating: 5)
