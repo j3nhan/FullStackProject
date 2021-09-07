@@ -2,7 +2,7 @@ import { RECEIVE_CART_ITEM, RECEIVE_CART_ITEMS, CLEAR_CART } from "../actions/ca
 import { RECEIVE_ITEM, REMOVE_ITEM } from "../actions/item_actions";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
-const cartItemsReducer = (state = {}, action) => {
+const cartItemsReducer = (state = {items: {}}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
