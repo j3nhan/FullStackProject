@@ -16,7 +16,7 @@ const App = () => {
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/signin" component={SigninContainer} />
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
-                <Route path='/cart_items' component={CartItemsContainer} />
+                <Route path='/cart' component={CartItemsContainer} />
                 <Route path="*" component={ NoPageFound } />
             </Switch>
         </div>
