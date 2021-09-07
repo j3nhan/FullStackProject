@@ -1,4 +1,8 @@
 class Api::CartItemsController < ApplicationController
+    def index 
+        @cart_items = current_user.cart_items
+    end
+
     def show
         @cart_item = CartItem.find(params[:id])
         return nil if !current_user
