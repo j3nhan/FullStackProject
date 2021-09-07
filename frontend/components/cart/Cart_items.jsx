@@ -7,6 +7,7 @@ import LoadingPage from '../Loading_page';
 class CartItems extends React.Component {
     constructor(props) {
         super(props) 
+        this.total = 0;
 
         const { item } = this.props;
         this.state = {
@@ -16,8 +17,8 @@ class CartItems extends React.Component {
         }
 
         this.handleQuantity = this.handleQuantity.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
+        this.checkout = this.checkout.bind(this);
     }
 
     componentWillUnmount() {
@@ -30,13 +31,13 @@ class CartItems extends React.Component {
         this.props.updateCartItem(nextState)
     }
 
-    handleDelete(e) {
+    deleteItem(e) {
         this.setState({quantity: 0})
         this.props.deleteCartItem(this.props.item.id)
     }
 
 
-    handleSubmit(e) {
+    checkout(e) {
         alert('Thank you for shopping with ValYOU.')
     }
 
@@ -74,7 +75,7 @@ class CartItems extends React.Component {
                             <p className='cart-checkout-subtotal-text'>Subtotal ({cartItems.items.length} {cartItems.items.length > 1 ? 'items' : 'item'}): </p>
                             <p className='cart-checkout-subtotal-amount'>{moneyFormatter.format(subTotal / 100)}</p>
                         </div>
-                        <div className='cart-checkout-button' onClick={this.handleSubmit}>Proceed to checkout</div>
+                        <div className='cart-checkout-button' onClick={this.checkout}>Proceed to checkout</div>
                         </div>
                     </div>
                     </div>
@@ -96,7 +97,7 @@ class CartItems extends React.Component {
                         <option value={5}>5</option>
                         </select>
                     </div>
-                    <p className='cart-item-delete' onClick={this.handleDelete}>Delete</p>
+                    <p className='cart-item-delete' onClick={this.deleteItem}>Delete</p>
                     </div>
                     <p className='cart-item-price'>{moneyFormatter.format(itemSubtotal / 100)}</p>
                     
