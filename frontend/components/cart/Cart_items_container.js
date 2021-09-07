@@ -5,8 +5,8 @@ import { deleteItem } from '../../actions/item_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    cartItem: state.entities.cartItem,
-    items: state.entities.cartItem.items
+    cartItems: state.entities.cartItems,
+    items: state.entities.cartItems.items
 });
 
 
