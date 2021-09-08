@@ -3,7 +3,7 @@ import CartItems from './Cart_items';
 import { fetchCartItems, fetchCartItem, createCartItem, deleteCartItem, clearCart } from '../../actions/cart_items_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-    currentUser: state.entities.users[state.session.id],
+    currentUser: state.entities.id,
     cartItems: state.entities.cartItems,
 });
 

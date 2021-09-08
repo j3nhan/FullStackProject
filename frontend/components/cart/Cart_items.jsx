@@ -28,33 +28,31 @@ class CartItems extends React.Component {
         // this.checkout = this.checkout.bind(this);
     }
 
-    componentWillUnmount() {
-        this.props.clearCart();
-    }
-
-    componentDidMount() {
-        this.props.fetchCartItems();
-    }
-
-    updateTotal(array) {
-        let newArray = [];
-        newArray.forEach(item => newArray.push(item.price));
-        let total = newArray.reduce((a, b) => a + b, 0);
+    updateTotal(amount) {
+        let newAmount = [];
+        amount.forEach(item => newAmount.push(item.price));
+        let total = newAmount.reduce((a, b) => a + b, 0);
         return (
             <div>{moneyFormatter.format(total / 100)}</div>
         )
     }
+    
+    componentDidMount() {
+        this.props.fetchCartItems();
+    }
 
     componentDidUpdate(prevProps) {
-        const before = Object.values(prevProps.CartItems);
-        const current = Object.values(this.props.CartItems);
+        const prev = Object.values(prevProps.cartItems);
+        const current = Object.values(this.props.cartItems);
         
-        if (before.length !== current.length) {
+        if (prev.length !== current.length) {
             this.props.fetchCartItems();
         }
     }
-
-
+    
+    componentWillUnmount() {
+        this.props.clearCart();
+    }
     
     // quantity(e) {
     //     this.setState({quantity: e.target.value})
@@ -96,7 +94,7 @@ class CartItems extends React.Component {
                 <div className='left-cart-cont'>
                     <ul>
                         {cartItemsKey.map(cartItemId => (
-                            <li>
+                            <li key={cartItemId}>
                                 <div>
                                     <img src={this.props.cartItems[cartItemId].photoUrl}/>
                                 </div>
@@ -111,13 +109,10 @@ class CartItems extends React.Component {
                                         <div>Price</div>
                                         {moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}
                                     </div>
-                                    
                                     <div>
-                                        <button className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</button>
+                                        <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
                                     </div>
-
                                 </div>
-
                             </li>
                         ))}
                     </ul>
@@ -150,14 +145,13 @@ class CartItems extends React.Component {
 
     render() {
         // const {currentUser, cartItems, fetchCartItem, deleteItem, items } = this.props;
-
-        if (this.currentUser && Object.values(this.props.cartItems).length !== 0) {
+        if (!this.props.cartItems) {
+            return null
+        }   
+            
+        if (Object.values(this.props.cartItems).length > 0) {
             return (
                 <div>
-                    <div>
-                        <LoadingPage/>
-                    </div>
-                    
                     <div>{this.cartFull()}</div>
                 </div>
             )
