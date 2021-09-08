@@ -7,6 +7,8 @@ import Header from '../header/Header';
 class ItemShow extends React.Component {
     constructor(props) {
         super(props);
+
+        this.addItem = this.addItem.bind(this);
     }
     componentDidMount() {
         this.props.fetchItem(this.props.match.params.itemId)
@@ -15,6 +17,13 @@ class ItemShow extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.location !== this.props.location) 
         this.props.fetchItem(this.props.match.params.itemId)
+    }
+
+    addItem(e) {
+        e.preventDefault();
+        if (this.props.sessionId) {
+            let { item, }
+        }
     }
 
     render() {
