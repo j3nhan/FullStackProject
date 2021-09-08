@@ -7,7 +7,14 @@ import LoadingPage from '../Loading_page';
 class CartItems extends React.Component {
     constructor(props) {
         super(props) 
-        this.total = 0;
+
+        this.state = {
+            total: 0
+        }
+
+        // this.userCart = this.userCart.bind(this);
+        this.cartFull = this.cartFull.bind(this);
+        this.updateTotal = this.updateTotal.bind(this);
 
         // const { item } = this.props;
         // this.state = {
@@ -24,6 +31,30 @@ class CartItems extends React.Component {
     componentWillUnmount() {
         this.props.clearCart();
     }
+
+    componentDidMount() {
+        this.props.fetchCartItems();
+    }
+
+    updateTotal(array) {
+        let newArray = [];
+        newArray.forEach(item => newArray.push(item.price));
+        let total = newArray.reduce((a, b) => a + b, 0);
+        return (
+            <div>{moneyFormatter.format(total / 100)}</div>
+        )
+    }
+
+    componentDidUpdate(prevProps) {
+        const before = Object.values(prevProps.CartItems);
+        const current = Object.values(this.props.CartItems);
+        
+        if (before.length !== current.length) {
+            this.props.fetchCartItems();
+        }
+    }
+
+
     
     // quantity(e) {
     //     this.setState({quantity: e.target.value})
@@ -41,47 +72,107 @@ class CartItems extends React.Component {
     //     alert('Thank you for shopping with ValYOU.')
     // }
 
+    // userCart() {
+    //     return (
+    //         <div className='cart-signin'>Your ValYOU cart is empty
+    //             <Link className='cart-button-link' to='/sigin'>
+    //                 <button className="sign-in-yellow">Sign in to your account</button>
+    //             </Link>
+    //             <Link className='cart-button-link' to='/signup'>
+    //                 <button className="sign-up-gray">Sign up now</button>
+    //             </Link>
+    //         </div>
+    //     )
+    // }
+
+   cartFull() {
+        let cartItemsCount = Object.values(this.props.cartItems).length;
+        let cartItemsKey = Object.keys(this.props.cartItems);
+        let cartItemsVal = Object.values(this.props.cartItems);
+    
+        return (
+            <div>
+                <div>Shopping Cart</div>
+                <div className='left-cart-cont'>
+                    <ul>
+                        {cartItemsKey.map(cartItemId => (
+                            <li>
+                                <div>
+                                    <img src={this.props.cartItems[cartItemId].photoUrl}/>
+                                </div>
+
+                                <div className='mid-cart-cont'>
+                                    <div>
+                                        <Link to={`/items/${this.props.cartItems[cartItemId].id}`}>
+                                            <div>{this.props.cartItems[cartItemId].title}</div>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <div>Price</div>
+                                        {moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}
+                                    </div>
+                                    
+                                    <div>
+                                        <button className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</button>
+                                    </div>
+
+                                </div>
+
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div className='right-cart-cont'>
+                    <div className='subtotal-cont'>
+                    <div>Subtotal ({cartItemsCount} items): <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div></div>
+                    </div>
+
+                    <button className='proceed-to-checkout'>Proceed to checkout
+                        <div className='checkout'>
+                            Thank you! Your order has been received.
+                        </div>
+                    </button>
+
+                    <div>
+                        <div>In Stock</div>
+                        <div>Prime & FREE Returns</div>
+                    </div>
+
+                    <label className='gift'>
+                        <input type='checkbox' className='gift-checkbox'/><div className='gift-text'>This is a gift</div>
+                    </label>
+                </div>
+
+            </div>
+        )
+    }
+
     render() {
         // const {currentUser, cartItems, fetchCartItem, deleteItem, items } = this.props;
 
-        if (currentUser) return (
-            <div>
-                <LoadingPage/>
-            </div>
-        )
-        
-        // if (this.state.quantity === 0) return (
-        //     <div className='cart-item-deleted'>
-        //         <p><Link className='cart-item-deleted-link' to={`items/${items.item.id}`}>{items.item.name}</Link> was removed from your Shopping Cart.</p>
-        //     </div>
-        // )
-
-        itemInCart() {
-            let items = Object.value(this.props.items)
-            this.total = 0;
-            return items.map((item, idx) => (
-                <div key={idx}>
+        if (this.currentUser && Object.values(this.props.cartItems).length !== 0) {
+            return (
+                <div>
                     <div>
-                        <img src={item.photoUrl}/>
+                        <LoadingPage/>
                     </div>
                     
-                    <div>
-                        <div>{item.name}</div>
-                    </div>
-
-                    <div>
-                        <div className='cart-item-unit-price'>{moneyFormatter.format(item.price / 100)}</div>
-                    </div>
+                    <div>{this.cartFull()}</div>
                 </div>
-            ))
+            )
+        } else {
+            return (
+                <div className='cart-signin'>Your ValYOU cart is empty
+                    <Link className='cart-button-link' to='/signin'>
+                        <button className="sign-in-yellow">Sign in to your account</button>
+                    </Link>
+                    <Link className='cart-button-link' to='/signup'>
+                        <button className="sign-up-gray">Sign up now</button>
+                    </Link>
+                </div>
+            )
         }
-
-        return (
-            if (!this.props.cartItems.length === 0) {
-                return 
-            }
-        )
-
 
 
         // let subTotal = cartItems.prices.reduce((a, b) => a + b, 0)
