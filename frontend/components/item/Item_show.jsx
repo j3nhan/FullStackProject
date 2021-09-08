@@ -8,7 +8,7 @@ class ItemShow extends React.Component {
     constructor(props) {
         super(props);
 
-        this.addItem = this.addItem.bind(this);
+        this.addCartItem = this.addCartItem.bind(this);
     }
     componentDidMount() {
         this.props.fetchItem(this.props.match.params.itemId)
@@ -19,12 +19,34 @@ class ItemShow extends React.Component {
         this.props.fetchItem(this.props.match.params.itemId)
     }
 
-    addItem(e) {
+    addCartItem(e) {
         e.preventDefault();
         if (this.props.sessionId) {
-            let { item, }
+            let { item, itemAdded } = this.props;
+            let cartItems = Object.values(itemAdded);
+            let collection = [];
+
+            cartItems.forEach(cartItem => {
+                collection.push(cartItem)
+            });
+
+            collection.includes(item) ? 
+            <div>
+                <div>
+                    Check your cart
+                </div>
+            </div>
+            : 
+            this.props.addCartItem({
+                userId: this.props.sessionId,
+                itemId: item.id
+            })
+        } else {
+            this.props.history.push('/signin')
         }
+
     }
+}
 
     render() {
         const { item } = this.props;
