@@ -32,7 +32,7 @@ class SignInForm extends React.Component {
 
     handleDemo(e){
         e.preventDefault();
-        const user = {email: "demo@demo.com", password: "demodemo"};
+        const user = {email: "shopper@shopper.com", password: "shopper"};
         this.props.signinUser(user)
         .then(() => this.props.history.go(-1))
     };
@@ -83,7 +83,7 @@ class SignInForm extends React.Component {
                             </button>
                             
                             <p className='try-demo'>- Or -</p>
-                            <button className='demo-button' onClick={this.handleDemo}>Demo Sign-In</button>
+                            <button className='demo-button' onClick={this.handleDemo}>Demo User Sign-In</button>
 
                             <div className='error-message'>
                                 {this.renderErrors()}
