@@ -66,7 +66,7 @@ class Homepage extends React.Component {
                             </div>
                         </Link>
 
-                        <Link to='/checkout' className='header-link'>
+                        <Link to='/cart' className='header-link'>
                             <div className="header-basket">
                                 <ShoppingCartIcon/>
                                 <span className="header-option2 basket-count">0</span>
