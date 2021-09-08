@@ -1,5 +1,6 @@
-@cart_items.each do |cart_item|
-    json.set! cart_item.id do
-        json.extract! cart_item, :id, :user_id, :item_id
+@cart_items.each do |item|
+    json.set! item.id do
+        json.extract! item, :id, :title, :description, :price
+        json.photoUrl url_for(item.photo)
     end
 end
