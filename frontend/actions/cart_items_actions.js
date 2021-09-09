@@ -17,7 +17,7 @@ const receiveCartItem = cartItem => ({
 
 const removeCartItem = cartItemId => ({
     type: REMOVE_CART_ITEM,
-    cartItemId: cartItemId.id
+    cartItemId
 })
 
 export const fetchCartItems = () => dispatch => (
