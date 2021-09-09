@@ -1,6 +1,6 @@
-import { RECEIVE_CART_ITEM, RECEIVE_CART_ITEMS, REMOVE_CART_ITEM, CLEAR_CART } from "../actions/cart_items_actions";
+import { RECEIVE_CART_ITEMS, RECEIVE_CART_ITEM, REMOVE_CART_ITEM, CLEAR_CART } from "../actions/cart_items_actions";
 
-const cartItemsReducer = (state = {}, action) => {
+const cartItemsReducer = (state = [], action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);
 
