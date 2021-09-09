@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import CartItems from './Cart_items';
 import { fetchCartItems, fetchCartItem, createCartItem, deleteCartItem, clearCart } from '../../actions/cart_items_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-    currentUser: state.entities.id,
-    cartItems: state.entities.cartItems,
+const mapStateToProps = state => ({
+    currentUser: state.session.id,
+    currCartItems: state.entities.cartItems,
 });
 
 
