@@ -19,8 +19,8 @@ const removeItem = itemId => ({
     itemId
 })
 
-export const fetchItems = (items) => dispatch => (
-    ItemAPIUtil.fetchItems(items)
+export const fetchItems = () => dispatch => (
+    ItemAPIUtil.fetchItems()
     .then(res => dispatch(receiveItems(res)))
 );
 
