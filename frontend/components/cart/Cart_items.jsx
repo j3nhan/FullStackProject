@@ -29,11 +29,11 @@ class CartItems extends React.Component {
     }
 
     updateTotal(amount) {
-        let newAmount = [];
-        amount.forEach(item => newAmount.push(item.price));
-        let total = newAmount.reduce((a, b) => a + b, 0);
+        let itemsPrice = [];
+        let grandTotal = itemsPrice.reduce((a, b) => a + b, 0);
+        amount.forEach(item => itemsPrice.push(item.price));
         return (
-            <div>{moneyFormatter.format(total / 100)}</div>
+            <div>{moneyFormatter.format(grandTotal / 100)}</div>
         )
     }
     
@@ -42,16 +42,12 @@ class CartItems extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        const prev = Object.values(prevProps.cartItems);
-        const current = Object.values(this.props.cartItems);
+        const prev = Object.values(prevProps.currCartItems);
+        const current = Object.values(this.props.currCartItems);
         
         if (prev.length !== current.length) {
             this.props.fetchCartItems();
         }
-    }
-    
-    componentWillUnmount() {
-        this.props.clearCart();
     }
     
     // quantity(e) {
@@ -84,9 +80,9 @@ class CartItems extends React.Component {
     // }
 
    cartFull() {
-        let cartItemsCount = Object.values(this.props.cartItems).length;
-        let cartItemsKey = Object.keys(this.props.cartItems);
-        let cartItemsVal = Object.values(this.props.cartItems);
+        let cartItemsCount = Object.values(this.props.currCartItems).length;
+        let cartItemsKey = Object.keys(this.props.currCartItems);
+        let cartItemsVal = Object.values(this.props.currCartItems);
     
         return (
             <div>
@@ -96,18 +92,18 @@ class CartItems extends React.Component {
                         {cartItemsKey.map(cartItemId => (
                             <li key={cartItemId}>
                                 <div>
-                                    <img src={this.props.cartItems[cartItemId].photoUrl}/>
+                                    <img src={this.props.currCartItems[cartItemId].photoUrl}/>
                                 </div>
 
                                 <div className='mid-cart-cont'>
                                     <div>
-                                        <Link to={`/items/${this.props.cartItems[cartItemId].id}`}>
-                                            <div>{this.props.cartItems[cartItemId].title}</div>
+                                        <Link to={`/items/${this.props.currCartItems[cartItemId].id}`}>
+                                            <div>{this.props.currCartItems[cartItemId].itemName}</div>
                                         </Link>
                                     </div>
                                     <div>
                                         <div>Price</div>
-                                        {moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}
+                                        {moneyFormatter.format(this.props.currCartItems[cartItemId].price / 100)}
                                     </div>
                                     <div>
                                         <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
@@ -143,16 +139,24 @@ class CartItems extends React.Component {
         )
     }
 
+    componentWillUnmount() {
+        this.props.clearCart();
+    }
+
     render() {
         // const {currentUser, cartItems, fetchCartItem, deleteItem, items } = this.props;
-        if (!this.props.cartItems) {
-            return null
-        }   
-            
-        if (Object.values(this.props.cartItems).length > 0) {
+        if (!this.props.currCartItems) {
             return (
                 <div>
-                    <div>{this.cartFull()}</div>
+                    <LoadingPage/>
+                </div>
+            )
+        }   
+            
+        if (Object.values(this.props.currCartItems).length > 0) {
+            return (
+                <div>
+                    <div>{this.cartFull}</div>
                 </div>
             )
         } else {
@@ -221,3 +225,4 @@ class CartItems extends React.Component {
 }
 
 export default CartItems;
+
