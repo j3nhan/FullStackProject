@@ -8,48 +8,67 @@ class ItemShow extends React.Component {
     constructor(props) {
         super(props);
 
-        this.addCartItem = this.addCartItem.bind(this);
+        // this.state = {
+        //     qty: 1
+        // }
+
+        this.buyItem = this.buyItem.bind(this);
+        this.addToCart = this.addToCart.bind(this);
     }
+
     componentDidMount() {
-        this.props.fetchItem(this.props.match.params.itemId)
+        this.props.fetchItems();
+        this.props.fetchItem(this.props.itemIdMat);
     }
     
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.location !== this.props.location) 
-        this.props.fetchItem(this.props.match.params.itemId)
+    componentDidUpdate(prevProps) {
+        if (prevProps.itemIdMat !== this.props.itemIdMat) {
+            this.props.fetchItem();
+        }
     }
 
-    addCartItem(e) {
+    buyItem(currItem) {
+        this.props.addCartItem({
+            user_id: this.props.currentUser,
+            item_id: currItem.id
+        })
+    }
+
+    addToCart(e) {
         e.preventDefault();
-        if (this.props.sessionId) {
-            let { item, itemAdded } = this.props;
-            let cartItems = Object.values(itemAdded);
-            let collection = [];
+        
+        if (this.props.currentUser) {
+            let newArr = [];
+            for (let i = 0; i < this.props.itemsAdded.length; i++) {
+                newArr.push(this.props.itemsAdded[i])
+            }
+            // this.props.itemsAdded.forEach(item => {
+            //     newArr.push(item);
+            // })
 
-            cartItems.forEach(cartItem => {
-                collection.push(cartItem)
-            });
-
-            collection.includes(item) ? 
-            <div>
-                <div>
-                    Check your cart
-                </div>
-            </div>
-            : 
-            this.props.addCartItem({
-                userId: this.props.sessionId,
-                itemId: item.id
-            })
+            if (newArr.includes(this.props.item)) {
+                return (
+                    <div>
+                        <div>
+                            Added to your cart
+                        </div>
+                    </div>
+                )
+            } else {
+                this.buyItem(this.props.item);
+                this.props.history.push('/checkout');
+            }
+        
         } else {
-            this.props.history.push('/signin')
+            this.props.history.push('/signin');
         }
 
     }
-}
+
 
     render() {
         const { item } = this.props;
+        // if (item === undefined) return null;
         
         if (!item) {
             return (
@@ -97,7 +116,9 @@ class ItemShow extends React.Component {
                                 <li>Eligible for Return, Refund or Replacement</li>
                             </ul>
                         </div>
-                        <button className="clickbutton" onClick={this.addItem}>Add to Cart</button>
+                        <Link to="/checkout">
+                            <button className="clickbutton" onClick={this.addToCart}>Add to Cart</button>
+                        </Link>
                     </div>
                 </div>
             </div>
