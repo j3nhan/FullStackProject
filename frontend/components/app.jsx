@@ -6,7 +6,7 @@ import SigninContainer from './signin/Signin_container';
 import ItemShowContainer from './item/Item_show_container'
 import HomepageContainer from './home/Homepage_container'
 import NoPageFound from './No_page_found';
-import CartItemsContainer from './cart/Cart_items_container';
+import CartItemsContainer from './cart_item/Cart_items_container';
     
 const App = () => {
     return (

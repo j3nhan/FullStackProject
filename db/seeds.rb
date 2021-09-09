@@ -11,6 +11,7 @@ require 'open-uri'
 User.destroy_all
 demo = User.create!(name: 'Shopper', email: 'shopper@shopper.com', password: 'shopper')
 
+Cart.destroy_all
 CartItem.destroy_all
 Review.destroy_all
 Item.destroy_all
