@@ -6,8 +6,10 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true 
 
-    has_many :cart_items, foreign_key: :user_id
+    has_one :cart, foreign_key: :user_id
+    has_many :cart_stuff, through: :cart, source: :cart_items
     has_many :reviews, foreign_key: :author_id
+    has_many :item_reviews, through: :reviews, source: :item
 
     def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)
