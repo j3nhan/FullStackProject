@@ -4,16 +4,15 @@ class Api::CartItemsController < ApplicationController
     end
 
     def show
-        # @cart_item = CartItem.find(params[:id])
+        @cart_item = CartItem.find(params[:id])
         # render :show
-        # return nil if !current_user
+        return nil if !current_user
 
         # if @cart_item
         #     render :show
         # else
         #     render json: @cart_item.errors.full_messages, status: 404 
         # end
-        @cart_item = CartItem.find(params[:id])
     end
 
     def create
@@ -36,7 +35,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy 
-        @cart_item = CartItem.find(params[:id])
+        @cart_item = CartItem.find_by(id: params[:id])
         @cart_item.destroy 
         render :show
     end
