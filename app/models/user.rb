@@ -7,7 +7,7 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true 
 
     has_one :cart, foreign_key: :user_id
-    has_many :cart_stuff, through: :cart, source: :cart_items
+    has_many :cart_items, through: :cart, source: :cart_items
     has_many :reviews, foreign_key: :author_id
     has_many :item_reviews, through: :reviews, source: :item
 
