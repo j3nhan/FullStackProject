@@ -6,7 +6,7 @@ import SigninContainer from './signin/Signin_container';
 import ItemShowContainer from './item/Item_show_container'
 import HomepageContainer from './home/Homepage_container'
 import NoPageFound from './No_page_found';
-import CartItemsContainer from './cart_item/Cart_items_container';
+import CartContainer from './cart/Cart_container';
     
 const App = () => {
     return (
@@ -16,7 +16,7 @@ const App = () => {
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/signin" component={SigninContainer} />
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
-                <Route exact path='/checkout' component={CartItemsContainer} />
+                <Route exact path='/checkout' component={CartContainer} />
                 <Route path="*" component={ NoPageFound } />
             </Switch>
         </div>
