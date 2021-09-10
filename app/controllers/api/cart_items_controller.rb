@@ -5,14 +5,7 @@ class Api::CartItemsController < ApplicationController
 
     def show
         @cart_item = CartItem.find(params[:id])
-        # render :show
         return nil if !current_user
-
-        # if @cart_item
-        #     render :show
-        # else
-        #     render json: @cart_item.errors.full_messages, status: 404 
-        # end
     end
 
     def create
@@ -41,7 +34,7 @@ class Api::CartItemsController < ApplicationController
     end
 
     def cart_item_params 
-        params.require(:cartItem).permit(:user_id, :item_id)
+        params.require(:cartItem).permit(:user_id, :item_id, :quantity)
     end
 
 end
