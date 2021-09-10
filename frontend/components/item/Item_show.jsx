@@ -5,16 +5,6 @@ import LoadingPage from '../Loading_page';
 import Header from '../header/Header';
 
 class ItemShow extends React.Component {
-    constructor(props) {
-        super(props);
-
-        // this.state = {
-        //     qty: 1
-        // }
-
-        this.buyItem = this.buyItem.bind(this);
-        this.addToCart = this.addToCart.bind(this);
-    }
 
     componentDidMount() {
         this.props.fetchItem(this.props.itemIdMat);
@@ -26,49 +16,24 @@ class ItemShow extends React.Component {
         }
     }
 
-    buyItem(currItem) {
-        // console.log({
-        //     user_id: this.props.currentUser,
-        //     item_id: currItem.id
-        // })
+    addToCart = e => {
+        e.preventDefault();
         this.props.addCartItem({
-
-            item_id: currItem.id
+            user_id: this.props.currentUser,
+            item_id: this.props.itemIdMat,
+            quantity: 1
         })
     }
 
-    addToCart(e) {
+    updateQuantity = e => {
         e.preventDefault();
-        
-        if (this.props.currentUser) {
-            let newArr = [];
-            for (let i = 0; i < this.props.itemsAdded.length; i++) {
-                newArr.push(this.props.itemsAdded[i])
-            }
-            // this.props.itemsAdded.forEach(item => {
-            //     newArr.push(item);
-            // })
-
-            if (newArr.includes(this.props.item)) {
-                return (
-                    <div>
-                        <div>
-                            Added to your cart
-                        </div>
-                    </div>
-                )
-            } else {
-                this.buyItem(this.props.item);
-                this.props.history.push('/checkout');
-                
-            }
-        
-        } else {
-            this.props.history.push('/signin');
-        }
 
     }
 
+    deleteItem = e => {
+        e.preventDefault();
+        
+    }
 
     render() {
         const { item } = this.props;
@@ -120,9 +85,7 @@ class ItemShow extends React.Component {
                                 <li>Eligible for Return, Refund or Replacement</li>
                             </ul>
                         </div>
-                        <Link to="/checkout">
-                            <button className="clickbutton" onClick={this.addToCart}>Add to Cart</button>
-                        </Link>
+                        <button className="clickbutton" onClick={this.addToCart}>Add to Cart</button>
                     </div>
                 </div>
             </div>
