@@ -16,16 +16,6 @@ class CartItems extends React.Component {
         this.cartFull = this.cartFull.bind(this);
         this.updateTotal = this.updateTotal.bind(this);
 
-        // const { item } = this.props;
-        // this.state = {
-        //     id: item.id,
-        //     userId: item.userId,
-        //     quantity: item.quantity
-        // }
-
-        // this.quantity = this.quantity.bind(this);
-        // this.deleteItem = this.deleteItem.bind(this);
-        // this.checkout = this.checkout.bind(this);
     }
 
     updateTotal(amount) {
