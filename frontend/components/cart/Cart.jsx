@@ -47,10 +47,6 @@ class Cart extends React.Component {
         let cartItemsKey = Object.keys(this.props.cartItems);
         let cartItemsVal = Object.values(this.props.cartItems);
 
-        console.log("COUNT", cartItemsCount)
-        console.log("KEY", cartItemsKey)
-        console.log("VAL", cartItemsVal)
-
         return (
             <div>
                 <div>Shopping Cart</div>
@@ -114,7 +110,6 @@ class Cart extends React.Component {
         if (!this.props.cartItems) {
             return null
         }
-
 
         if (Object.values(this.props.cartItems).length === 0) {
             return (

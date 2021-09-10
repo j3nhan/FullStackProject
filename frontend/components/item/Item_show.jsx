@@ -17,7 +17,6 @@ class ItemShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchItems();
         this.props.fetchItem(this.props.itemIdMat);
     }
     
@@ -28,8 +27,12 @@ class ItemShow extends React.Component {
     }
 
     buyItem(currItem) {
+        // console.log({
+        //     user_id: this.props.currentUser,
+        //     item_id: currItem.id
+        // })
         this.props.addCartItem({
-            user_id: this.props.currentUser,
+
             item_id: currItem.id
         })
     }
@@ -57,6 +60,7 @@ class ItemShow extends React.Component {
             } else {
                 this.buyItem(this.props.item);
                 this.props.history.push('/checkout');
+                
             }
         
         } else {
