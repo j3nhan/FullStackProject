@@ -9,11 +9,3 @@ export const fetchItem = itemId => (
         url: `/api/items/${itemId}`,
     })
 )
-
-export const deleteItem = itemId => (
-    $.ajax({
-        method: "DELETE",
-        url: `/api/items/${itemId}`
-    })
-)
-
