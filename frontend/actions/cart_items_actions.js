@@ -31,7 +31,7 @@ export const fetchCartItem = cartItemId => dispatch => (
 );
 
 export const createCartItem = cartItem => dispatch => (
-    CartItemsAPIUtil.fetchCartItem(cartItem)
+    CartItemsAPIUtil.createCartItem(cartItem)
     .then(res => dispatch(receiveCartItem(res)))
 );
 
