@@ -111,9 +111,11 @@ class Cart extends React.Component {
             return null
         }
 
-        if (Object.values(this.props.cartItems).length === 0) {
+        if (!currentUser) {
             return (
-                <div className='cart-signin'>Your ValYOU cart is empty
+                <div className='cart-signin'>
+                    <div>Shopping Cart</div>
+                    <div>Your ValYOU cart is empty</div>
                     <Link className='cart-button-link' to='/signin'>
                         <button className="sign-in-yellow">Sign in to your account</button>
                     </Link>
@@ -122,12 +124,18 @@ class Cart extends React.Component {
                     </Link>
                 </div>
             )
+        } else if (Object.values(this.props.cartItems).length === 0) {
+            return (
+                <div>
+                    <div>Shopping Cart</div>
+                    <div>Your ValYOU cart is empty</div>
+                </div>
+            )
         } else {
             return (
                 <div>
                     <div>{this.cartFull}</div>
                 </div>
-
             )
         }
     }
