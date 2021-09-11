@@ -4,16 +4,16 @@ import { createCartItem, updateCartItem, deleteCartItem } from '../../actions/ca
 import ItemShow from './Item_show';
 
 const mapStateToProps = (state, ownProps) => ({
+    currentUser: state.session.id,
     item: state.entities.items[ownProps.match.params.itemId],
     itemIdMat: ownProps.match.params.itemId,
-    itemsAdded: Object.values(state.entities.cartItems),
-    currentUser: state.session.id,
+    itemsAdded: Object.values(state.entities.cartItems)
 })
 
 const mapDispatchToProps = dispatch => ({
     fetchItems: () => dispatch(fetchItems()),
     fetchItem: itemIdMat => dispatch(fetchItem(itemIdMat)),
-    addCartItem: item => dispatch(createCartItem(item)),
+    createCartItem: item => dispatch(createCartItem(item)),
     updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
     deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId)),
 })
