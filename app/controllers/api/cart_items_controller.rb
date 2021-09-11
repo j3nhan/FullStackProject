@@ -1,6 +1,8 @@
 class Api::CartItemsController < ApplicationController
     def index 
-        @cart_items = current_user.cart_items
+        if current_user
+            @cart_items = CartItem.all
+        end
     end
 
     def show
