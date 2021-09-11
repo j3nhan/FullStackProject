@@ -4,7 +4,7 @@ import { fetchCartItems, fetchCartItem, createCartItem, updateCartItem, deleteCa
 
 const mapStateToProps = state => ({
     currentUser: state.session.id,
-    currCartItems: state.entities.cartItems,
+    cartItems: state.entities.cartItems,
     cartItemId: Object.keys(state.entities.cartItems)
 });
 
