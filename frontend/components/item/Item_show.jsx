@@ -5,7 +5,6 @@ import LoadingPage from '../Loading_page';
 import Header from '../header/Header';
 
 class ItemShow extends React.Component {
-
     componentDidMount() {
         this.props.fetchItem(this.props.itemIdMat);
     }
@@ -30,14 +29,8 @@ class ItemShow extends React.Component {
 
     }
 
-    deleteItem = e => {
-        e.preventDefault();
-        
-    }
-
     render() {
         const { item } = this.props;
-        // if (item === undefined) return null;
         
         if (!item) {
             return (
