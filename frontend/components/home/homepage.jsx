@@ -54,20 +54,19 @@ class Homepage extends React.Component {
                     <div className="header-nav">
                         <Link to='/signin' className='header-link'>
                             <div className="header-option">
-                                <span className="header-option1">Hello, {this.props.currentUser.name}</span>
+                                <span className="header-option1">Hello,</span>
+                                <span className="header-option2">{this.props.currentUser.name}</span>
+                            </div>
+                        </Link>
+
+                        <Link className='header-link'>
+                            <div className="header-option">
                                 <button className='header-option2-signout' type='submit' onClick={this.signedoutHome}>Sign Out</button>
                             </div>
                         </Link>
 
-                        <Link to='/orders' className='header-link'>
-                            <div className="header-option">
-                                <span className="header-option1">Returns</span>
-                                <span className="header-option2">& Orders</span>
-                            </div>
-                        </Link>
-
                         <Link to='/checkout' className='header-link'>
-                            <div className="header-basket">
+                            <div className="header-basket-homepage">
                                 <ShoppingCartIcon/>
                                 <span className="header-option2 basket-count">0</span>
                             </div>
@@ -107,22 +106,19 @@ class Homepage extends React.Component {
                     </div>
 
                     <div className="header-nav">
+                            <div className="header-option">
+                                <span className="header-option1">Hello,</span>
+                                <span className="header-option2">Guest</span>
+                            </div>
+
                         <Link to='/signin' className='header-link'>
                             <div className="header-option">
-                                <span className="header-option1">Hello</span>
-                                <span className="header-option2">Sign In</span>
-                            </div>
-                        </Link>
-
-                        <Link to='/orders' className='header-link'>
-                            <div className="header-option">
-                                <span className="header-option1">Returns</span>
-                                <span className="header-option2">& Orders</span>
+                                <button className='header-option2-signout'>Sign In</button>
                             </div>
                         </Link>
 
                         <Link to='/checkout' className='header-link'>
-                            <div className="header-basket">
+                            <div className="header-basket-homepage">
                                 <ShoppingCartIcon/>
                                 <span className="header-option2 basket-count">0</span>
                             </div>
