@@ -59,18 +59,17 @@ class Homepage extends React.Component {
                             </div>
                         </Link>
 
-                        <Link className='header-link'>
                             <div className="header-option">
                                 <button className='header-option2-signout' type='submit' onClick={this.signedoutHome}>Sign Out</button>
                             </div>
-                        </Link>
 
                         <Link to='/checkout' className='header-link'>
                             <div className="header-basket-homepage">
                                 <ShoppingCartIcon/>
-                                <span className="header-option2 basket-count">0</span>
+                                <span className="header-option2 basket-count">{Object.values(this.props.cart).length}</span>
                             </div>
                         </Link>
+
                     </div>
                 </nav>
             </div> 
@@ -120,7 +119,7 @@ class Homepage extends React.Component {
                         <Link to='/checkout' className='header-link'>
                             <div className="header-basket-homepage">
                                 <ShoppingCartIcon/>
-                                <span className="header-option2 basket-count">0</span>
+                                <span className="header-option2 basket-count">{Object.values(this.props.cart).length}</span>
                             </div>
                         </Link>
                     </div>
