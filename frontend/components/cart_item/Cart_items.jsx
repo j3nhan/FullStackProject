@@ -17,10 +17,10 @@ class CartItems extends React.Component {
         this.deleteCartItem = this.deleteCartItem.bind(this);
     }
 
-    updateTotal(amount) {
+    updateTotal(cartItemsValue) {
         let itemsPrice = [];
         let grandTotal = itemsPrice.reduce((a, b) => a + b, 0);
-        amount.forEach(item => itemsPrice.push(item.price));
+        cartItemsValue.forEach(item => itemsPrice.push(item.price));
         return (
             <div>{moneyFormatter.format(grandTotal / 100)}</div>
         )
@@ -32,6 +32,7 @@ class CartItems extends React.Component {
 
     updateQuantity(e) {
         e.preventDefault();
+
     }
 
     deleteCartItem(e) {
@@ -56,54 +57,29 @@ class CartItems extends React.Component {
         let cartItemsCount = Object.values(this.props.cartItems).length;
         let cartItemsKey = Object.keys(this.props.cartItems);
         let cartItemsVal = Object.values(this.props.cartItems);
-
         return (
             <div>
                 <div>Shopping Cart</div>
                 <div className='left-cart-cont'>
                     <ul>
-                        {/* {cartItemsKey.map(cartItemId => (
-                            <li key={cartItemId}>
+                        {cartItemsKey.map((cartItemId, idx) => (
+                            <li key={idx}>
                                 <div>
-                                    <img src={this.props.cartItems[cartItemId].photoUrl}/>
+                                    <img src={this.props.cartItems[idx].photoUrl}/>
                                 </div>
 
                                 <div className='mid-cart-cont'>
                                     <div>
-                                        <Link to={`/items/${this.props.cartItems[cartItemId].id}`}>
-                                            <div>{this.props.cartItems[cartItemId].itemName}</div>
+                                        <Link to={`/items/${this.props.cartItems[idx].itemId}`}>
+                                            <div>{this.props.cartItems[idx].itemName}</div>
                                         </Link>
                                     </div>
                                     <div>
                                         <div>Price</div>
-                                        {moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}
+                                        <div>{moneyFormatter.format(this.props.cartItems[idx].price / 100)}</div>
                                     </div>
                                     <div>
-                                        <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
-                                    </div>
-                                </div>
-                            </li>
-                        ))} */}
-
-
-                        {cartItemsKey.map(cartItemId => (
-                            <li key={cartItemId}>
-                                <div>
-                                    <img src={this.props.cartItems[cartItemId].photoUrl}/>
-                                </div>
-
-                                <div className='mid-cart-cont'>
-                                    <div>
-                                        <Link to={`/items/${this.props.cartItems[cartItemId].id}`}>
-                                            <div>{this.props.cartItems[cartItemId].itemName}</div>
-                                        </Link>
-                                    </div>
-                                    <div>
-                                        <div>Price</div>
-                                        {moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}
-                                    </div>
-                                    <div>
-                                        <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
+                                        <p className='delete-cart-item' onClick={this.deleteCartItem(cartItemId)}>Delete</p>
                                     </div>
                                 </div>
                             </li>
@@ -113,7 +89,9 @@ class CartItems extends React.Component {
 
                 <div className='right-cart-cont'>
                     <div className='subtotal-cont'>
-                    <div>Subtotal ({cartItemsCount} items): <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div></div>
+                        <div>Subtotal ({cartItemsCount} items): 
+                            <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
+                        </div>
                     </div>
 
                     <button className='proceed-to-checkout'>Proceed to checkout
@@ -137,6 +115,11 @@ class CartItems extends React.Component {
     }
 
     render() {
+
+        let cartItemsCount = Object.values(this.props.cartItems).length;
+        let cartItemsKey = Object.keys(this.props.cartItems);
+        let cartItemsVal = Object.values(this.props.cartItems);
+        
         if (!this.props.cartItems) {
             return (
                 <div>
@@ -162,7 +145,58 @@ class CartItems extends React.Component {
             return (
                 <div>
                     <Header/>
-                    <div>{this.cartFull}</div>
+                        
+                    <div>Shopping Cart</div>
+                    <div className='left-cart-cont'>
+                        <ul>
+                            {cartItemsKey.map((cartItemId, idx) => (
+                                <li key={idx}>
+                                    <div>
+                                        <img src={this.props.cartItems[cartItemId].photoUrl}/>
+                                    </div>
+
+                                    <div className='mid-cart-cont'>
+                                        <div>
+                                            <Link to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
+                                                <div>{this.props.cartItems[cartItemId].itemName}</div>
+                                            </Link>
+                                        </div>
+                                        <div>
+                                            <div>Price</div>
+                                            <div>{moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}</div>
+                                        </div>
+                                        <div>
+                                            <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className='right-cart-cont'>
+                        <div className='subtotal-cont'>
+                            <div>Subtotal ({cartItemsCount} items): 
+                                <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
+                            </div>
+                        </div>
+
+                        <button className='proceed-to-checkout'>Proceed to checkout
+                            <div className='checkout'>
+                                Thank you! Your order has been received.
+                            </div>
+                        </button>
+
+                        <div>
+                            <div>In Stock</div>
+                            <div>Prime & FREE Returns</div>
+                        </div>
+
+                        <label className='gift'>
+                            <input type='checkbox' className='gift-checkbox'/><div className='gift-text'>This is a gift</div>
+                        </label>
+                    </div>
+
                 </div>
             )
 
