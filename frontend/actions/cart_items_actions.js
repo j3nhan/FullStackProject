@@ -20,6 +20,11 @@ const removeCartItem = cartItemId => ({
     cartItemId
 })
 
+const removeCart = cartItems => ({
+    type: CLEAR_CART,
+    cartItems
+})
+
 export const fetchCartItems = () => dispatch => (
     CartItemsAPIUtil.fetchCartItems()
     .then(res => dispatch(receiveCartItems(res)))
@@ -46,5 +51,6 @@ export const deleteCartItem = cartItemId => dispatch => (
 );
 
 export const clearCart = () => dispatch => (
-    dispatch({type: CLEAR_CART})
-)
+    CartItemsAPIUtil.clearCart()
+    .then(res => dispatch(removeCart(res)))
+);
