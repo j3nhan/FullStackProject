@@ -7,10 +7,6 @@ class CartItems extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            total: 0
-        }
-
         this.updateTotal = this.updateTotal.bind(this);
         this.updateQuantity = this.updateQuantity.bind(this);
         this.deleteCartItem = this.deleteCartItem.bind(this);
