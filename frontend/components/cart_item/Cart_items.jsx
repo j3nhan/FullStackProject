@@ -10,7 +10,6 @@ class CartItems extends React.Component {
         this.updateTotal = this.updateTotal.bind(this);
         this.updateQuantity = this.updateQuantity.bind(this);
         this.deleteCartItem = this.deleteCartItem.bind(this);
-        this.clearCart = this.clearCart.bind(this);
     }
 
     updateTotal(cartItemsValue) {
@@ -43,15 +42,6 @@ class CartItems extends React.Component {
         if (oldProps.length !== newProps.length) {
             this.props.fetchCartItems();
         } 
-    }
-
-    clearCart(e) {
-        e.preventDefault();
-        this.props.clearCart()
-    }
-
-    componentWillUnmount() {
-        this.props.clearCart();
     }
 
     render() {
@@ -123,7 +113,7 @@ class CartItems extends React.Component {
                             </div>
                         </div>
 
-                        <button className='proceed-to-checkout' onClick={this.clearCart}>Proceed to checkout</button>
+                        <button className='proceed-to-checkout'>Proceed to checkout</button>
 
                         <div>
                             <div>In Stock</div>
