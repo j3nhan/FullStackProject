@@ -15,9 +15,9 @@ const receiveCartItem = cartItem => ({
     cartItem
 });
 
-const removeCartItem = cartItemId => ({
+const removeCartItem = cartItem => ({
     type: REMOVE_CART_ITEM,
-    cartItemId
+    cartItem
 })
 
 const removeCart = cartItems => ({
