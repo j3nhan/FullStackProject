@@ -1,0 +1,122 @@
+.checkout-product {
+    display: block;
+    box-sizing: border-box;
+    min-width: 998px;
+    padding: 14px 18px 18px;
+    margin: 0 auto;
+    margin: 0 auto;
+    min-width: 700px;
+    background-color: #EAEDED!important;
+}
+
+.left-cart-cont {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    padding: 20px 20px 15px;
+    margin: 0px 0px 20px;
+}
+
+.price-title {
+    color: #565959!important; 
+    box-sizing: border-box;
+    text-align: right!important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #DDD;
+}
+
+.main-cont {
+    display: flex;
+    flex-direction: row;
+}
+
+.checkout-product-image {
+    object-fit: contain;
+    width: 180px;
+    height: 180px;
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 14px 0px;
+    border-bottom: 1px solid #DDD;
+}
+
+.checkout-product-info {
+    padding-left: 20px;
+}
+
+.checkout-product-title {
+    font-size: 18px!important;
+    line-height: 1.3em !important;
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+
+.price-product {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-title {
+font-size: 28px;
+font-weight: 450;
+line-height: 36px;
+padding: 0;
+margin: 0;
+}
+
+.delete-cart-item {
+    background: 0 0;
+    border: 0;
+    color: #0066C0;
+    cursor: pointer;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    font: inherit;
+    font-size: 12px!important;
+    line-height: 16px!important;
+}
+
+
+
+.checkout-right {
+display: flex;
+flex-direction: column;
+margin-top: 20px;
+width: 300px;
+height: 150px;
+padding: 20px;
+background-color: white;
+border: 1px solid #dddddd;
+border-radius: 3px;
+justify-content: space-between;
+}
+
+.subtotal-gift {
+display: flex;
+align-items: center;
+}
+
+.subtotal-gift > input {
+margin-right: 5px;
+}
+
+.subtotal > button {
+background: #f0c14b;
+border-radius: 2px;
+width: 100%;
+height: 30px;
+border: 1px solid;
+margin-top: 10px;
+color: #111;
+border-color: #a88734 #9c7e31 #846a29;
+cursor: pointer;
+}
+  
