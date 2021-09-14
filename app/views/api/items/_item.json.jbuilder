@@ -1,4 +1,4 @@
-json.extract! item, :id, :item_name, :description, :price, :rating, :cart_item_id, :review_id
+json.extract! item, :id, :item_name, :description, :price, :rating
 json.photoUrl url_for(item.photo)
 
 json.reviews item.reviews.each do |review|

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Slider from '../slider/Slider'
 import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -54,24 +54,22 @@ class Homepage extends React.Component {
                     <div className="header-nav">
                         <Link to='/signin' className='header-link'>
                             <div className="header-option">
-                                <span className="header-option1">Hello, {this.props.currentUser.name}</span>
+                                <span className="header-option1">Hello,</span>
+                                <span className="header-option2">{this.props.currentUser.name}</span>
+                            </div>
+                        </Link>
+
+                            <div className="header-option">
                                 <button className='header-option2-signout' type='submit' onClick={this.signedoutHome}>Sign Out</button>
                             </div>
-                        </Link>
-
-                        <Link to='/orders' className='header-link'>
-                            <div className="header-option">
-                                <span className="header-option1">Returns</span>
-                                <span className="header-option2">& Orders</span>
-                            </div>
-                        </Link>
 
                         <Link to='/checkout' className='header-link'>
-                            <div className="header-basket">
+                            <div className="header-basket-homepage">
                                 <ShoppingCartIcon/>
-                                <span className="header-option2 basket-count">0</span>
+                                <span className="header-option2 basket-count">{Object.values(this.props.cart).length}</span>
                             </div>
                         </Link>
+
                     </div>
                 </nav>
             </div> 
@@ -107,24 +105,21 @@ class Homepage extends React.Component {
                     </div>
 
                     <div className="header-nav">
+                            <div className="header-option">
+                                <span className="header-option1">Hello,</span>
+                                <span className="header-option2">Guest</span>
+                            </div>
+
                         <Link to='/signin' className='header-link'>
                             <div className="header-option">
-                                <span className="header-option1">Hello</span>
-                                <span className="header-option2">Sign In</span>
-                            </div>
-                        </Link>
-
-                        <Link to='/orders' className='header-link'>
-                            <div className="header-option">
-                                <span className="header-option1">Returns</span>
-                                <span className="header-option2">& Orders</span>
+                                <button className='header-option2-signout'>Sign In</button>
                             </div>
                         </Link>
 
                         <Link to='/checkout' className='header-link'>
-                            <div className="header-basket">
+                            <div className="header-basket-homepage">
                                 <ShoppingCartIcon/>
-                                <span className="header-option2 basket-count">0</span>
+                                <span className="header-option2 basket-count">{Object.values(this.props.cart).length}</span>
                             </div>
                         </Link>
                     </div>
@@ -176,12 +171,12 @@ class Homepage extends React.Component {
                         Back to top
                     </div>
                     <div className='bottom-footer'>
-                        <div className='meet-me'>Meet the Creator
+                        <div className='meet-me'>Get to Know Me
                             <li id='first'>
-                                Jenny Nhan  |  
-                                <a className='connectlinks' href=''>LinkedIn</a>  |  
-                                <a className='connectlinks' href=''>Email</a>  |  
-                                <a className='connectlinks' href=''>GitHub</a>
+                                <a className='connectlinks' href='https://jennynhan.com'>Jenny Nhan</a>  |  
+                                <a className='connectlinks' href='https://linkedin.com/in/jennynhan/'> LinkedIn</a>  |  
+                                <a className='connectlinks' href='mailto:j3nnynhan@gmail.com'> Email</a>  |  
+                                <a className='connectlinks' href='https://github.com/j3nhan'> GitHub</a>  
                             </li>
                         </div>
                     </div>

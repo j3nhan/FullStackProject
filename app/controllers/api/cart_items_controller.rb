@@ -1,18 +1,17 @@
 class Api::CartItemsController < ApplicationController
-    def show
-        @cart_item = CartItem.find(params[:id])
-        return nil if !current_user
-
-        if @cart_item
-            render :show
-        else
-            render json: @cart_item.errors.full_messages, status: 404 
+    def index 
+        if current_user
+            @cart_items = CartItem.all
         end
     end
 
-    def create
-        cart_item_params[:user_id] != "" ? @cart_item = CartItem.new(cart_item_params) : @cart_item = CartItem.new()
+    def show
+        @cart_item = CartItem.find(params[:id])
+        return nil if !current_user
+    end
 
+    def create
+        @cart_item = CartItem.new(cart_item_params)
         if @cart_item.save!
             render :show
         else
@@ -31,12 +30,13 @@ class Api::CartItemsController < ApplicationController
     end
 
     def destroy 
-        @cart_item = CartItem.find(params[:id])
+        @cart_item = CartItem.find_by(id: params[:id])
         @cart_item.destroy 
+        render :show
     end
 
     def cart_item_params 
-        params.require(:cart_item).permit(:id, :item_id, :user_id)
+        params.require(:cart_item).permit(:user_id, :item_id, :quantity)
     end
 
 end

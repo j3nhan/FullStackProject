@@ -5,6 +5,7 @@ import Homepage from './Homepage';
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
+    cart: state.entities.cartItems
 });
 
 const mapDispatchToProps = dispatch => ({

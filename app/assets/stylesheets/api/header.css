@@ -49,6 +49,12 @@
     font-family: Helvetica, sans-serif;
   }
 
+  .header-option2-baseket {
+      font-size: 14px;
+    font-weight: 600;
+    font-family: Helvetica, sans-serif;
+  }
+
   .header-option2-signout {
     font-size: 13px;
     font-weight: 600;
@@ -97,6 +103,14 @@
   .header-basket {
     display: flex;
     align-items: center;
+    margin-right: 25px;
+    justify-self: center;
+  }
+
+  .header-basket-homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .basket-count {

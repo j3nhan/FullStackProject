@@ -9,8 +9,10 @@
 require 'open-uri'
 
 User.destroy_all
-demo_signin = User.create!(name: 'VIP', email: 'winning@winning.com', password: 'winning')
+demo = User.create!(name: 'Shopper', email: 'shopper@shopper.com', password: 'shopper')
 
+CartItem.destroy_all
+Review.destroy_all
 Item.destroy_all
 
 item1 = Item.create!(item_name:'Avocado', description: 'Freshly picked', price: 150, rating: 5)
@@ -21,7 +23,7 @@ item3 = Item.create!(item_name:'Kale', description: 'Most healthy vegetable on t
 item3.photo.attach(io: URI.open('https://valyou-dev.s3.us-west-1.amazonaws.com/farmersmarket/kale.jpg'), filename:'kale.jpg')
 item4 = Item.create!(item_name:'Lemon', description: 'Tangy with a bit of sweetness', price: 10, rating: 4)
 item4.photo.attach(io: URI.open('https://valyou-dev.s3.us-west-1.amazonaws.com/farmersmarket/lemon.jpg'), filename:'lemon.jpg')
-item5 = Item.create!(item_name:'Red Bellpepper', description: 'Spicy and fresh', price: 5099, rating: 4)
+item5 = Item.create!(item_name:'Red Bellpepper', description: 'Spicy and fresh', price: 50, rating: 4)
 item5.photo.attach(io: URI.open('https://valyou-dev.s3.us-west-1.amazonaws.com/farmersmarket/redbellpepper.jpg'), filename:'redbellpepper.jpg')
 item6 = Item.create!(item_name:'Backpack', description: 'Perfect for all locations', price:1800, rating: 5)
 item6.photo.attach(io: URI.open('https://valyou-dev.s3.us-west-1.amazonaws.com/minorityowned/backpack1.jpg'), filename:'backpack1.jpg')

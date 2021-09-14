@@ -1,8 +1,4 @@
 json.id @cart_item.id
-json.user_id @cart_item.user_id
-json.items @cart_item.items.each do |item|
-    json.set! item.id do
-        json.partial! 'item', item: item
-        json.photoUrl url_for(item.photo)
-    end
-end
+json.item_name @cart_item.item.item_name
+json.price @cart_item.item.price
+json.photoUrl url_for(@cart_item.item.photo)

@@ -9,5 +9,3 @@ export const fetchItem = itemId => (
         url: `/api/items/${itemId}`,
     })
 )
-
-

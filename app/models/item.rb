@@ -4,5 +4,5 @@ class Item < ApplicationRecord
 
     has_one_attached :photo
     has_many :reviews, foreign_key: :item_id
-    belongs_to :cart_items, foreign_key: :cart_item_id
+    has_many :cart_items, foreign_key: :item_id
 end
