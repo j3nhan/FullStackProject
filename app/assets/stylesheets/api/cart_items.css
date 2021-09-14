@@ -180,3 +180,12 @@ background-color: white;
     font-size: 18px!important;
     font-weight: 450;
 }
+
+.zero-cart-cont {
+    margin: 20px;
+}
+
+.shop-today {
+    color: #007185;
+    text-decoration: none;
+}
