@@ -78,60 +78,60 @@ class CartItems extends React.Component {
                     <div className="checkout-product">
                         <div className="left-right-cont">
                             <div className='left-cart-cont'>
-                                    <h1 className='cart-title'>Shopping Cart</h1>
-                                    <div className="price-title">Price</div>
-                                    <ul>
-                                        {cartItemsKey.map((cartItemId, idx) => (
-                                            <li className='cart-list' key={idx}>
-                                                <div className='main-cont'>
+                                <h1 className='cart-title'>Shopping Cart</h1>
+                                <div className="price-title">Price</div>
+                                <ul>
+                                    {cartItemsKey.map((cartItemId, idx) => (
+                                        <li className='cart-list' key={idx}>
+                                            <div className='main-cont'>
+                                                <div>
+                                                    <Link to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
+                                                        <img className="checkout-product-image" src={this.props.cartItems[cartItemId].photoUrl} />
+                                                    </Link>
+                                                </div>
+
+                                                <div className="checkout-product-info">
                                                     <div>
-                                                        <Link to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
-                                                            <img className="checkout-product-image" src={this.props.cartItems[cartItemId].photoUrl} />
+                                                        <Link className="checkout-product-title" to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
+                                                            <div>{this.props.cartItems[cartItemId].itemName}</div>
                                                         </Link>
+                                                        <div className="in-stock-name">In Stock</div>
+                                                        <div className="free-shipping">Eligible for FREE Shipping & FREE Returns</div>
+                                                        <label className="subtotal-gift-one">
+                                                            <input type='checkbox' className='gift-one'/><div className='gift-text-one'>This is a gift</div>
+                                                        </label>
                                                     </div>
-
-                                                    <div className="checkout-product-info">
-                                                        <div>
-                                                            <Link className="checkout-product-title" to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
-                                                                <div>{this.props.cartItems[cartItemId].itemName}</div>
-                                                            </Link>
-                                                            <div className="in-stock-name">In Stock</div>
-                                                            <div className="free-shipping">Eligible for FREE Shipping & FREE Returns</div>
-                                                            <label className="subtotal-gift-one">
-                                                                <input type='checkbox' className='gift-one'/><div className='gift-text-one'>This is a gift</div>
-                                                            </label>
-                                                        </div>
-                                                        <div>
-                                                            <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
-                                                        </div>
+                                                    <div>
+                                                        <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
                                                     </div>
                                                 </div>
+                                            </div>
 
-                                                <div className="price-product">
-                                                    <div>{moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}</div>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                            <div className="price-product">
+                                                <div>{moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}</div>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                                
+                                <div className='total-container'>
+                                    <div className='items-count'>Subtotal ({cartItemsCount} items): </div>
+                                    <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
+                                </div>
                             </div>
 
                             <div className="checkout-right">
+                                <div className="orders-over">Orders of $25 or more of eligible items qualify for FREE Shipping.</div>
                                 <div className='subtotal-cont'>
-                                    <div>Subtotal ({cartItemsCount} items): 
-                                        <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
-                                    </div>
-                                </div>
-
-                                <button className='proceed-to-checkout'>Proceed to checkout</button>
-
-                                <div>
-                                    <div>In Stock</div>
-                                    <div>FREE Shipping & FREE Returns</div>
+                                    <div className='items-count'>Subtotal ({cartItemsCount} items): </div>
+                                    <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
                                 </div>
 
                                 <label className="subtotal-gift">
                                     <input type='checkbox' className='gift-checkbox'/><div className='gift-text'>This order contains a gift</div>
                                 </label>
+
+                                <button className='proceed-to-checkout'>Proceed to checkout</button>
                             </div>
                         </div>
                     </div>
@@ -142,9 +142,16 @@ class CartItems extends React.Component {
             return (
                 <div>
                     <Header/>
-                    <div className="checkout-title">
-                        <div>Shopping Cart</div>
-                        <div>Your ValYOU cart is empty</div>
+                    <div className="zero-cart-cont">
+                        <div className='left-cart-cont'>
+                            <h1 className='cart-title'>Your ValYOU Cart is empty.</h1>
+                            <div className="price-title">Price</div>
+
+                            <div className='total-container'>
+                                <div className='items-count'>Subtotal ({cartItemsCount} items): </div>
+                                <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )
