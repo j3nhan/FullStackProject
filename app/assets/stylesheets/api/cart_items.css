@@ -4,9 +4,14 @@
     min-width: 998px;
     padding: 14px 18px 18px;
     margin: 0 auto;
-    margin: 0 auto;
     min-width: 700px;
     background-color: #EAEDED!important;
+}
+
+.left-right-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .left-cart-cont {
@@ -15,6 +20,7 @@
     flex-direction: column;
     padding: 20px 20px 15px;
     margin: 0px 0px 20px;
+    width: 68%;
 }
 
 .price-title {
@@ -115,13 +121,10 @@ margin: 0;
 .checkout-right {
 display: flex;
 flex-direction: column;
-margin-top: 20px;
 width: 300px;
 height: 150px;
 padding: 20px;
 background-color: white;
-border: 1px solid #dddddd;
-border-radius: 3px;
 justify-content: space-between;
 }
 
