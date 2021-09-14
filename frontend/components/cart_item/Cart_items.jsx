@@ -75,56 +75,65 @@ class CartItems extends React.Component {
             return (
                 <div>
                     <Header/>
-                        
-                    <div>Shopping Cart</div>
-                    <div className='left-cart-cont'>
-                        <ul>
-                            {cartItemsKey.map((cartItemId, idx) => (
-                                <li key={idx}>
-                                    <div>
-                                        <Link to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
-                                            <img src={this.props.cartItems[cartItemId].photoUrl}/>
-                                        </Link>
-                                    </div>
+                    <div className="checkout-product">
+                        <div className='left-cart-cont'>
+                                <h1 className='cart-title'>Shopping Cart</h1>
+                                <div className="price-title">Price</div>
+                                <ul>
+                                    {cartItemsKey.map((cartItemId, idx) => (
+                                        <li className='cart-list' key={idx}>
+                                            <div className='main-cont'>
+                                                <div>
+                                                    <Link to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
+                                                        <img className="checkout-product-image" src={this.props.cartItems[cartItemId].photoUrl} />
+                                                    </Link>
+                                                </div>
 
-                                    <div className='mid-cart-cont'>
-                                        <div>
-                                            <Link to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
-                                                <div>{this.props.cartItems[cartItemId].itemName}</div>
-                                            </Link>
-                                        </div>
-                                        <div>
-                                            <div>Price</div>
-                                            <div>{moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}</div>
-                                        </div>
-                                        <div>
-                                            <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                                                <div className="checkout-product-info">
+                                                    <div>
+                                                        <Link className="checkout-product-title" to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
+                                                            <div>{this.props.cartItems[cartItemId].itemName}</div>
+                                                        </Link>
+                                                        <div>In Stock</div>
+                                                        <div>Eligible for FREE Shipping & FREE Returns</div>
+                                                        <label className="subtotal-gift">
+                                                            <input type='checkbox' className='gift-checkbox'/><div className='gift-text'>This is a gift</div>
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                    <div className='right-cart-cont'>
-                        <div className='subtotal-cont'>
-                            <div>Subtotal ({cartItemsCount} items): 
-                                <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
+                                            <div className="price-product">
+                                                <div>{moneyFormatter.format(this.props.cartItems[cartItemId].price / 100)}</div>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                        </div>
+
+                        <div className="checkout-right">
+                            <div className='subtotal-cont'>
+                                <div>Subtotal ({cartItemsCount} items): 
+                                    <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
+                                </div>
                             </div>
+
+                            <button className='proceed-to-checkout'>Proceed to checkout</button>
+
+                            <div>
+                                <div>In Stock</div>
+                                <div>FREE Shipping & FREE Returns</div>
+                            </div>
+
+                            <label className="subtotal-gift">
+                                <input type='checkbox' className='gift-checkbox'/><div className='gift-text'>This order contains a gift</div>
+                            </label>
                         </div>
-
-                        <button className='proceed-to-checkout'>Proceed to checkout</button>
-
-                        <div>
-                            <div>In Stock</div>
-                            <div>FREE Shipping & FREE Returns</div>
-                        </div>
-
-                        <label className='gift'>
-                            <input type='checkbox' className='gift-checkbox'/><div className='gift-text'>This is a gift</div>
-                        </label>
+                        
                     </div>
-
                 </div>
             )
 
@@ -132,8 +141,10 @@ class CartItems extends React.Component {
             return (
                 <div>
                     <Header/>
-                    <div>Shopping Cart</div>
-                    <div>Your ValYOU cart is empty</div>
+                    <div className="checkout-title">
+                        <div>Shopping Cart</div>
+                        <div>Your ValYOU cart is empty</div>
+                    </div>
                 </div>
             )
         }
