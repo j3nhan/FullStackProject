@@ -74,11 +74,13 @@ margin: 0;
 .in-stock-name {
     color: #007600!important;
     font-size: 12px!important;
+    padding: 3px;
 }
 
 .free-shipping {
     color: #565959!important;
     font-size: 12px!important;
+    padding: 3px;
 }
 
 .delete-cart-item {
@@ -92,19 +94,22 @@ margin: 0;
     font: inherit;
     font-size: 12px!important;
     line-height: 16px!important;
+    padding: 3px;
 }
 
 .subtotal-gift-one {
     display: flex;
     align-items: center;
+    padding: 3px;
 }
 
 .subtotal-gift-one > input {
-    margin-right: 5px;
+    padding: 3px;
 }
 
 .gift-text-one {
     font-size: 12px;
+    padding: 3px;
 }
 
 .checkout-right {
