@@ -45,7 +45,7 @@ const Header = () => {
                     <Link to='/checkout' className='header-link'>
                         <div className="header-basket">
                             <ShoppingCartIcon/>
-                            <span className="header-option2-basket basket-count">{Object.values(this.props.cart).length}</span>
+                            <span className="header-option2-basket basket-count">0</span>
                         </div>
                     </Link>
                 </div>
