@@ -94,10 +94,10 @@ class CartItems extends React.Component {
                                                         <Link className="checkout-product-title" to={`/items/${this.props.cartItems[cartItemId].itemId}`}>
                                                             <div>{this.props.cartItems[cartItemId].itemName}</div>
                                                         </Link>
-                                                        <div>In Stock</div>
-                                                        <div>Eligible for FREE Shipping & FREE Returns</div>
-                                                        <label className="subtotal-gift">
-                                                            <input type='checkbox' className='gift-checkbox'/><div className='gift-text'>This is a gift</div>
+                                                        <div className="in-stock-name">In Stock</div>
+                                                        <div className="free-shipping">Eligible for FREE Shipping & FREE Returns</div>
+                                                        <label className="subtotal-gift-one">
+                                                            <input type='checkbox' className='gift-one'/><div className='gift-text-one'>This is a gift</div>
                                                         </label>
                                                     </div>
                                                     <div>
