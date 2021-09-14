@@ -142,11 +142,14 @@ class CartItems extends React.Component {
             return (
                 <div>
                     <Header/>
-                    <div className="zero-cart-cont">
+                    <div className='zero-cart-cont'>
                         <div className='left-cart-cont'>
                             <h1 className='cart-title'>Your ValYOU Cart is empty.</h1>
                             <div className="price-title">Price</div>
-
+                            <br/>
+                            <Link to="/" className='shop-today'>
+                                <p>Shop today's deals</p>
+                            </Link>
                             <div className='total-container'>
                                 <div className='items-count'>Subtotal ({cartItemsCount} items): </div>
                                 <div className='cart-total'>{this.updateTotal(cartItemsVal)}</div>
