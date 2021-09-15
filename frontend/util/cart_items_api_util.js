@@ -32,10 +32,3 @@ export const deleteCartItem = cartItemId => (
         url: `/api/cart_items/${cartItemId}`
     })
 )
-
-export const clearCart = () => (
-    $.ajax({
-        method: 'DELETE',
-        url: 'api/cart_items/clear'
-    })
-)
