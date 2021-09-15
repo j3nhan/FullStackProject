@@ -1,28 +1,26 @@
-export const fetchReviews = () => {
-    return $.ajax({
-        method:"GET",
+export const fetchReviews = () => (
+    $.ajax({
         url: '/api/reviews'
     })
-}
+)
 
-export const fetchReview = () => {
-    return $.ajax({
-        method: "GET",
+export const fetchReview = () => (
+    $.ajax({
         url: '/api/reviews'
     })
-}
+)
 
-export const createReview = review => {
-    return $.ajax({
-        method: "POST",
+export const createReview = review => (
+    $.ajax({
+        method: 'POST',
         url: '/api/reviews',
         data: { review }
     })
-}
+)
 
-export const deleteReview = reviewId => {
+export const deleteReview = reviewId => (
     $.ajax({
-        method: "DELETE",
-        url: '/api/reviews/${reviewId}'
+        method: 'DELETE',
+        url: `/api/reviews/${reviewId}`
     })
-}
+)
