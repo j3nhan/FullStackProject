@@ -1,4 +1,4 @@
-import { RECEIVE_CART_ITEMS, RECEIVE_CART_ITEM, REMOVE_CART_ITEM, CLEAR_CART } from "../actions/cart_items_actions";
+import { RECEIVE_CART_ITEMS, RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from "../actions/cart_items_actions";
 
 const cartItemsReducer = (state = [], action) => {
     Object.freeze(state);
@@ -11,9 +11,6 @@ const cartItemsReducer = (state = [], action) => {
             return nextState;
         case REMOVE_CART_ITEM:
             delete nextState[action.cartItem.id];
-            return nextState;
-        case CLEAR_CART:
-            delete nextState[action.cartItems];
             return nextState;
         default: 
             return state;
