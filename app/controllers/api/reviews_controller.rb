@@ -1,20 +1,26 @@
 class Api::ReviewsController < ApplicationController
     def index
-        @reviews = Review.all
+        if params[:item_id]
+            @reviews = Review.where(item_id: params[:item_id])
+        else
+            @reviews = Review.all
+        end
+
         render :index
     end
 
     def show
-        @review = Review.find_by(item_id: params[:item_id])
-        if @reviews
+        @review = Review.find(params[:id])
             render :show
-        end
     end
 
     def create
         @review = Review.new(review_params)
-        if @review.save
-            render :show
+        @review.author_id = current_user.id
+        @review.item_id = params[:review][:item_id]
+        if @review.save!
+            @reviews = Review.all
+            render :index
         else
             render json: @review.errors.full_messages, status: 401
         end
