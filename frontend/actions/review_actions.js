@@ -25,14 +25,14 @@ export const receiveReviewErrors = errors => ({
     errors
 })
 
-export const fetchReviews = () => dispatch => (
-    ReviewAPIUtil.fetchReviews()
+export const fetchReviews = itemId => dispatch => (
+    ReviewAPIUtil.fetchReviews(itemId)
     .then(res => dispatch(receiveReviews(res))),
     err => (dispatch(receiveReviewErrors(err)))
 )
 
-export const createReview = review => dispatch => (
-    ReviewAPIUtil.createReview(review)
+export const createReview = (review, itemId) => dispatch => (
+    ReviewAPIUtil.createReview(review, itemId)
     .then(res => dispatch(receiveReview(res)),
     err => dispatch(receiveReviewErrors(err)))
 )
