@@ -4,16 +4,15 @@ import { createReview } from '../../actions/review_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
-        formType: "Create Review",
-        review: {
-            user_id: state.session.id,
-            title: '',
-            body: '',
-            item_id: ownProps.match.params.itemId,
-            rating: 1
-        },
-        item: state.entities.items[ownProps.match.params.itemId]
-
+    review: {
+        user_id: state.session.id,
+        title: '',
+        body: '',
+        item_id: ownProps.match.params.itemId,
+        rating: 1
+    },
+    
+    item: state.entities.items[ownProps.match.params.itemId]
 });
 
 const mapDispatchToProps = dispatch => ({
