@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
     has_many :cart_items, foreign_key: :user_id
     has_many :reviews, foreign_key: :author_id
-    has_many :item_reviews, through: :reviews, source: :item
+    has_many :item_reviews, foreign_key: :item_id
 
     def self.find_by_credentials(email, password)
         @user = User.find_by(email: email)
