@@ -1,5 +1,6 @@
 import React from 'react';
 import Rating from 'react-rating';
+import Header from '../header/Header';
 
 class Review extends React.Component {
     constructor(props) {
@@ -37,11 +38,12 @@ class Review extends React.Component {
         
         return (
             <div>
+                <Header/>
                 <form onSubmit={this.handleSubmit}>
                     <h3>Create Review</h3>
                     <div>
-                        <img src={item.photoUrl} />
-                        <div>{item.itemName}</div>
+                        {/* <img src={this.props.item.photoUrl} /> */}
+                        {/* <div>{item.itemName}</div> */}
                     </div>
 
                     <div>
