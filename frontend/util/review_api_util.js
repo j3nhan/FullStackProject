@@ -1,6 +1,6 @@
-export const fetchReviews = (reviewId) => (
+export const fetchReviews = itemId => (
     $.ajax({
-        url: `/api/reviews/${itemId}/reviews`
+        url: `/api/items/${itemId}/reviews`
     })
 )
 
