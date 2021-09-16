@@ -70,9 +70,7 @@ class Review extends React.Component {
                 </form>
             </div>
         )
-
     }
-    
 }
 
 export default Review;
