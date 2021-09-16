@@ -2,17 +2,19 @@ import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/revie
 
 const reviewsReducer = (state={}, action) => {
     Object.freeze(state)
-    let nextState = Object.assign({}, state)
+    let nextState = Object.assign({}, state);
+
     switch(action.type) {
         case RECEIVE_REVIEWS:
-            return action.reviews
+            return action.reviews;
         case RECEIVE_REVIEW:
-            return Object.assign({}, state, {[action.review.id]: action.review})
+            nextState[action.review.id] = action.review
+            return nextState;
         case REMOVE_REVIEW:
-            delete nextState[action.review.id]
-            return nextState
+            delete nextState[action.reviewId]
+            return nextState;
         default:
-            return state
+            return state;
     }
 }
 
