@@ -1,9 +1,12 @@
 import { connect } from 'react-redux';
 import Review from './Review';
 import { createReview } from '../../actions/review_actions';
+import { fetchItem } from '../../actions/item_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
     item: state.entities.items[ownProps.match.params.itemId],
+    itemIdMat: ownProps.match.params.itemId,
 
     review: {
         title: '',
@@ -15,7 +18,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    createReview: (review, itemId) => dispatch(createReview(review, itemId))
+    createReview: (review, itemId) => dispatch(createReview(review, itemId)),
+    fetchItem: itemId => dispatch(fetchItem(itemId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Review);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Review));
