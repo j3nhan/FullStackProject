@@ -20,8 +20,8 @@ class ReviewIndex extends React.Component {
     }
 
     render() {
-        console.log(this.props);
-        const { reviews } = this.props;
+        const { reviews} = this.props;
+
         const starIcon = (
             <img className="rating-star" src={'images/staricon.svg'} />
         )
@@ -40,7 +40,7 @@ class ReviewIndex extends React.Component {
                             <div key={review.id}>
                                 <div>
                                     <img src={'images/profilepic.jpeg'} alt='profile'/>
-                                    <div>{review.author}</div>
+                                    <div>{this.props.authors[0].name}</div>
                                 </div>
 
                                 <div>
