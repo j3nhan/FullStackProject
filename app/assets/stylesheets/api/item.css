@@ -1,3 +1,12 @@
+.item-show-entire {
+  background-color: white;
+}
+
+.horizontal-line {
+  width: 95%;
+  color: #e7e7e7;
+}
+
 .item {
     display: flex;
     flex-direction: column;
