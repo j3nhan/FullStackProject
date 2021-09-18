@@ -4,7 +4,6 @@ import { moneyFormatter } from '../../util/money_util';
 import LoadingPage from '../Loading_page';
 import Header from '../header/Header';
 import ReviewIndexContainer from './Review_index_container'
-// import Review from './Review';
 
 class ItemShow extends React.Component {
     componentDidMount() {
@@ -43,15 +42,6 @@ class ItemShow extends React.Component {
                 </div>
             )
         }
-
-        const reviewButton = (this.props.currentUser) ? (
-            <Link to={`/reviews/create/${item.id}`}>
-                <button className="review-button">Write a customer review</button></Link>
-        ) : (
-            <Link to={"/signin"}>
-                <button className="review-button">Write a customer review</button>
-            </Link>
-        )
         
         if (item) return (
             <div>
@@ -103,8 +93,14 @@ class ItemShow extends React.Component {
                         <h4>Review this Product</h4>
                         <div>Share your thoughts with other customers</div>
                         <div>
-                            {/* <Review item={this.props.item} review={this.props.review} createReview={this.props.createReview}/> */}
-                            {reviewButton}
+                            {this.props.currentUser ? 
+                                <Link to={`/reviews/create/${item.id}`}>
+                                    <button className="review-button">Write a customer review</button></Link>
+                             : 
+                                <Link to={"/signin"}>
+                                    <button className="review-button">Write a customer review</button>
+                                </Link>
+                            }
                         </div>
                     </div>
 
