@@ -33,13 +33,13 @@ class Review extends React.Component {
 
     render() {
         const { item } = this.props;
-        // const starIcon = (
-        //     <img className="rating-star" src={'images/staricon.svg'} />
-        // )
+        const starIcon = (
+            <img className="rating-star" src={'images/staricon.svg'} />
+        )
 
-        // const noStar = (
-        //     <img className="rating-star" src={'images/nostar.svg'} />
-        // )
+        const noStar = (
+            <img className="rating-star" src={'images/nostar.svg'} />
+        )
 
         if (!item) {
             return (
@@ -61,13 +61,13 @@ class Review extends React.Component {
                     </div>
 
                     <div>
-                        {/* <h4>Overall Rating</h4> */}
-                        {/* <Rating
+                        <h4>Overall Rating</h4>
+                        <Rating
                             initialRating={ this.state.rating }
                             emptySymbol={ noStar }
                             fullSymbol={ starIcon }
                             onChange={ this.updateReview('rating') }
-                        /> */}
+                        />
                     </div>
 
                     <div>
