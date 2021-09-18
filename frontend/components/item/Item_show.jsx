@@ -46,17 +46,14 @@ class ItemShow extends React.Component {
         if (item) return (
             <div className="item-show-entire">
                 <Header/>
-                <div className='itemshow-div'>
                     <div className='itemshow-main-div'>
-                        <div className='itemshow-pic-div'>
+                        <div>
                             <img className='itemshow-pic-img' src={item.photoUrl} />
                         </div>
 
                         <div className='itemshow-details-div'>
-                            <div className='itemshow-details-name'>
-                                {item.itemName}
-                                <p className='itemshow-details-seller'>Support Yours Truly</p>
-                            </div>
+                            <div className='itemshow-details-name'>{item.itemName}</div>
+                            <p className='itemshow-details-seller'>Support Yours Truly</p>
                             <div className='itemshow-details-rating-div'>
                                 <div className="rating">
                                     {Array(item.rating).fill().map((_, idx) => (
@@ -65,11 +62,16 @@ class ItemShow extends React.Component {
                                         </div>
                                     ))}
                                 </div>
+                                <div className="ratings-word">1000 ratings</div>
                             </div>
-                            <div className='itemshow-details-price-div'>
-                            <p>Price: </p>
-                            <p className='itemshow-details-price'>{moneyFormatter.format(item.price / 100)}</p>
+                            <div className='best-seller'>#1 Best Seller</div>
+                            
+                            <div className='itemshow-price-div'>
+                                <div className='itemshow-price'>Price: </div>
+                                <div className='itemshow-details-price'>{moneyFormatter.format(item.price / 100)}</div>
+                                <div clasName='fast-shipping'>Get <span id='free-bold'>Fast, Free Shipping</span> with ValYOU Prime</div>
                             </div>
+
                             <div className='itemshow-details-description-div'>
                                 <p>About this item</p>
                                 <ul className='itemshow-details-description-bullets'>
@@ -77,7 +79,6 @@ class ItemShow extends React.Component {
                                     <li>ValYOU's Choice</li>
                                     <li>Environmentally Friendly and Cruelty-Free</li>
                                     <li>Made with love and care</li>
-                                    <li>Fast and Free Shipping</li>
                                     <li>Eligible for Return, Refund or Replacement</li>
                                 </ul>
                             </div>
@@ -85,7 +86,6 @@ class ItemShow extends React.Component {
                             <button className="clickbutton" onClick={this.addToCart}>Add to Cart</button>
                         </div>
                     </div>
-                </div>
 
                 <hr className="horizontal-line"/>
                 <div className="review-show-cont">          
