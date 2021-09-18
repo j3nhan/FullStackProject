@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
 import { fetchReviews, deleteReview } from '../../actions/review_actions'
 import ReviewIndex from './Review_index'
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
+    item: state.entities.items[ownProps.match.params.itemId],
+    itemIdMat: ownProps.match.params.itemId,
     reviews: Object.values(state.entities.reviews),
     authors: state.entities.users,
-    authorId: state.session.id,
-    // userKey: Object.keys(state.entities.users),
-    // reviewKey: Object.keys(state.entities.reviews)
+    currentUser: state.session.id,
+    reviewId: Object.keys(state.entities.reviews)
 });
 
 const mapDispatchToProps = dispatch => ({
     fetchReviews: itemId => dispatch(fetchReviews(itemId)),
-    deleteReview: reviewId => dispatch(deleteReview(reviewId)),
+    deleteReview: reviewId => dispatch(deleteReview(reviewId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReviewIndex));
