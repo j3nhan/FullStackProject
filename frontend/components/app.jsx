@@ -17,7 +17,7 @@ const App = () => {
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/signin" component={SigninContainer} />
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
-                <Route exact path="/review/create" component={ReviewContainer}/>
+                <Route exact path="/reviews/create/:itemId" component={ReviewContainer}/>
                 <Route exact path='/checkout' component={CartItemsContainer} />
                 <Route path="*" component={ NoPageFound } />
             </Switch>
