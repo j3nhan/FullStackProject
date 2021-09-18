@@ -44,7 +44,7 @@ class ItemShow extends React.Component {
         }
         
         if (item) return (
-            <div>
+            <div className="item-show-entire">
                 <Header/>
                 <div className='itemshow-div'>
                     <div className='itemshow-main-div'>
@@ -87,10 +87,12 @@ class ItemShow extends React.Component {
                     </div>
                 </div>
 
+                <hr className="horizontal-line"/>
                 <div className="review-show-cont">
+                                        
                     <div>
-                        <h3>Customer Reviews</h3>
-                        <h4>Review this Product</h4>
+                        <h2>Customer Reviews</h2>
+                        <h3>Review this Product</h3>
                         <div>Share your thoughts with other customers</div>
                         <div>
                             {this.props.currentUser ? 
