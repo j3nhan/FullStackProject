@@ -12,11 +12,9 @@ class ReviewIndex extends React.Component {
         this.props.fetchReviews(this.props.itemIdMat)
     }
 
-    deleteReview(reviewId) {
-        return (() => 
-            this.props.deleteReview(reviewId)
-            .then(() => this.props.history.push(`/items/${this.props.itemIdMat}`))
-        )
+    deleteReview(e) {
+        e.preventDefault();
+        this.props.deleteReview(this.props.reviewId)
     }
 
     render() {
@@ -65,7 +63,7 @@ class ReviewIndex extends React.Component {
                                     <div>
                                         {this.props.currentUser === review.authorId ?
                                             <div>
-                                                <button className="review-delete-btn" onClick={this.deleteReview(review.id)}>Delete</button>
+                                                <button className="review-delete-btn" onClick={() => this.props.deleteReview(review.id)}>Delete</button>
                                             </div>
                                             : 
                                             null
