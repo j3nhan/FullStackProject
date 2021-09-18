@@ -20,7 +20,7 @@ class ReviewIndex extends React.Component {
     }
 
     render() {
-        const { reviews} = this.props;
+        const { reviews } = this.props;
 
         const starIcon = (
             <img className="rating-star" src={'images/staricon.svg'} />
@@ -63,7 +63,7 @@ class ReviewIndex extends React.Component {
 
                                 <div>
                                     <div>
-                                        {this.props.currentUser === review.author_id ?
+                                        {this.props.currentUser === review.authorId ?
                                             <div>
                                                 <button className="review-delete-btn" onClick={this.deleteReview(review.id)}>Delete</button>
                                             </div>
