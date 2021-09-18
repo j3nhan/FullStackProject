@@ -19,11 +19,6 @@ const removeCartItem = cartItem => ({
     cartItem
 })
 
-const removeCart = cartItems => ({
-    type: CLEAR_CART,
-    cartItems
-})
-
 export const fetchCartItems = () => dispatch => (
     CartItemsAPIUtil.fetchCartItems()
     .then(res => dispatch(receiveCartItems(res)))
