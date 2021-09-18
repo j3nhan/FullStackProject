@@ -28,20 +28,20 @@ class ReviewIndex extends React.Component {
         )
 
         return (
-            <div>
-                <h2>Top Global Reviews</h2>
+            <div className="review-page-index">
+                <h2 className="global-reviews">Top Global Reviews</h2>
                 <ul>
                     {reviews.map(review => {
-                        const dateCreated = new Date(review.created_at).toDateString()
+                        const dateCreated = new Date().toDateString()
 
                         return (
                             <div key={review.id}>
-                                <div>
-                                    <img src={'images/profilepic.jpeg'} alt='profile'/>
-                                    <div>{this.props.authors[0].name}</div>
+                                <div className="image-name">
+                                    <img src={'images/profilepic.jpeg'} alt='profile' className='profile-pic'/>
+                                    <div className='author-name'>{this.props.authors[0].name}</div>
                                 </div>
 
-                                <div>
+                                <div className='rating-title'>
                                     <div>
                                         <Rating 
                                             initialRating={ review.rating }
@@ -52,18 +52,20 @@ class ReviewIndex extends React.Component {
                                         />
                                     </div>
 
-                                    <div>{review.title}</div>
+                                    <div className='rev-title'>{review.title}</div>
                                 </div>
 
-                                <div>Reviewed on {dateCreated}</div>
-                                <div>Verified Purchase</div>
-                                <div>{review.body}</div>
+                                <div className="date-rev">Reviewed on {dateCreated}</div>
+                                <div className='ver-pur'>Verified Purchase</div>
+                                <div className='body-rev'>{review.body}</div>
 
                                 <div>
                                     <div>
                                         {this.props.currentUser === review.authorId ?
                                             <div>
-                                                <button className="review-delete-btn" onClick={() => this.props.deleteReview(review.id)}>Delete</button>
+                                                <button className="review-delete-btn" onClick={() => this.props.deleteReview(review.id)}>
+                                                    <div className='delete-text'>Delete</div>
+                                                </button>
                                             </div>
                                             : 
                                             null
