@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { moneyFormatter } from '../../util/money_util';
 import LoadingPage from '../Loading_page';
 import Header from '../header/Header';
+import ReviewIndexContainer from './Review_index_container'
+// import Review from './Review';
 
 class ItemShow extends React.Component {
     componentDidMount() {
@@ -33,7 +35,7 @@ class ItemShow extends React.Component {
 
     render() {
         const { item } = this.props;
-        
+
         if (!item) {
             return (
                 <div>
@@ -41,6 +43,15 @@ class ItemShow extends React.Component {
                 </div>
             )
         }
+
+        const reviewButton = (this.props.currentUser) ? (
+            <Link to={`/reviews/create/${item.id}`}>
+                <button className="review-button">Write a customer review</button></Link>
+        ) : (
+            <Link to={"/signin"}>
+                <button className="review-button">Write a customer review</button>
+            </Link>
+        )
         
         if (item) return (
             <div>
@@ -85,6 +96,25 @@ class ItemShow extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div className="review-show-cont">
+                    <div>
+                        <h3>Customer Reviews</h3>
+                        <h4>Review this Product</h4>
+                        <div>Share your thoughts with other customers</div>
+                        <div>
+                            {/* <Review item={this.props.item} review={this.props.review} createReview={this.props.createReview}/> */}
+                            {reviewButton}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <ReviewIndexContainer itemId={this.props.item.id} />
+                        </div>
+                    </div>
+                </div>
+
             </div>
         )
 
