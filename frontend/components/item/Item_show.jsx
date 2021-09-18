@@ -88,28 +88,29 @@ class ItemShow extends React.Component {
                 </div>
 
                 <hr className="horizontal-line"/>
-                <div className="review-show-cont">
-                                        
-                    <div>
-                        <h2>Customer Reviews</h2>
-                        <h3>Review this Product</h3>
-                        <div>Share your thoughts with other customers</div>
+                <div className="review-show-cont">          
+                    <div className="review-left-cont">
+                        <h2 className="customer-review-title">Customer Reviews</h2>
+                        <h3 className='review-this'>Review this Product</h3>
+                        <div className='share-thoughts'>Share your thoughts with other customers</div>
                         <div>
                             {this.props.currentUser ? 
                                 <Link to={`/reviews/create/${item.id}`}>
-                                    <button className="review-button">Write a customer review</button></Link>
+                                    <button className="review-button">
+                                        <div className="review-text">Write a customer review</div>
+                                    </button></Link>
                              : 
                                 <Link to={"/signin"}>
-                                    <button className="review-button">Write a customer review</button>
+                                    <button className="review-button">
+                                        <div className="review-text">Write a customer review</div>
+                                    </button>
                                 </Link>
                             }
                         </div>
                     </div>
 
-                    <div>
-                        <div>
-                            <ReviewIndexContainer itemId={this.props.item.id} />
-                        </div>
+                    <div className="review-right-cont">
+                        <ReviewIndexContainer itemId={this.props.item.id} />
                     </div>
                 </div>
 
