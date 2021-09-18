@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { fetchItems, fetchItem } from '../../actions/item_actions';
 import { createCartItem, updateCartItem, deleteCartItem } from '../../actions/cart_items_actions';
 import ItemShow from './Item_show';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.id,
@@ -18,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
     deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ItemShow));
