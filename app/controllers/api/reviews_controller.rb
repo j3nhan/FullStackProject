@@ -11,7 +11,7 @@ class Api::ReviewsController < ApplicationController
 
     def show
         @review = Review.find(params[:id])
-            render :show
+        render :show
     end
 
     def create
@@ -23,7 +23,7 @@ class Api::ReviewsController < ApplicationController
             @reviews = Review.all
             render :index
         else
-            render json: @review.errors.full_messages, status: 401
+            render json: @review.errors.full_messages, status: 422
         end
     end
 
