@@ -33,11 +33,11 @@ class Review extends React.Component {
     render() {
         const { item } = this.props;
         const starIcon = (
-            <img className="rating-star" src={'images/staricon.svg'} />
+            <img className="rating-star-rev" src={'images/staricon.svg'} />
         )
 
         const noStar = (
-            <img className="rating-star" src={'images/nostar.svg'} />
+            <img className="rating-star-rev" src={'images/nostar.svg'} />
         )
 
         if (!item) {
@@ -49,36 +49,37 @@ class Review extends React.Component {
         }
         
         return (
-            <div>
+            <div className='review-page-entire'>
                 <form onSubmit={this.handleSubmit}>
-                    <h3>Create Review</h3>
-                    <div>
-                        <img src={this.props.item.photoUrl} /> 
-                        <div>{this.props.item.itemName}</div>
+                    <h3 className='create-review-title'>Create Review</h3>
+                    <div className='photo-name-cont'>
+                        <img className='photo-review' src={this.props.item.photoUrl} /> 
+                        <div className='item-name-review'>{this.props.item.itemName}</div>
                     </div>
 
-                    <div>
-                        <h4>Overall Rating</h4>
+                    <div className='star-cont'>
+                        <h3 className='overall-rating'>Overall Rating</h3>
                         <Rating
                             initialRating={ this.state.rating }
                             emptySymbol={ noStar }
                             fullSymbol={ starIcon }
                             onChange={ this.updateReview('rating') }
+                            className="rating-cont-rev"
                         />
                     </div>
 
-                    <div>
-                        <h4>Add a headline</h4>
-                        <input type="text" onChange={this.updateState('title')} value={this.state.title} placeholder="What's most important to know?"/>
+                    <div className='headline-cont'>
+                        <h4 className="headline-title">Add a headline</h4>
+                        <input className='headline-input' type="text" onChange={this.updateState('title')} value={this.state.title} placeholder="What's most important to know?"/>
                     </div>
 
                     <div>
-                        <h4>Add a written review</h4>
-                        <textarea onChange={this.updateState('body')} value={this.state.body} placeholder="What did you like or dislike? What did you use this product for?" ></textarea>                    
+                        <h4 className='headline-title'>Add a written review</h4>
+                        <textarea className='rev-input' onChange={this.updateState('body')} value={this.state.body} placeholder="What did you like or dislike? What did you use this product for?" ></textarea>                    
                     </div>
 
-                    <div>
-                        <button>Submit</button>
+                    <div className='submit-btn-cont'>
+                        <button className='submit-rev-button'>Submit</button>
                     </div>
                 </form>
             </div>
