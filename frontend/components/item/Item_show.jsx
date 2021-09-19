@@ -109,7 +109,9 @@ class ItemShow extends React.Component {
                         </div>
                     </div>
 
-                <hr className="horizontal-line"/>
+                <div className='horizontal-line-cont'>
+                    <div className="horizontal-line"></div>
+                </div>
                 <div className="review-show-cont">          
                     <div className="review-left-cont">
                         <h2 className="customer-review-title">Customer Reviews</h2>
