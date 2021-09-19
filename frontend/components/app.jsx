@@ -3,7 +3,7 @@ import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SignupContainer from './signup/Signup_container';
 import SigninContainer from './signin/Signin_container';
-import HomepageContainer from './home/Homepage_container'
+import Homepage from './home/Homepage'
 import ItemShowContainer from './item/Item_show_container'
 import ReviewContainer from './item/Review_container'
 import CartItemsContainer from './cart_item/Cart_items_container';
@@ -15,7 +15,7 @@ const App = () => {
         <div>
             <HeaderContainer/>
             <Switch>
-                <Route exact path="/" component={HomepageContainer} />
+                <Route exact path="/" component={Homepage} />
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/signin" component={SigninContainer} />
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
