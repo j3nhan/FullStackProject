@@ -5,7 +5,7 @@ const ItemCard = ({ item }) => {
     return (
         <li className='item-index-item'>
             <Link className='item-body' to={`/items/${item.id}`}>
-                <div className='photo-cont'>
+                <div>
                     <img className='index-item-photo' src={item.photoUrl}></img>
                 </div>
             </Link>

@@ -1,0 +1,109 @@
+.review-page-entire {
+    background-color: white;
+    padding: 20px 30px!important;
+    height: 85vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.create-review-title {
+    font-size: 24px;
+    font-weight: 700!important;
+    line-height: 32px;
+    font: Arial, Helvetica, sans-serif;
+    padding: 13px 0px;
+    margin-bottom: 14px;
+}
+
+.photo-name-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2%;
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 1%;
+}
+
+.photo-review {
+    object-fit: contain;
+    max-width: 100%;
+    width: 62px;
+    height: 62px;
+    padding-right: 25px;
+}
+
+.item-name-review {
+    font-size: 14px!important;
+    line-height: 20px!important;
+}
+
+.overall-rating, .headline-title {
+    font-weight: 700!important;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 8px!important;
+}
+
+.rating-star-rev {
+    size: 35px;
+}
+
+.star-cont, .headline-cont {
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 2%;
+    margin-top: 3%;
+}
+
+.headline-cont {
+    margin-bottom: 2%;
+    margin-top: 2%;
+    border-bottom: 1px solid #DDD;
+}
+
+.rating-cont-rev {
+    margin-bottom: 2%;
+}
+
+.headline-input {
+    background-color: #fff;
+    height: 25px;
+    width: 700px;
+    padding: 3px 7px;
+    line-height: normal;
+    border: 1px solid #888C8C;
+    border-radius: 3px;
+    margin-bottom: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.rev-input {
+    width: 700px;
+    height: 130px;
+    margin-top: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 7px 7px;
+}
+
+.submit-btn-cont {
+    margin-top: 1%;
+    display: flex;
+    justify-content: flex-end;
+    width: 730px;
+}
+
+.submit-rev-button {
+    margin-right: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: rgb(250, 216, 76);
+    border-color: rgb(250, 216, 76);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 13px;
+    line-height: 29px;
+    outline: 0;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}

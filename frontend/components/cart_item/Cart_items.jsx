@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { moneyFormatter } from '../../util/money_util';
-// import Header from '../header/Header';
 
 class CartItems extends React.Component {
     constructor(props) {
@@ -62,7 +61,7 @@ class CartItems extends React.Component {
             return (
                 <div className="cart-signin-page">
                     <div className='cart-signin'>
-                        <div className="your-cart-empty">Your ValYOU cart is empty</div>
+                        <div className="your-cart-empty">Please sign in to access your ValYOU cart.</div>
                         <div className='cart-links'>
                             <Link className='cart-button-link' to='/signin'>
                                 <button className="sign-in-yellow">Sign in to your account</button>
@@ -77,7 +76,6 @@ class CartItems extends React.Component {
         } else if (this.props.currentUser && Object.values(this.props.cartItems).length > 0) {
             return (
                 <div>
-                    {/* <Header/> */}
                     <div className="checkout-product">
                         <div className="left-right-cont">
                             <div className='left-cart-cont'>
@@ -144,7 +142,6 @@ class CartItems extends React.Component {
         } else {
             return (
                 <div>
-                    {/* <Header/> */}
                     <div className='zero-cart-cont'>
                         <div className='left-cart-cont'>
                             <h1 className='cart-title'>Your ValYOU Cart is empty.</h1>

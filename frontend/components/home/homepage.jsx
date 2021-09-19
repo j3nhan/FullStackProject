@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Slider from '../slider/Slider'
-import ItemIndexContainer from '../item/Item_index_container';
+import Slider from '../slider/slider'
+import ItemIndexContainer from '../item/item_index_container';
 
 class Homepage extends React.Component {
     constructor(props) {
