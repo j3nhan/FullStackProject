@@ -61,7 +61,7 @@ class CartItems extends React.Component {
             return (
                 <div className="cart-signin-page">
                     <div className='cart-signin'>
-                        <div className="your-cart-empty">Your ValYOU cart is empty</div>
+                        <div className="your-cart-empty">Please sign in to access your ValYOU cart.</div>
                         <div className='cart-links'>
                             <Link className='cart-button-link' to='/signin'>
                                 <button className="sign-in-yellow">Sign in to your account</button>
