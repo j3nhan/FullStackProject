@@ -10,19 +10,6 @@
     display: flex;
   }
   
-  .item-container {
-    display: flex;
-    justify-content: space-around;
-    color: white;
-    background-color: #2b2727
-  }
-  
-  .item-container p {
-    margin: 10px;
-    font-size: 14px;
-    font-family: Helvetica, sans-serif;
-  }
-  
   .home-row {
     margin-top: 50px;
     display: flex;

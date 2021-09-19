@@ -22,6 +22,18 @@
     justify-content: space-around;
   }
   
+  .item-container {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    background-color: #2b2727
+  }
+  
+  .item-container p {
+    margin: 10px;
+    font-size: 14px;
+    font-family: Helvetica, sans-serif;
+  }
   
   .header-option {
     display: flex;
