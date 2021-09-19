@@ -12,6 +12,10 @@ class Header extends React.Component {
         this.guestHomepage = this.guestHomepage.bind(this);
         this.signedoutHome = this.signedoutHome.bind(this);
     }
+
+    // componentWillMount() {
+    //     this.props.cart;
+    // }
     
     signedoutHome() {
         this.props.signoutUser();
