@@ -2,9 +2,13 @@
   background-color: white;
 }
 
+.horizontal-line-cont {
+  display: flex;
+  justify-content: center;
+}
 .horizontal-line {
-  width: 95%;
-  color: #D5D9D9;
+  border-bottom: 1px solid #DDD;
+  width: 93%;
 }
 
 .review-show-cont {
