@@ -8,10 +8,12 @@ import ItemShowContainer from './item/Item_show_container'
 import ReviewContainer from './item/Review_container'
 import CartItemsContainer from './cart_item/Cart_items_container';
 import NoPageFound from './No_page_found';
+import HeaderContainer from './header/Header_container';
     
 const App = () => {
     return (
         <div>
+            <HeaderContainer/>
             <Switch>
                 <Route exact path="/" component={HomepageContainer} />
                 <AuthRoute exact path="/signup" component={SignupContainer} />
