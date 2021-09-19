@@ -60,15 +60,18 @@ class CartItems extends React.Component {
 
         if (!this.props.currentUser) {
             return (
-                <div className='cart-signin'>
-                    <div>Shopping Cart</div>
-                    <div>Your ValYOU cart is empty</div>
-                    <Link className='cart-button-link' to='/signin'>
-                        <button className="sign-in-yellow">Sign in to your account</button>
-                    </Link>
-                    <Link className='cart-button-link' to='/signup'>
-                        <button className="sign-up-gray">Sign up now</button>
-                    </Link>
+                <div className="cart-signin-page">
+                    <div className='cart-signin'>
+                        <div className="your-cart-empty">Your ValYOU cart is empty</div>
+                        <div className='cart-links'>
+                            <Link className='cart-button-link' to='/signin'>
+                                <button className="sign-in-yellow">Sign in to your account</button>
+                            </Link>
+                            <Link className='cart-button-link' to='/signup'>
+                                <button className="sign-up-gray">Sign up now</button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             )
         } else if (this.props.currentUser && Object.values(this.props.cartItems).length > 0) {
