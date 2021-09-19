@@ -35,6 +35,8 @@ class ItemShow extends React.Component {
     render() {
         const { item } = this.props;
 
+        const today = new Date().toDateString();
+
         if (!item) {
             return (
                 <div>
@@ -84,8 +86,13 @@ class ItemShow extends React.Component {
                             </div>
                             
                         </div>
-                        
-                        <div>
+
+                        <div className="add-to-cart-box">
+                            <div>One-time purchase</div>
+                            <div>Fastest delivery:</div>
+                            <div> { today } </div>
+                            <div>Order within 30 mins</div>
+                            <div className="in-stock">In Stock</div>
                             <button className="clickbutton" onClick={this.addToCart}>Add to Cart</button>
                         </div>
                     </div>
