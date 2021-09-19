@@ -189,3 +189,67 @@ background-color: white;
     color: #007185;
     text-decoration: none;
 }
+
+.cart-signin-page {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.cart-signin {
+    background-color: white;
+    height: 300px;
+    width: 80%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cart-links {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.your-cart-empty {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+.sign-in-yellow {
+    margin-right: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: rgb(250, 216, 76);
+    border-color: rgb(250, 216, 76);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 13px;
+    line-height: 29px;
+    outline: 0;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.sign-up-gray {
+    margin-left: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    border-color: #D5D9D9!important;;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 13px;
+    line-height: 29px;
+    outline: 0;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
