@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { moneyFormatter } from '../../util/money_util';
 import LoadingPage from '../Loading_page';
-// import Header from '../header/Header';
 import ReviewIndexContainer from './Review_index_container'
 
 class ItemShow extends React.Component {
@@ -47,7 +46,6 @@ class ItemShow extends React.Component {
         
         if (item) return (
             <div className="item-show-entire">
-                {/* <Header/> */}
                     <div className='itemshow-main-div'>
                         <div>
                             <img className='itemshow-pic-img' src={item.photoUrl} />
