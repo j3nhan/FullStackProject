@@ -62,18 +62,18 @@ class ItemShow extends React.Component {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="ratings-word">1000 ratings</div>
+                                <div className="ratings-word">1,234 ratings</div>
                             </div>
                             <div className='best-seller'>#1 Best Seller</div>
                             
                             <div className='itemshow-price-div'>
                                 <div className='itemshow-price'>Price: </div>
                                 <div className='itemshow-details-price'>{moneyFormatter.format(item.price / 100)}</div>
-                                <div clasName='fast-shipping'>Get <span id='free-bold'>Fast, Free Shipping</span> with ValYOU Prime</div>
+                                <div clasName='fast-shipping'>Get <span id='free-bold'>Fast, Free Shipping</span> with <span id="valyou-prime">ValYOU Prime</span></div>
                             </div>
 
                             <div className='itemshow-details-description-div'>
-                                <p>About this item</p>
+                                <p className='about-item'>About this item</p>
                                 <ul className='itemshow-details-description-bullets'>
                                     <li>{item.description}</li>
                                     <li>ValYOU's Choice</li>
@@ -83,6 +83,9 @@ class ItemShow extends React.Component {
                                 </ul>
                             </div>
                             
+                        </div>
+                        
+                        <div>
                             <button className="clickbutton" onClick={this.addToCart}>Add to Cart</button>
                         </div>
                     </div>

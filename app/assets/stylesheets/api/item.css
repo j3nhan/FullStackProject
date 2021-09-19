@@ -124,7 +124,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 90%;
 }
 
 .itemshow-price {
@@ -148,4 +150,29 @@
 
 #free-bold {
   font-weight: bold;
+}
+
+#valyou-prime {
+  color: #007185;
+}
+
+.itemshow-details-description-div {
+  border-top: 1px solid #d5d8d8!important;
+  width: 80%;  
+  margin-bottom: 15px;
+}
+
+.about-item {
+    font-size: 16px!important;
+    line-height: 24px!important;
+    font-weight: 700!important;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.itemshow-details-description-bullets {
+  list-style: disc;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 18px;
 }
