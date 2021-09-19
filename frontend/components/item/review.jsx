@@ -1,6 +1,5 @@
 import React from 'react';
 import Rating from 'react-rating';
-// import Header from '../header/Header';
 import LoadingPage from '../Loading_page';
 
 class Review extends React.Component {
@@ -51,8 +50,6 @@ class Review extends React.Component {
         
         return (
             <div>
-
-                {/* <Header/> */}
                 <form onSubmit={this.handleSubmit}>
                     <h3>Create Review</h3>
                     <div>
