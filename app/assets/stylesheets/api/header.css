@@ -114,7 +114,9 @@
   }
   
   .basket-count {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 3px;
+    margin-right: 15px;
+    color: #FF9900;
+    font-size: 16px;
   }
   
