@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SignInForm from './signInForm';
+import SignInForm from './signin_form';
 import { signinUser , receiveSesErrors, removeSesErrors } from '../../actions/session_actions';
 
 const mapStateToProps = ({errors}) => ({
