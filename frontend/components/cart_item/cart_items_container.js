@@ -8,7 +8,6 @@ const mapStateToProps = state => ({
     cartItemId: Object.keys(state.entities.cartItems)
 });
 
-
 const mapDispatchToProps = dispatch => ({
     fetchCartItems: () => dispatch(fetchCartItems()),
     fetchCartItem: cartItemId => dispatch(fetchCartItem(cartItemId)),
