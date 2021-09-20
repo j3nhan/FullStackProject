@@ -3,7 +3,7 @@ import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SignupContainer from './signup/signup_container';
 import SigninContainer from './signin/signin_container';
-import Homepage from './home/homepage'
+import Homepage from './home/homepage';
 import ItemShowContainer from './item/item_show_container'
 import ReviewContainer from './item/review_container'
 import CartItemsContainer from './cart_item/cart_items_container';
