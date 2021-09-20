@@ -38,7 +38,7 @@ class ReviewIndex extends React.Component {
                             <div key={review.id}>
                                 <div className="image-name">
                                     <img src={'images/profilepic.jpeg'} alt='profile' className='profile-pic'/>
-                                    <div className='author-name'>{this.props.authors[0].name}</div>
+                                    <div className='author-name'>{review.name}</div>                                    
                                 </div>
 
                                 <div className='rating-title'>
