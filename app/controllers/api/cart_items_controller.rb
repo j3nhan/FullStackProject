@@ -1,13 +1,15 @@
 class Api::CartItemsController < ApplicationController
     def index 
+        return nil if !current_user
+
         if current_user
             @cart_items = CartItem.all
         end
     end
 
     def show
-        @cart_item = CartItem.find(params[:id])
         return nil if !current_user
+        @cart_item = CartItem.find(params[:id])
     end
 
     def create
@@ -33,6 +35,11 @@ class Api::CartItemsController < ApplicationController
         @cart_item = CartItem.find_by(id: params[:id])
         @cart_item.destroy 
         render :show
+    end
+
+    def clear
+        @cart_items = CartItem.all
+        @cart_items.destroy_all
     end
 
     def cart_item_params 
