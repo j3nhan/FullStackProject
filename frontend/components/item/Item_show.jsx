@@ -69,7 +69,7 @@ class ItemShow extends React.Component {
                             <div className='itemshow-price-div'>
                                 <div className='itemshow-price'>Price: </div>
                                 <div className='itemshow-details-price'>{moneyFormatter.format(item.price / 100)}</div>
-                                <div clasName='fast-shipping'>Get <span id='free-bold'>Fast, Free Shipping</span> with <span id="valyou-prime">ValYOU Prime</span></div>
+                                <div className='fast-shipping'>Get <span id='free-bold'>Fast, Free Shipping</span> with <span id="valyou-prime">ValYOU Prime</span></div>
                             </div>
 
                             <div className='itemshow-details-description-div'>
