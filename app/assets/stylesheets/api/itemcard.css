@@ -1,0 +1,10 @@
+.item-index-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 3%;
+}
+
+.index-item-photo {
+    height: auto;
+    width: 150px;
+}
