@@ -25,8 +25,9 @@
   .item-container {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     color: white;
-    background-color: #2b2727
+    background-color: #2b2727;
   }
   
   .item-container p {
