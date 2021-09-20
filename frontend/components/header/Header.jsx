@@ -126,10 +126,11 @@ class Header extends React.Component {
 
     render() {
         const categories = [
-            "Mom & Pop",
+            "Recommended",
             "Farmers Market",
             "Women-Owned",
             "Veteran-Owned",
+            "Mom & Pop",
             "Disability-Owned"
         ]
 
