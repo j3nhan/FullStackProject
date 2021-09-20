@@ -126,7 +126,7 @@ class Header extends React.Component {
 
     render() {
         const categories = [
-            "Recommended",
+            "Recommendation",
             "Farmers Market",
             "Women-Owned",
             "Veteran-Owned",
