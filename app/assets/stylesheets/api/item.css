@@ -1,5 +1,6 @@
 .item-show-entire {
   background-color: white;
+  min-height: 90vh;
 }
 
 .horizontal-line-cont {
@@ -75,6 +76,8 @@
 }
 
 .itemshow-main-div {
+  background-color: white;
+  padding-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -88,9 +91,10 @@
 .itemshow-pic-img {
     object-fit: contain;
     max-width: 100%;
-    width: 380px;
-    height: 480px;
+    width: 280px;
+    height: 380px;
     margin-left: 5%;
+    padding-bottom: 5%;
 }
 
 .itemshow-details-name {
