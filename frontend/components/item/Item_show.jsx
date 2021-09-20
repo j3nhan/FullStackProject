@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { moneyFormatter } from '../../util/money_util';
-import LoadingPage from '../Loading_page';
-import ReviewIndexContainer from './Review_index_container'
+import LoadingPage from '../loading_page';
+import ReviewIndexContainer from './review_index_container'
 
 class ItemShow extends React.Component {
     componentDidMount() {

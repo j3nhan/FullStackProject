@@ -1,6 +1,6 @@
 import React from 'react';
-import LoadingPage from '../Loading_page';
-import ItemCard from './Item_card';
+import LoadingPage from '../loading_page';
+import ItemCard from './item_card';
 
 class ItemIndex extends React.Component {
     constructor(props) {

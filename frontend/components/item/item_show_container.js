@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchItems, fetchItem } from '../../actions/item_actions';
 import { createCartItem, updateCartItem, deleteCartItem } from '../../actions/cart_items_actions';
-import ItemShow from './Item_show';
+import ItemShow from './item_show';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => ({

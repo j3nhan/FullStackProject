@@ -1,5 +1,5 @@
 {
-  "name": "FullStack",
+  "name": "ValYOU",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.14.8",
@@ -37,15 +37,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/j3nhan/FullStackProject.git"
+    "url": "git+https://github.com/j3nhan/ValYOU.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/j3nhan/FullStackProject/issues"
+    "url": "https://github.com/j3nhan/ValYOU/issues"
   },
-  "homepage": "https://github.com/j3nhan/FullStackProject#readme",
+  "homepage": "https://github.com/j3nhan/ValYOU#readme",
   "devDependencies": {
     "file-loader": "^6.2.0"
   }

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { signoutUser } from '../../actions/session_actions';
 
-import Header from './Header';
+import Header from './header';
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],

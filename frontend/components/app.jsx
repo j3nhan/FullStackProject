@@ -7,7 +7,7 @@ import Homepage from './home/homepage'
 import ItemShowContainer from './item/item_show_container'
 import ReviewContainer from './item/review_container'
 import CartItemsContainer from './cart_item/cart_items_container';
-import NoPageFound from './No_page_found';
+import NoPageFound from './no_page_found';
 import HeaderContainer from './header/header_container';
     
 const App = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Rating from 'react-rating';
-import LoadingPage from '../Loading_page';
+import LoadingPage from '../loading_page';
 
 class Review extends React.Component {
     constructor(props) {
