@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { moneyFormatter } from '../../util/money_util';
+import LoadingPage from '../loading_page';
 
 class CartItems extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class CartItems extends React.Component {
         this.updateTotal = this.updateTotal.bind(this);
         this.updateQuantity = this.updateQuantity.bind(this);
         this.deleteCartItem = this.deleteCartItem.bind(this);
+        this.emptyCart = this.emptyCart.bind(this);
     }
 
     updateTotal(cartItemsValue) {
@@ -32,6 +34,13 @@ class CartItems extends React.Component {
     deleteCartItem(e) {
         e.preventDefault();
         this.props.deleteCartItem(this.props.cartItemId)
+    }
+    
+    emptyCart(e) {
+        e.preventDefault()
+
+        this.props.clearCart()
+        .then(() => this.props.history.push('/checkout'));
     }
 
     componentDidUpdate(prevProps) {
@@ -132,7 +141,7 @@ class CartItems extends React.Component {
                                     <input type='checkbox' className='gift-checkbox'/><div className='gift-text'>This order contains a gift</div>
                                 </label>
 
-                                <button className='proceed-to-checkout'>Proceed to checkout</button>
+                                <button className='proceed-to-checkout' onClick={this.emptyCart}>Proceed to checkout</button>
                             </div>
                         </div>
                     </div>
