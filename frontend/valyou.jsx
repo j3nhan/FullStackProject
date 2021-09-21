@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { fetchCartItems } from './actions/cart_items_actions';
 import Root from './components/root';
 import configureStore from './store/store';
 
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         store = configureStore(preloadedState);
+        fetchCartItems()(store.dispatch);
         delete window.currentUser;
     } else {
         store = configureStore();
