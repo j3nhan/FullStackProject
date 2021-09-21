@@ -7,9 +7,7 @@ Rails.application.routes.draw do
       resources :reviews, only: [:index, :show, :create]
     end
     resources :reviews, only: [:destroy]
-    resources :cart_items, except: [:new, :edit] do 
-      delete "clear", on: :collection
-    end
+    resources :cart_items, except: [:new, :edit]
   end
 
   root "static_pages#root"
