@@ -1,4 +1,5 @@
 import { signup, signin, signout } from '../util/session_api_util';
+import { fetchCartItems } from './cart_items_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const SIGNOUT_CURRENT_USER = 'SIGNOUT_CURRENT_USER';
@@ -28,6 +29,9 @@ export const signupUser = user => dispatch => (
     .then(res => dispatch(receiveCurrentUser(res)),
         errors => dispatch(receiveSesErrors(errors.responseJSON))
     )
+    .then(() => {
+        fetchCartItems()(dispatch)
+    })
 );
 
 export const signinUser = user => dispatch => (
@@ -35,6 +39,9 @@ export const signinUser = user => dispatch => (
     .then(res => dispatch(receiveCurrentUser(res)),
         errors => dispatch(receiveSesErrors(errors.responseJSON))
     )
+    .then(() => {
+        fetchCartItems()(dispatch)
+    })
 );
 
 export const signoutUser = () => dispatch => (
