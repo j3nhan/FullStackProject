@@ -3,7 +3,7 @@ class Api::CartItemsController < ApplicationController
         return nil if !current_user
 
         if current_user
-            @cart_items = CartItem.all
+            @cart_items = CartItem.where('user_id = ?', current_user.id)
         end
     end
 
