@@ -28,7 +28,6 @@ class CartItems extends React.Component {
 
     updateQuantity(e) {
         e.preventDefault();
-
     }
 
     deleteCartItem(e) {
@@ -41,6 +40,7 @@ class CartItems extends React.Component {
 
         this.props.clearCart()
         .then(() => this.props.history.push('/checkout'));
+        // .then(() => window.location.reload()
     }
 
     componentDidUpdate(prevProps) {
