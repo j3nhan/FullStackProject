@@ -1,4 +1,5 @@
 import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions'
+import { SIGNOUT_CURRENT_USER } from "../actions/session_actions";
 
 const reviewsReducer = (state={}, action) => {
     Object.freeze(state)
@@ -12,6 +13,8 @@ const reviewsReducer = (state={}, action) => {
         case REMOVE_REVIEW:
             delete nextState[action.reviewId.id]
             return nextState;
+        case SIGNOUT_CURRENT_USER:
+            return {};
         default:
             return state;
     }
