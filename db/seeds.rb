@@ -65,23 +65,3 @@ item24 = Item.create!(item_name:'Apron', description: 'Versatile wear for all si
 item24.photo.attach(io: URI.open('https://valyou-dev.s3.us-west-1.amazonaws.com/veteranowned/apron.jpg'), filename:'apron.jpg')
 item25 = Item.create!(item_name:'Camp Light', description: 'Very light and easy to use at night', price: 3999, rating: 5)
 item25.photo.attach(io: URI.open('https://valyou-dev.s3.us-west-1.amazonaws.com/veteranowned/camplight.jpg'), filename:'camplight.jpg')
-
-# ------------------------------------------------------------------------------
-# aws dev policy 
-# {
-#     "Version": "2012-10-17",
-#     "Statement": [
-#         {
-#             "Sid": "Stmt1420751757000",
-#             "Effect": "Allow",
-#             "Principal": {
-#                 "AWS": "arn:aws:iam::847364190137:user/valyou-main"
-#             },
-#             "Action": "s3:*",
-#             "Resource": [
-#                 "arn:aws:s3:::valyou-dev",
-#                 "arn:aws:s3:::valyou-dev/*"
-#             ]
-#         }
-#     ]
-# }
