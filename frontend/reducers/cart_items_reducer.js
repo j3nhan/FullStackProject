@@ -15,7 +15,8 @@ const cartItemsReducer = (state = [], action) => {
             return nextState;
         case CLEAR_CART:
             delete nextState[action.cartItems];
-            return nextState;
+            return [];
+            // return nextState;
         case SIGNOUT_CURRENT_USER:
             return [];
         default: 
