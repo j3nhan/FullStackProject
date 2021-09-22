@@ -58,7 +58,6 @@ class ItemIndex extends React.Component {
                                     {this.props.items.slice(20, 25).map((item, idx) => <ItemCard key={idx} item={item} />)}
                             </div>
                         </div>
-
                     </div>
                 </div>
             )
