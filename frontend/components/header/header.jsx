@@ -12,10 +12,6 @@ class Header extends React.Component {
         this.guestHomepage = this.guestHomepage.bind(this);
         this.signedoutHome = this.signedoutHome.bind(this);
     }
-
-    // componentWillMount() {
-    //     this.props.cart;
-    // }
     
     signedoutHome() {
         this.props.signoutUser();
@@ -137,7 +133,7 @@ class Header extends React.Component {
         return (
             <div>
                 <span>
-                    {this.props.currentUser ? this.userHomepage() : this.guestHomepage()}
+                    { this.props.currentUser ? this.userHomepage() : this.guestHomepage() }
                 </span>
 
                 <div className="item-container">
