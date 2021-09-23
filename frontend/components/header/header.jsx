@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import NavSearchContainer from '../search/nav_search_container';
 
 class Header extends React.Component {
     constructor(props) {
@@ -35,13 +36,17 @@ class Header extends React.Component {
                         <span className="header-option2">Home Sweet Home</span>
                     </div>
 
+                    <div>
+                        <NavSearchContainer/>
+                    </div>
+{/* 
                     <div className="search">
                         <select>
                             <option>All</option>
                         </select>
                         <input type="text" className="searchInput" />
                         <SearchIcon className="searchIcon" />
-                    </div>
+                    </div> */}
 
                     <div className="header-nav">
                         <Link to='/signin' className='header-link'>
@@ -89,12 +94,16 @@ class Header extends React.Component {
                     </div>
 
                     <div className="search">
+                        <NavSearchContainer/>
+                    </div>
+
+                    {/* <div className="search">
                         <select>
                             <option>All</option>
                         </select>
                         <input type="text" className="searchInput" />
                         <SearchIcon className="searchIcon" />
-                    </div>
+                    </div> */}
 
                     <div className="header-nav">
                             <div className="header-option">
