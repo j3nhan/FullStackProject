@@ -9,6 +9,7 @@ import ReviewContainer from './item/review_container'
 import CartItemsContainer from './cart_item/cart_items_container';
 import NoPageFound from './no_page_found';
 import HeaderContainer from './header/header_container';
+import ItemsSearchContainer from './search/items_search_container'
     
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
             <HeaderContainer/>
             <Switch>
                 <Route exact path="/" component={Homepage} />
+                <Route exact path="/search" component={ItemsSearchContainer} />
                 <AuthRoute exact path="/signup" component={SignupContainer} />
                 <AuthRoute exact path="/signin" component={SigninContainer} />
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
