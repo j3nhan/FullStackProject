@@ -36,17 +36,9 @@ class Header extends React.Component {
                         <span className="header-option2">Home Sweet Home</span>
                     </div>
 
-                    <div>
+                    <div className="search">
                         <NavSearchContainer/>
                     </div>
-{/* 
-                    <div className="search">
-                        <select>
-                            <option>All</option>
-                        </select>
-                        <input type="text" className="searchInput" />
-                        <SearchIcon className="searchIcon" />
-                    </div> */}
 
                     <div className="header-nav">
                         <Link to='/signin' className='header-link'>
@@ -96,14 +88,6 @@ class Header extends React.Component {
                     <div className="search">
                         <NavSearchContainer/>
                     </div>
-
-                    {/* <div className="search">
-                        <select>
-                            <option>All</option>
-                        </select>
-                        <input type="text" className="searchInput" />
-                        <SearchIcon className="searchIcon" />
-                    </div> */}
 
                     <div className="header-nav">
                             <div className="header-option">
