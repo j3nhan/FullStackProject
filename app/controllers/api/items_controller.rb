@@ -11,7 +11,7 @@ class Api::ItemsController < ApplicationController
 
     def search
         @items = Item.search_by(params[:search])
-        render :search_results
+        render :items_search
     end
     
 end
