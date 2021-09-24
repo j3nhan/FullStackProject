@@ -80,6 +80,10 @@
   
 }
 
+.continue:hover {
+  box-shadow: 0 0 15px rgba(33,33,33,.2);
+}
+
 .private-condition {
   font-size: 12px!important;
   line-height: 1.5!important;
