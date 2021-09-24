@@ -33,7 +33,6 @@ class ItemShow extends React.Component {
 
     render() {
         const { item } = this.props;
-
         const today = new Date().toDateString();
 
         if (!item) {
