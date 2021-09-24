@@ -157,6 +157,10 @@ background-color: white;
     margin-top: 15px;
 }
 
+.proceed-to-checkout:hover {
+    box-shadow: 0 0 7px rgba(33,33,33,.2);
+}
+
 .subtotal-cont {
     display: flex;
     flex-direction: row;
@@ -237,6 +241,10 @@ background-color: white;
     cursor: pointer;
 }
 
+.sign-in-yellow:hover {
+    box-shadow: 0 0 10px rgba(33,33,33,.2);
+}
+
 .sign-up-gray {
     margin-left: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -252,4 +260,8 @@ background-color: white;
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
+}
+
+.sign-up-gray:hover {
+    box-shadow: 0 0 10px rgba(33,33,33,.2);
 }
