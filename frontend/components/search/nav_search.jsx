@@ -15,6 +15,7 @@ class NavSearch extends React.Component {
         e.preventDefault();
         this.props.fetchItemsSearch(this.state.keyword)
         .then(() => { this.props.history.push('/search')})
+        .then(() => this.setState({ keyword: ''}))
     }
 
     searchTerm(e) {
