@@ -12,7 +12,7 @@ class ItemsSearch extends React.Component {
         const searchResults = (this.props.items.length > 0 && this.props.items.map((item, idx) => {
             return (
                 <li key={idx}>
-                    <Link onClick={() => { this.props.history.push(`/items/${item.id}`) }} >
+                    <Link to={`/items/${item.id}`} onClick={() => { this.props.history.push(`/items/${item.id}`) }} >
                         <div>
                             <img src={item.photoUrl} />
                         </div>
