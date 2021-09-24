@@ -86,11 +86,12 @@
   }
   
   .search > select {
-    height: 41px;
+    height: 41.5px;
     padding: 5px;
     font-size: 14px;
     font-family: Helvetica, sans-serif;
     border-radius: 2px 0 0 2px;
+    cursor: pointer;
   }
   
   .searchIcon {
@@ -100,6 +101,11 @@
     font-size: 3.2rem !important;
     padding: 5px;
     border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  .searchIcon:hover {
+    box-shadow: 0 0 15px rgba(33,33,33,.2);
   }
   
   .searchInput {
