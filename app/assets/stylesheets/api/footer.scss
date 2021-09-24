@@ -49,17 +49,18 @@
         padding: 15px 5px 5px 9px;
         text-align: center;
         font-family: inherit;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .connectlinks {
         text-decoration: none;
         color: #dddddd;
         font-family: inherit;
+        padding: 5px;
     }
     .connectlinks:hover {
-        text-decoration: underline;
         cursor: pointer;
+        color: rgb(196, 85, 0);
     }
 }
 .last-footer {
