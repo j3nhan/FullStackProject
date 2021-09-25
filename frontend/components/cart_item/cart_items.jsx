@@ -39,7 +39,7 @@ class CartItems extends React.Component {
         e.preventDefault()
 
         this.props.clearCart()
-        .then(() => this.props.history.push('/checkout'));
+        .then(() => this.props.history.push('/thankyou'));
         // .then(() => window.location.reload()
     }
 
