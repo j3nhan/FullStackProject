@@ -31,7 +31,7 @@ class ItemIndex extends React.Component {
                         <h1 className="all-items-head">Recommended For You</h1> 
                         
                         <div className="home">
-                            <div className="catagory-name">Farmers Market</div>   
+                            <div className="catagory-name-fm">Farmers Market</div>   
                             <div className="home-row">
                                     {this.props.items.slice(0, 5).map((item, idx) => <ItemCard key={idx} item={item} />)}
                             </div>
