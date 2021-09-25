@@ -10,6 +10,7 @@ import CartItemsContainer from './cart_item/cart_items_container';
 import NoPageFound from './no_page_found';
 import HeaderContainer from './header/header_container';
 import ItemsSearchContainer from './search/items_search_container'
+import CompleteCart from './cart_item/complete_cart';
     
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                 <Route exact path="/items/:itemId" component={ItemShowContainer} />
                 <Route exact path="/reviews/create/:itemId" component={ReviewContainer}/>
                 <Route exact path='/checkout' component={CartItemsContainer} />
+                <Route exact path='/thankyou' component={CompleteCart} />
                 <Route path="*" component={ NoPageFound } />
             </Switch>
         </div>
