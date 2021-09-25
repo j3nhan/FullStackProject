@@ -44,6 +44,14 @@
   font-weight: 600px;
 }
 
+.catagory-name-fm {
+  margin-top: 20px;
+  margin-left: 3%;
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: 600px;
+}
+
 .home-container {
-  height: 45vh;
+  height: 38vh;
 }
