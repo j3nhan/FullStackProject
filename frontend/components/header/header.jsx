@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import NavSearchContainer from '../search/nav_search_container';
@@ -128,12 +127,12 @@ class Header extends React.Component {
                 <span>
                     { this.props.currentUser ? this.userHomepage() : this.guestHomepage() }
                 </span>
-
+            
                 <div className="item-container">
                     {categories && categories.map((category, idx) =>
                         <p key={ idx }>{category}</p>
                     )}
-                </div>
+                </div> 
             </div>
         )
     };
