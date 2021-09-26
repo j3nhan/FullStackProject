@@ -41,6 +41,12 @@ class Homepage extends React.Component {
                                 <a className='connectlinks' href='https://github.com/j3nhan'> GitHub</a>  
                             </li>
                         </div>
+                        <div id="footer-description">
+                            ValYOU is a full-stack web application clone of Amazon that focuses on supporting small businesses and underrepresented groups. 
+                        </div>
+                        <div id="footer-description">
+                             TECHNOLOGIES: Ruby on Rails, React Redux, PostgreSQL, Amazon AWS S3
+                        </div>
                     </div>
                 </footer>  
             </div>
