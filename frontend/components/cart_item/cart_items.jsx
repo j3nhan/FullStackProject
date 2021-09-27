@@ -40,7 +40,7 @@ class CartItems extends React.Component {
 
         this.props.clearCart()
         .then(() => this.props.history.push('/thankyou'));
-        // .then(() => window.location.reload()
+        // .then(() => window.location.reload())
     }
 
     componentDidUpdate(prevProps) {
@@ -91,8 +91,8 @@ class CartItems extends React.Component {
                                 <h1 className='cart-title'>Shopping Cart</h1>
                                 <div className="price-title">Price</div>
                                 <ul>
-                                    {cartItemsKey.map((cartItemId, idx) => (
-                                        <li className='cart-list' key={idx}>
+                                    {cartItemsKey.map((cartItemId) => (
+                                        <li className='cart-list' key={cartItemId}>
                                             <div className='main-cont'>
                                                 <div>
                                                     <Link to={`/items/${this.props.cartItems[cartItemId].itemId}`}>

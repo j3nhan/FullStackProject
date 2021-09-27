@@ -9,8 +9,8 @@ class CompleteCart extends React.Component {
     render() {
         return (
             <div className='entire-background-black'>
-                <div class="pyro">
-                    <div class="before"></div>
+                <div className="pyro">
+                    <div className="before"></div>
                         <div className='thankyou-cont'>
                             <h1 className='word'>THANK YOU</h1>
                             <div className='order'>FOR YOUR ORDER!</div>
@@ -24,7 +24,7 @@ class CompleteCart extends React.Component {
                                 <a href="https://github.com/j3nhan"><img className="logo" src={"images/github-logo.png"} /></a>
                             </div>
                         </div>
-                    <div class="after"></div>
+                    <div className="after"></div>
                 </div>
                 
             </div>
