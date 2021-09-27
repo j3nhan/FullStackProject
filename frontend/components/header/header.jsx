@@ -128,9 +128,17 @@ class Header extends React.Component {
                     { this.props.currentUser ? this.userHomepage() : this.guestHomepage() }
                 </span>
             
-                <div className="item-container">
+                {/* <div className="header-cat-container">
                     {categories && categories.map((category, idx) =>
                         <p key={ idx }>{category}</p>
+                    )}
+                </div>  */}
+
+                <div className="header-cat-container">
+                    {categories && categories.map((category, idx) =>
+                    <Link to='/search'>
+                        <div className='header-cat' key={ idx }>{category}</div>
+                    </Link>
                     )}
                 </div> 
             </div>
