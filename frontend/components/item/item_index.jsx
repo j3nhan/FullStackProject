@@ -29,31 +29,29 @@ class ItemIndex extends React.Component {
                 <div>
                     <div className="item-index-cont">
                         <h1 className="all-items-head">Recommended For You</h1> 
-                        
                         <div className="home">
-                            <div className="catagory-name-fm">Farmers Market</div>   
+                            <div className="catagory-name-fm" id="fm">Farmers Market</div>   
                             <div className="home-row">
                                     {this.props.items.slice(0, 5).map((item, idx) => <ItemCard key={idx} item={item} />)}
                             </div>
                             
-
-                            <div className="catagory-name">Women-Owned</div>
+                            <div className="catagory-name" id="wo">Women-Owned</div>
                             <div className="home-row">
                                     {this.props.items.slice(5, 10).map((item, idx) => <ItemCard key={idx} item={item} />)}
                             </div>
 
-                            <div className="catagory-name">Veteran-Owned</div>
+                            <div className="catagory-name" id="vo">Veteran-Owned</div>
                             <div className="home-row">
                                     {this.props.items.slice(10, 15).map((item, idx) => <ItemCard key={idx} item={item} />)}
                             </div>
 
-                            <div className="catagory-name">Mom & Pop</div>
+                            <div className="catagory-name" id="mp">Mom & Pop</div>
                             <div className="home-row">
                                     {this.props.items.slice(15, 20).map((item, idx) => <ItemCard key={idx} item={item} />)}
                             </div>
 
                             
-                            <div className="catagory-name">Disability-Owned</div>
+                            <div className="catagory-name" id="do">Disability-Owned</div>
                             <div className="home-row">
                                     {this.props.items.slice(20, 25).map((item, idx) => <ItemCard key={idx} item={item} />)}
                             </div>

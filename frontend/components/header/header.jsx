@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import NavSearchContainer from '../search/nav_search_container';
+import { HashLink } from 'react-router-hash-link';
 
 class Header extends React.Component {
     constructor(props) {
@@ -113,34 +114,22 @@ class Header extends React.Component {
     };
 
     render() {
-        const categories = [
-            "Recommendation",
-            "Farmers Market",
-            "Women-Owned",
-            "Veteran-Owned",
-            "Mom & Pop",
-            "Disability-Owned"
-        ]
 
         return (
             <div>
                 <span>
                     { this.props.currentUser ? this.userHomepage() : this.guestHomepage() }
                 </span>
-            
-                {/* <div className="header-cat-container">
-                    {categories && categories.map((category, idx) =>
-                        <p key={ idx }>{category}</p>
-                    )}
-                </div>  */}
 
                 <div className="header-cat-container">
-                    {categories && categories.map((category, idx) =>
-                    <Link to='/search'>
-                        <div className='header-cat' key={ idx }>{category}</div>
-                    </Link>
-                    )}
-                </div> 
+                    <div className="header-cat" >Recommendation</div>
+                    <HashLink className="header-cat" smooth to='/#fm'>Farmers Market</HashLink>
+                    <HashLink className="header-cat" smooth to='/#wo'>Women-Owned</HashLink>
+                    <HashLink className="header-cat" smooth to='/#vo'>Veteran-Owned</HashLink>
+                    <HashLink className="header-cat" smooth to='/#mp'>Mom & Pop</HashLink>
+                    <HashLink className="header-cat" smooth to='/#do' > Disability-Owned </HashLink>
+                </div>
+
             </div>
         )
     };
