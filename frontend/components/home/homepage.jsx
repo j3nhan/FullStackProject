@@ -42,7 +42,7 @@ class Homepage extends React.Component {
                             </li>
                         </div>
                         <div id="footer-description">
-                            ValYOU is a full-stack web application clone of Amazon that focuses on supporting small businesses and underrepresented groups. 
+                            ValYOU is a full-stack web application clone of Amazon that focuses on supporting small businesses and underrepresented communities. 
                         </div>
                         <div id="footer-description">
                              TECHNOLOGIES: Ruby on Rails, React Redux, PostgreSQL, Amazon AWS S3
