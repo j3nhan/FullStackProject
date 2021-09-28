@@ -1,24 +1,22 @@
-# README
+# ValYOU
+[ValYOU](https://valyou.herokuapp.com) is a full-stack web application clone of Amazon. What makes ValYOU different from the other e-commerce sites is that customers can shop for curated items exclusively from small businesses. At ValYOU, supporting underrepresented communities and making the shopping experience as seamless as possible are top priorities!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technologies
+- React.js
+- Redux.js
+- Node.js
+- Ruby on Rails
+- PostgreSql 
+- ActiveStorage
+- Webpack
+- Amazon AWS S3
+- Heroku 
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+#### User Authentication
+####  Homepage
+####  Reviews
+####  Search
+####  Checkout 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
