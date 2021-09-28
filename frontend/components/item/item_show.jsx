@@ -114,6 +114,9 @@ class ItemShow extends React.Component {
                 <div className="review-show-cont">          
                     <div className="review-left-cont">
                         <h2 className="customer-review-title">Customer Reviews</h2>
+                        <div>
+                            <img className='review-stars' src={"images/stars-rev.png"}/>
+                        </div>
                         <h3 className='review-this'>Review this Product</h3>
                         <div className='share-thoughts'>Share your thoughts with other customers</div>
                         <div>
