@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class CompleteCart extends React.Component {
     constructor(props) {
@@ -14,6 +14,7 @@ class CompleteCart extends React.Component {
                         <div className='thankyou-cont'>
                             <h1 className='word'>THANK YOU</h1>
                             <div className='order'>FOR YOUR ORDER!</div>
+                            <Link to="/" className='return-link'><button className='return-btn'>Continue Shopping</button></Link>
                             <div className='visit'>Your visit made my day. I appreciate your support</div>
                             <div className='visit'> for my software engineering aspirations.</div>
                             <div className='visit'> Please don't hesitate to contact me to learn more!</div>
