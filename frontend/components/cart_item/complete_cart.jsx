@@ -18,10 +18,10 @@ class CompleteCart extends React.Component {
                             <div className='visit'> for my software engineering aspirations.</div>
                             <div className='visit'> Please don't hesitate to contact me to learn more!</div>
                             <div className='connect-logos'>
-                                <a href="https://www.jennynhan.com"><img className="logo" src={"images/portfolio-logo.png"} /></a>
-                                <a href="https://www.linkedin.com/in/jennynhan/"><img className="logo" src={"images/linkedin-logo.png"} /></a>
-                                <a href="mailto:j3nnynhan@gmail.com"><img className="logo" src={"images/email-logo.png"} /></a>
-                                <a href="https://github.com/j3nhan"><img className="logo" src={"images/github-logo.png"} /></a>
+                                <a href="https://www.jennynhan.com" target="_blank" rel="noopener noreferrer"><img className="logo" src={"images/portfolio-logo.png"} /></a>
+                                <a href="https://www.linkedin.com/in/jennynhan/" target="_blank" rel="noopener noreferrer"><img className="logo" src={"images/linkedin-logo.png"} /></a>
+                                <a href="mailto:j3nnynhan@gmail.com" target="_blank" rel="noopener noreferrer"><img className="logo" src={"images/email-logo.png"} /></a>
+                                <a href="https://github.com/j3nhan" target="_blank" rel="noopener noreferrer"><img className="logo" src={"images/github-logo.png"} /></a>
                             </div>
                         </div>
                     <div className="after"></div>
