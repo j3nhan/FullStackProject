@@ -68,7 +68,7 @@ class SignupForm extends React.Component {
                             />
                             <h5 className="sub-title">Email</h5>
                             <input
-                                type="text"
+                                type="email"
                                 value={this.state.email}
                                 onChange={this.handleUpdate("email")}
                             />
