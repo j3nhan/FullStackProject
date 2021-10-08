@@ -35,10 +35,10 @@ class Homepage extends React.Component {
                     <div className='bottom-footer'>
                         <div className='meet-me'>Get to Know Me
                             <li id='first'>
-                                <a className='connectlinks' href='https://jennynhan.com'>Jenny Nhan</a>  |  
-                                <a className='connectlinks' href='https://linkedin.com/in/jennynhan/'> LinkedIn</a>  |  
-                                <a className='connectlinks' href='mailto:j3nnynhan@gmail.com'> Email</a>  |  
-                                <a className='connectlinks' href='https://github.com/j3nhan'> GitHub</a>  
+                                <a className='connectlinks' target="_blank" rel="noopener noreferrer" href='https://jennynhan.com'>Jenny Nhan</a>  |  
+                                <a className='connectlinks' target="_blank" rel="noopener noreferrer" href='https://linkedin.com/in/jennynhan/'> LinkedIn</a>  |  
+                                <a className='connectlinks' target="_blank" rel="noopener noreferrer" href='mailto:j3nnynhan@gmail.com'> Email</a>  |  
+                                <a className='connectlinks' target="_blank" rel="noopener noreferrer" href='https://github.com/j3nhan'> GitHub</a>  
                             </li>
                         </div>
                         <div id="footer-description">
