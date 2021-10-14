@@ -40,7 +40,6 @@ class CartItems extends React.Component {
 
         this.props.clearCart()
         .then(() => this.props.history.push('/thankyou'));
-        // .then(() => window.location.reload())
     }
 
     componentDidUpdate(prevProps) {
