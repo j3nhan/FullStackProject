@@ -61,7 +61,7 @@ class ItemShow extends React.Component {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="ratings-word">1,234 ratings</div>
+                                <div className="ratings-word">ratings</div>
                             </div>
                             <div className='best-seller'>#1 Best Seller</div>
                             
