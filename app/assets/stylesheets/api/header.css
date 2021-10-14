@@ -128,8 +128,8 @@
   width: 80%;
 }
 
-.searchInput :focus {
-  border-color: lightsalmon;
+.searchInput:focus {
+  outline: none;
 }
 
 .header-basket {

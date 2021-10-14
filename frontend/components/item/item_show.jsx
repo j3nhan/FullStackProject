@@ -5,6 +5,7 @@ import LoadingPage from '../loading_page';
 import ReviewIndexContainer from './review_index_container'
 
 class ItemShow extends React.Component {
+
     componentDidMount() {
         this.props.fetchItem(this.props.itemIdMat);
         this.addToCart = this.addToCart.bind(this);
@@ -90,19 +91,7 @@ class ItemShow extends React.Component {
                             <div className="pur-date"> { today } </div>
                             <div className="in-stock">In Stock</div>
                             <div className="qty-div">
-                                <label className='qty-label'>Qty:</label>
-                                <select name="qty" id="qty">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </select>
+                                <label className='qty-label'>Qty: 1</label>
                             </div>
                             <button className="clickbutton" onClick={this.addToCart}>Add to Cart</button>
                         </div>
