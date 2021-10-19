@@ -5,7 +5,7 @@ import Header from './header';
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
-    cart: state.entities.cartItems
+    cart: Object.values(state.entities.cartItems)
 });
 
 const mapDispatchToProps = dispatch => ({
