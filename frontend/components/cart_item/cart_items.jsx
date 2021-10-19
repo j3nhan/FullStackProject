@@ -57,7 +57,7 @@ class CartItems extends React.Component {
         const { currentUser, cartItemVal } = this.props;
         let cartItemsCount = this.props.cartItemVal.length;
         
-        if (!this.props.cartItems) {
+        if (!cartItemVal) {
             return (
                 <div>
                     <LoadingPage/>

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchItems, fetchItem } from '../../actions/item_actions';
-import { createCartItem, updateCartItem, deleteCartItem } from '../../actions/cart_items_actions';
+import { fetchCartItems, createCartItem, updateCartItem, deleteCartItem } from '../../actions/cart_items_actions';
 import ItemShow from './item_show';
 import { fetchReviews } from '../../actions/review_actions';
 import { withRouter } from 'react-router-dom';
@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     fetchItems: () => dispatch(fetchItems()),
     fetchItem: itemIdMat => dispatch(fetchItem(itemIdMat)),
+    fetchCartItems: () => dispatch(fetchCartItems()),
     createCartItem: item => dispatch(createCartItem(item)),
     updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
     deleteCartItem: cartItemId => dispatch(deleteCartItem(cartItemId)),
