@@ -20,6 +20,13 @@ class Header extends React.Component {
     }
 
     userHomepage() {
+        let cartQty = 0;
+        if (this.props.currentUser && this.props.cart.length > 0) {
+            this.props.cart.forEach(cartItem => {
+                    cartQty += cartItem.quantity
+            }); 
+        }
+
         return (
             <div>
                 <nav className="header">   
@@ -55,7 +62,7 @@ class Header extends React.Component {
                         <Link to='/checkout' className='header-link'>
                             <div className="header-basket-homepage">
                                 <ShoppingCartIcon/>
-                                <span className="header-option2 basket-count">{Object.values(this.props.cart).length}</span>
+                                <span className="header-option2 basket-count">{cartQty}</span>
                             </div>
                         </Link>
 
@@ -104,7 +111,7 @@ class Header extends React.Component {
                         <Link to='/checkout' className='header-link'>
                             <div className="header-basket-homepage">
                                 <ShoppingCartIcon/>
-                                <span className="header-option2 basket-count">{Object.values(this.props.cart).length}</span>
+                                <span className="header-option2 basket-count"></span>
                             </div>
                         </Link>
                     </div>
@@ -114,7 +121,6 @@ class Header extends React.Component {
     };
 
     render() {
-
         return (
             <div>
                 <span>

@@ -251,12 +251,15 @@
   font-weight: bold;
 }
 
+
 .qty-label {
   padding-right: 5px;
 }
 
 .qty-div {
   margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .review-stars {

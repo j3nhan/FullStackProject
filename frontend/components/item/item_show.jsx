@@ -3,12 +3,27 @@ import { Link } from 'react-router-dom';
 import { moneyFormatter } from '../../util/money_util';
 import LoadingPage from '../loading_page';
 import ReviewIndexContainer from './review_index_container'
+import Rating from 'react-rating';
+import { withRouter } from 'react-router';
 
 class ItemShow extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            quantity: 1
+        }
+
+        this.updateQuantity = this.updateQuantity.bind(this);
+        this.updateRating = this.updateRating.bind(this);
+        this.updateReview = this.updateReview.bind(this);
+        this.itemCheckout = this.itemCheckout.bind(this);
+        this.addToCart = this.addToCart.bind(this);
+    }
 
     componentDidMount() {
         this.props.fetchItem(this.props.itemIdMat);
-        this.addToCart = this.addToCart.bind(this);
+        this.props.fetchReviews(this.props.itemIdMat);
     }
     
     componentDidUpdate(prevProps) {
@@ -17,24 +32,85 @@ class ItemShow extends React.Component {
         }
     }
 
+    updateQuantity(e) {
+        e.preventDefault();
+        this.setState({
+            quantity: parseInt(e.target.value)
+        });
+    }
+
+    updateRating() {
+        let sumRating = 0;
+        let averageRating = 0;
+        if (this.props.reviews.length !== 0) {
+            this.props.reviews.forEach(review => {
+                if (review.rating) {
+                    sumRating += review.rating;
+                }
+            });
+
+            averageRating = Math.round(sumRating / this.props.reviews.length);
+        }
+
+        return averageRating;
+    }
+    
+    updateReview(field) {
+        return e => this.setState({ [field]: e })
+    }
+
+    itemCheckout() {
+        return this.props.itemsAdded.some((item) => (item.itemId === this.props.item.id));
+    }
+    
     addToCart(e) {
         e.preventDefault();
 
         if (this.props.currentUser) {
-            this.props.createCartItem({
-                user_id: this.props.currentUser,
-                item_id: this.props.itemIdMat,
-                quantity: 1
+            let cartItemId;
+            this.props.itemsAdded.forEach((item) => {
+                if (item.itemId === this.props.item.id) {
+                    cartItemId = item.id
+                }
             })
-            this.props.history.push('/checkout')
+
+            const currItem = this.props.itemsAdded.filter((item) => item.id === cartItemId);
+            const currQuantity = currItem.length > 0 ? currItem[0].quantity : 0;
+            
+            if (this.itemCheckout()) {
+                this.props.updateCartItem({
+                    user_id: this.props.currentUser,
+                    item_id: this.props.item.id,
+                    quantity: currQuantity + parseInt(this.state.quantity),
+                    id: cartItemId
+                })
+                    .then(() => this.props.history.push('/checkout'))
+            } else {
+                this.props.createCartItem({
+                    user_id: this.props.currentUser,
+                    item_id: this.props.item.id,
+                    quantity: parseInt(this.state.quantity),
+                    id: cartItemId
+                })
+                    .then(() => this.props.history.push('/checkout'))
+            }
+
         } else {
             this.props.history.push('/signin')
         }
     }
 
     render() {
-        const { item } = this.props;
+        const { item, reviews } = this.props;
         const today = new Date().toDateString();
+
+        const starIcon = (
+            <img className="item-star-rev" src={'images/staricon.svg'} />
+        )
+
+        const noStar = (
+            <img className="item-star-rev" src={'images/nostar.svg'} />
+        )
 
         if (!item) {
             return (
@@ -56,13 +132,14 @@ class ItemShow extends React.Component {
                             <p className='itemshow-details-seller'>Support Yours Truly</p>
                             <div className='itemshow-details-rating-div'>
                                 <div className="rating">
-                                    {Array(item.rating).fill().map((_, idx) => (
-                                        <div key={ idx }>
-                                            <span role="img" aria-label="star">⭐</span>
-                                        </div>
-                                    ))}
+                                <Rating
+                                    initialRating={ this.updateRating() }
+                                    emptySymbol={ noStar }
+                                    fullSymbol={ starIcon }
+                                    readonly
+                                />
                                 </div>
-                                <div className="ratings-word">ratings</div>
+                                <div className="ratings-word"> {reviews.length} ratings</div>
                             </div>
                             <div className='best-seller'>#1 Best Seller</div>
                             
@@ -90,10 +167,26 @@ class ItemShow extends React.Component {
                             <div className="pur">Fastest delivery:</div>
                             <div className="pur-date"> { today } </div>
                             <div className="in-stock">In Stock</div>
+
+                            <form onSubmit={this.addToCart}>
                             <div className="qty-div">
-                                <label className='qty-label'>Qty: 1</label>
+                                    <label className='qty-label'>Qty:</label>
+                                    <select onChange={ this.updateQuantity } value={ this.state.quantity }> 
+                                        <option value={"1"}>1</option>
+                                        <option value={"2"}>2</option>
+                                        <option value={"3"}>3</option>
+                                        <option value={"4"}>4</option>
+                                        <option value={"5"}>5</option>
+                                        <option value={"6"}>6</option>
+                                        <option value={"7"}>7</option>
+                                        <option value={"8"}>8</option>
+                                        <option value={"9"}>9</option>
+                                        <option value={"10"}>10</option>
+                                    </select>
                             </div>
-                            <button className="clickbutton" onClick={this.addToCart}>Add to Cart</button>
+                            <button className="clickbutton" type="submit">Add to Cart</button>
+                            </form>
+
                         </div>
                     </div>
 
@@ -136,4 +229,4 @@ class ItemShow extends React.Component {
     }
 }
 
-export default ItemShow;
+export default withRouter(ItemShow);

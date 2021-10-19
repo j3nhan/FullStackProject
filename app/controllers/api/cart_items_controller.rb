@@ -27,7 +27,7 @@ class Api::CartItemsController < ApplicationController
             @cart_item.update(cart_item_params)
             render :show
         else
-            render json: ['Cart is not updated.'], status: 401
+            render json: ['Cart is not updated.'], status: 422
         end
     end
 
