@@ -29,7 +29,9 @@ class CartItems extends React.Component {
     totalQuantity() {
         let qty = 0;
         this.props.cartItemVal.forEach(item => {
-            qty += item.quantity
+            if (item.quantity) {
+                qty += item.quantity
+            }
         });
 
         return qty;
@@ -38,7 +40,7 @@ class CartItems extends React.Component {
     updateTotal(cartItemVal) {
         let grandTotal = 0;
         cartItemVal.forEach(item => {
-            if (item.price !== undefined) {
+            if (item.price && item.quantity) {
                 grandTotal += (item.price * item.quantity)
             }
         });

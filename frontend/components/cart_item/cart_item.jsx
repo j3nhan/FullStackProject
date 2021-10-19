@@ -17,7 +17,7 @@ class CartItem extends React.Component {
             this.props.updateCartItem({
                 user_id: this.props.currentUser,
                 item_id: this.props.cartItem.itemId,
-                quantity: parseInt(this.state.quantity),
+                quantity: this.state.quantity,
                 id: this.props.cartItem.id
             })
             location.reload();
@@ -28,13 +28,19 @@ class CartItem extends React.Component {
         e.preventDefault();
 
         this.setState({
-            quantity: parseInt(e.currentTarget.value)
+            quantity: e.currentTarget.value
         });
 
     }
 
     render(){
-        if (this.props.cartItem === undefined) return null;
+        if (!this.props.cartItem) {
+            return (
+                <div>
+                    <LoadingPage/>
+                </div>
+            )
+        }
         return(
             <li className='cart-list'>
                 <div className='main-cont'>

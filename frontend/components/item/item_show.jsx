@@ -38,7 +38,7 @@ class ItemShow extends React.Component {
     updateQuantity(e) {
         e.preventDefault();
         this.setState({
-            quantity: parseInt(e.target.value)
+            quantity: e.target.value
         });
     }
 
@@ -84,7 +84,7 @@ class ItemShow extends React.Component {
                 this.props.updateCartItem({
                     user_id: this.props.currentUser,
                     item_id: this.props.item.id,
-                    quantity: currQuantity + parseInt(this.state.quantity),
+                    quantity: currQuantity + this.state.quantity,
                     id: cartItemId
                 })
                     .then(() => this.props.history.push('/checkout'))
@@ -92,7 +92,7 @@ class ItemShow extends React.Component {
                 this.props.createCartItem({
                     user_id: this.props.currentUser,
                     item_id: this.props.item.id,
-                    quantity: parseInt(this.state.quantity),
+                    quantity: this.state.quantity,
                     id: cartItemId
                 })
                     .then(() => this.props.history.push('/checkout'))

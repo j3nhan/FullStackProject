@@ -23,7 +23,9 @@ class Header extends React.Component {
         let cartQty = 0;
         if (this.props.currentUser && this.props.cart.length > 0) {
             this.props.cart.forEach(cartItem => {
+                if (cartItem.quantity) {
                     cartQty += cartItem.quantity
+                }
             }); 
         }
 
