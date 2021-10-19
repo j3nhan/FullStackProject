@@ -71,23 +71,40 @@
 }
 
 .cart-title {
-font-size: 28px;
-font-weight: 450;
-line-height: 36px;
-padding: 0;
-margin: 0;
+    font-size: 28px;
+    font-weight: 450;
+    line-height: 36px;
+    padding: 0;
+    margin: 0;
 }
 
 .in-stock-name {
     color: #007600!important;
-    font-size: 12px!important;
+    font-size: 13px!important;
     padding: 3px;
 }
 
 .free-shipping {
     color: #565959!important;
-    font-size: 12px!important;
+    font-size: 13px!important;
     padding: 3px;
+}
+
+.qty-delete-div {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2px;
+    align-items: center;
+}
+
+.qty-cart-label {
+  font-size: 14px!important;
+  padding: 3px;
+}
+
+.border-color {
+    color: gray;
+    padding: 3px 5px;
 }
 
 .delete-cart-item {
@@ -99,15 +116,15 @@ margin: 0;
     overflow: visible;
     padding: 0;
     font: Arial, helvetica, sans-serif, inherit;
-    font-size: 12px!important;
+    font-size: 14px!important;
     line-height: 16px!important;
-    padding: 3px;
+    padding: 3px 3px 3px 0px;
 }
 
 .subtotal-gift-one {
     display: flex;
     align-items: center;
-    padding: 3px;
+    padding: 3px 3px 3px 0px;
 }
 
 .subtotal-gift-one > input {
@@ -115,7 +132,7 @@ margin: 0;
 }
 
 .gift-text-one {
-    font-size: 12px;
+    font-size: 13px;
     padding: 3px;
 }
 
