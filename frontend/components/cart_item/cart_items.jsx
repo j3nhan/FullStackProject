@@ -91,7 +91,6 @@ class CartItems extends React.Component {
                                 <div className="price-title">Price</div>
                                 <ul>
                                     {cartItemVal.map((cartItem) => (
-                                        
                                         <CartItem 
                                             key={ cartItem.id }
                                             cartItem={ cartItem }
@@ -100,56 +99,6 @@ class CartItems extends React.Component {
                                             updateCartItem={this.props.updateCartItem}
                                             fetchCartItem={this.props.fetchCartItem}
                                         />
-
-                                        // <li className='cart-list' key={cartItemId}>
-                                        //     <div className='main-cont'>
-                                        //         <div>
-                                        //             <Link to={`/items/${cartItems[cartItemId].itemId}`}>
-                                        //                 <img className="checkout-product-image" src={cartItems[cartItemId].photoUrl} />
-                                        //             </Link>
-                                        //         </div>
-
-                                        //         <div className="checkout-product-info">
-                                        //             <div>
-                                        //                 <Link className="checkout-product-title" to={`/items/${cartItems[cartItemId].itemId}`}>
-                                        //                     <div>{cartItems[cartItemId].itemName}</div>
-                                        //                 </Link>
-                                        //                 <div className="in-stock-name">In Stock</div>
-                                        //                 <div className="free-shipping">Eligible for FREE Shipping & FREE Returns</div>
-
-                                        //                 <form>
-                                        //                     <div className="qty-cart-div">
-                                        //                         <label className='qty-cart-label'>Qty: </label>
-
-                                        //                         <select id="selectQty" onChange={() => this.updateQuantity(cartItemId)} value={cartItems[cartItemId].quantity}> 
-                                        //                             <option value={"1"}>1</option>
-                                        //                             <option value={"2"}>2</option>
-                                        //                             <option value={"3"}>3</option>
-                                        //                             <option value={"4"}>4</option>
-                                        //                             <option value={"5"}>5</option>
-                                        //                             <option value={"6"}>6</option>
-                                        //                             <option value={"7"}>7</option>
-                                        //                             <option value={"8"}>8</option>
-                                        //                             <option value={"9"}>9</option>
-                                        //                             <option value={"10"}>10</option>
-                                        //                         </select>
-                                        //                     </div>
-                                        //                 </form>
-
-                                        //                 <label className="subtotal-gift-one">
-                                        //                     <input type='checkbox' className='gift-one'/><div className='gift-text-one'>This is a gift</div>
-                                        //                 </label>
-                                        //             </div>
-                                        //             <div>
-                                        //                 <p className='delete-cart-item' onClick={() => this.props.deleteCartItem(cartItemId)}>Delete</p>
-                                        //             </div>
-                                        //         </div>
-                                        //     </div>
-
-                                        //     <div className="price-product">
-                                        //         <div>{moneyFormatter.format(cartItems[cartItemId].price / 100)}</div>
-                                        //     </div>
-                                        // </li>
                                     ))}
                                 </ul>
                                 

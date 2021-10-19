@@ -35,7 +35,7 @@ class ItemShow extends React.Component {
     updateQuantity(e) {
         e.preventDefault();
         this.setState({
-            quantity: e.target.value
+            quantity: parseInt(e.target.value)
         });
     }
 
@@ -76,7 +76,7 @@ class ItemShow extends React.Component {
 
             const currItem = this.props.itemsAdded.filter((item) => item.id === cartItemId);
             const currQuantity = currItem.length > 0 ? currItem[0].quantity : 0;
-
+            
             if (this.itemCheckout()) {
                 this.props.updateCartItem({
                     user_id: this.props.currentUser,
