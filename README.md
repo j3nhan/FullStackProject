@@ -1,5 +1,5 @@
 # ValYOU
-[ValYOU](https://valyou.herokuapp.com) is a full-stack web application clone of Amazon. What makes ValYOU different from other e-commerce sites is that customers can shop for curated items exclusively from small businesses around the world. At ValYOU, supporting underrepresented communities and making the shopping experience as seamless as possible are my top priorities!
+ValYOU is a full-stack web application clone of Amazon. What makes ValYOU different from other e-commerce sites is that customers can shop for curated items exclusively from small businesses around the world. At ValYOU, supporting underrepresented communities and making the shopping experience as seamless as possible are my top priorities!
 
 ## Technologies
 - React.js
